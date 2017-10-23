@@ -10,7 +10,7 @@ const middleware = routerMiddleware(history);
 
 const store = createStore(
   // rootReducer,
-  DevTools.instrument(),
+  // DevTools.instrument(),
   applyMiddleware(thunk),
   applyMiddleware(middleware)
 );
