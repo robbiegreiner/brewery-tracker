@@ -5,6 +5,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "css-loader": "^0.28.7",
+    "firebase": "^4.6.0",
     "history": "^4.7.2",
     "pg-promise": "^7.0.3",
     "react": "^16.0.0",
