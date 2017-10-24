@@ -25,11 +25,9 @@ class Login extends Component {
     return (
       <div className='login'>
         <h1>Login Here</h1>
-        <form>
-          <input type='text' name='username'></input>
-          <input type='text' name='password'></input>
-          <button onClick={this.login.bind(this)}>Log In</button>
-        </form>
+        <input type='text' name='username'></input>
+        <input type='text' name='password'></input>
+        <button onClick={this.login.bind(this)}>Log In</button>
       </div>
     );
 
