@@ -22,10 +22,6 @@ class Login extends Component {
     login(this.state.email, this.state.password);
   }
 
-  // create action
-  // pass user up as payload to reducer
-  // set store
-
   render() {
     return (
       <div className='login'>

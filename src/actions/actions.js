@@ -1,4 +1,5 @@
 import firebase, { auth, provider } from '../firebase.js';
+import apikey from '../apikey.js'
 
 export const createAccountSuccess = (user) => {
   return {
@@ -33,6 +34,23 @@ export const login = (email, password) => {
         id: response.uid,
         email: response.email
       }))))
+      .catch(error => console.log(error));
+  };
+};
+
+
+export const searchAllSuccess = searchResults => {
+  return {
+    type: 'SEARCH_ALL_SUCCESS',
+    searchResults
+  };
+};
+
+export const fetchSearch = searchValue => {
+  return dispatch => {
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.brewerydb.com/v2/search?q=${searchValue}&key=${apikey}`)
+      .then(response => response.json())
+      .then(results => dispatch(searchAllSuccess(results.data)))
       .catch(error => console.log(error));
   };
 };

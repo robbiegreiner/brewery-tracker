@@ -18,17 +18,8 @@ class Landing extends Component {
   }
 
   searchClick() {
-    // create action creator
-    // create api call function
-    // api call function dispatches action
-    // action goes to reducer with results payload
-    // payload goes up to container
-    // container calls Component
-
-
-    // pass in searchValue
-
-
+    const { searchAll } = this.props;
+    searchAll(this.state.searchValue);
   }
 
 
@@ -38,14 +29,15 @@ class Landing extends Component {
       <div className='landing'>
         <h1>Landing & Search Here</h1>
         <input placeholder="Search" onChange= {(event ) => this.handleChange(event)}></input>
-        <button>City</button>
-        <button>Brewery</button>
-        <button>Beer</button>
-        <button>Style</button>
+        <button onClick={ () => this.searchClick() }>Go</button>
       </div>
     );
 
   }
 }
+
+Landing.propTypes = {
+  searchAll: PropTypes.func
+};
 
 export default Landing;
