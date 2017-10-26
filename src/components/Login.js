@@ -11,6 +11,10 @@ class Login extends Component {
     };
   }
 
+  // create action
+  // pass user up as payload to reducer
+  // set store
+
   login() {
     auth.signInWithPopup(provider)
       .then((result) => {
