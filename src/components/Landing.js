@@ -29,7 +29,9 @@ class Landing extends Component {
       <div className='landing'>
         <h1>Landing & Search Here</h1>
         <input placeholder="Search" onChange= {(event ) => this.handleChange(event)}></input>
-        <button onClick={ () => this.searchClick() }>Go</button>
+        <Link to='/searchresults'>
+          <button onClick={ () => this.searchClick() }>Go</button>
+        </Link>
       </div>
     );
 
