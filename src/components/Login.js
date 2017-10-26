@@ -21,11 +21,21 @@ class Login extends Component {
       });
   }
 
+  logout() {
+    auth.signOut()
+      .then(() => {
+        this.setState({
+          user: null
+        });
+      });
+  }
+
   render() {
     return (
       <div className='login'>
         <h1>Login Here</h1>
         <button onClick={this.login.bind(this)}>Log In</button>
+        <button onClick={this.logout.bind(this)}>Log Out</button>
       </div>
     );
 

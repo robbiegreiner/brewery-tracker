@@ -13,8 +13,12 @@ class Landing extends Component {
   render() {
     return (
       <div className='landing'>
-        <h1>Landing Seach Here</h1>
-        <button>Search</button>
+        <h1>Landing & Search Here</h1>
+        <input placeholder="Search"></input>
+        <button>City</button>
+        <button>Brewery</button>
+        <button>Beer</button>
+        <button>Style</button>
       </div>
     );
 
