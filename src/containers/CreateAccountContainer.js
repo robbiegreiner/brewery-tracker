@@ -7,8 +7,8 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  createAccount: (name, email, password) => {
-    dispatch(createAccount(name, email, password));
+  createAccount: (email, password) => {
+    dispatch(createAccount(email, password));
   }
 });
 

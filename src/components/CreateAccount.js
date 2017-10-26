@@ -7,7 +7,6 @@ class CreateAccount extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
       email: '',
       password: ''
     };
@@ -22,7 +21,7 @@ class CreateAccount extends Component {
 
   createNewUser() {
     const { createAccount } = this.props;
-    createAccount(this.state.name, this.state.email, this.state.password);
+    createAccount(this.state.email, this.state.password);
   }
 
 
@@ -40,7 +39,6 @@ class CreateAccount extends Component {
     return (
       <div className='create-account'>
         <h1>Create Account Here</h1>
-        <input placeholder="name" onChange={(event) => this.handleChange('name', event) }></input>
         <input placeholder="email" onChange={(event) => this.handleChange('email', event) }></input>
         <input placeholder="password" onChange={(event) => this.handleChange('password', event) }></input>
         <button onClick={ () => this.createNewUser()}>submit</button>

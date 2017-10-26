@@ -1,49 +1,41 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import firebase, { auth, provider } from '../firebase.js';
 
 class Login extends Component {
   constructor() {
     super();
     this.state = {
-      user: null
+      email: '',
+      password: ''
     };
   }
 
-  // create action
-  // pass user up as payload to reducer
-  // set store
-
-  login() {
-    auth.signInWithPopup(provider)
-      .then((result) => {
-        const user = result.user;
-        this.setState({
-          user
-        });
-      });
+  handleChange(description, event){
+    this.setState({
+      [description]: event.target.value
+    });
   }
 
-  logout() {
-    auth.signOut()
-      .then(() => {
-        this.setState({
-          user: null
-        });
-      });
+  userLogin() {
+    const { login } = this.props;
+    login(this.state.email, this.state.password);
   }
 
   render() {
     return (
       <div className='login'>
         <h1>Login Here</h1>
-        <button onClick={this.login.bind(this)}>Log In</button>
-        <button onClick={this.logout.bind(this)}>Log Out</button>
+        <input placeholder="email" onChange={(event) => this.handleChange('email', event) }></input>
+        <input placeholder="password" onChange={(event) => this.handleChange('password', event) }></input>
+        <button onClick={ () => this.userLogin()}>submit</button>
       </div>
     );
-
   }
 }
+
+Login.propTypes = {
+  login: PropTypes.func
+};
 
 export default Login;
