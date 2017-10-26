@@ -48,7 +48,7 @@ export const searchAllSuccess = searchResults => {
 
 export const fetchSearch = searchValue => {
   return dispatch => {
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.brewerydb.com/v2/search?q=${searchValue}&key=${apikey}`)
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.brewerydb.com/v2/search?q=${searchValue}&key=${apikey}&withBreweries=y`)
       .then(response => response.json())
       .then(results => dispatch(searchAllSuccess(results.data)))
       .catch(error => console.log(error));

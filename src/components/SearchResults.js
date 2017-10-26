@@ -1,27 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import BeerCard from './BeerCard.js'
 
 const SearchResults = ({ searchResults }) => {
 
   const beerResults = searchResults.filter( result => {
-    console.log(result);
     return result.type === "beer";
   });
 
-  const beerNames = beerResults.map( beer => {
-    return (
-      <h2>{beer.name}</h2>
-    )
-  })
+  const breweryResults = searchResults.filter( result => {
+    return result.type === "brewery";
+  });
 
-  console.log(beerResults);
-
+  const beerCards = beerResults.map( beer => {
+    return <BeerCard
+      beer={beer}
+      key={beer.id}/>;
+  });
 
   return (
-    <div className='Search Results'>
+    <div className='search-results'>
       <h1>Search Results</h1>
-      <h2>{beerNames}</h2>
+      <div className='card-container'>
+        {beerCards}
+      </div>
     </div>
   );
 };
