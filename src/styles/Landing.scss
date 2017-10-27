@@ -1,0 +1,23 @@
+.landing {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-area {
+  height: 100vh;
+  width: 100vw;
+  background:     linear-gradient( 90deg,
+      rgba(49, 61, 65, 0.6),
+      rgba(49, 61, 65, 0.6)
+    ), url("../assets/landing-img.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
