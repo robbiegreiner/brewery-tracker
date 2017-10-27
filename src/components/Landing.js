@@ -28,14 +28,16 @@ class Landing extends Component {
 
   renderRandomBrewery() {
     const { randomBrewery } = this.props;
-    return (
-      <div className='random-brewery'>
-        <h2>{randomBrewery.name}</h2>
-        {/* <img src={randomBrewery.images.squareMedium}></img> */}
-        <h3>{randomBrewery.website}</h3>
-        <p>{randomBrewery.description ? randomBrewery.description : 'no description provided'}</p>
-      </div>
-    );
+    if (randomBrewery.images) {
+      return (
+        <div className='random-brewery'>
+          <h2>{randomBrewery.name}</h2>
+          <img src={randomBrewery.images.large}></img>
+          <h3>{randomBrewery.website}</h3>
+          <p>{randomBrewery.description ? randomBrewery.description : 'no description provided'}</p>
+        </div>
+      );
+    }
   }
 
 
