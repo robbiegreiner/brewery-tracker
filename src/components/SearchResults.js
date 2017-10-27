@@ -6,7 +6,7 @@ import BeerCard from './BeerCard.js'
 const SearchResults = ({ searchResults }) => {
 
   const beerResults = searchResults.filter( result => {
-    return result.type === "beer";
+    return result.style;
   });
 
   const breweryResults = searchResults.filter( result => {
