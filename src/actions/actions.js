@@ -48,9 +48,28 @@ export const searchAllSuccess = searchResults => {
 
 export const fetchSearch = searchValue => {
   return dispatch => {
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.brewerydb.com/v2/search?q=${searchValue}&key=${apikey}&withBreweries=y`)
+    fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/search?q=${searchValue}&key=${apikey}&withBreweries=y&withDescription=y`)
       .then(response => response.json())
       .then(results => dispatch(searchAllSuccess(results.data)))
+      .catch(error => console.log(error));
+  };
+};
+
+// random beer fetch
+// https://api.brewerydb.com/v2/beer/random?key=c138c8eb0b70d77459a4c1f2f479533a
+
+export const randomBrewerySuccess = brewery => {
+  return {
+    type: 'RANDOM_BREWERY_SUCCESS',
+    brewery
+  };
+};
+
+export const fetchRandomBrewery = () => {
+  return dispatch => {
+    fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/random?key=${apikey}&hasImages=y`)
+      .then(response => response.json())
+      .then(results => dispatch(randomBrewerySuccess(results.data)))
       .catch(error => console.log(error));
   };
 };

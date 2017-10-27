@@ -11,6 +11,10 @@ class Landing extends Component {
     };
   }
 
+  componentDidMount() {
+    this.props.getRandomBrewery();
+  }
+
   handleChange(event) {
     this.setState({
       searchValue: event.target.value
@@ -20,6 +24,18 @@ class Landing extends Component {
   searchClick() {
     const { searchAll } = this.props;
     searchAll(this.state.searchValue);
+  }
+
+  renderRandomBrewery() {
+    const { randomBrewery } = this.props;
+    return (
+      <div className='random-brewery'>
+        <h2>{randomBrewery.name}</h2>
+        {/* <img src={randomBrewery.images.squareMedium}></img> */}
+        <h3>{randomBrewery.website}</h3>
+        <p>{randomBrewery.description ? randomBrewery.description : 'no description provided'}</p>
+      </div>
+    );
   }
 
 
@@ -32,6 +48,10 @@ class Landing extends Component {
         <Link to='/searchresults'>
           <button onClick={ () => this.searchClick() }>Go</button>
         </Link>
+        <div className='random-breweries'>
+          <h2>Random Breweries</h2>
+          {this.renderRandomBrewery()}
+        </div>
       </div>
     );
 
@@ -39,7 +59,9 @@ class Landing extends Component {
 }
 
 Landing.propTypes = {
-  searchAll: PropTypes.func
+  searchAll: PropTypes.func,
+  randomBrewery: PropTypes.object,
+  getRandomBrewery: PropTypes.func
 };
 
 export default Landing;
