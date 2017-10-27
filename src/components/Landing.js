@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import RandomBrewery from './RandomBrewery';
 
 
 class Landing extends Component {
@@ -26,33 +27,18 @@ class Landing extends Component {
     searchAll(this.state.searchValue);
   }
 
-  renderRandomBrewery() {
-    const { randomBrewery } = this.props;
-    if (randomBrewery.images) {
-      return (
-        <div className='random-brewery'>
-          <h2>{randomBrewery.name}</h2>
-          <img src={randomBrewery.images.large}></img>
-          <h3>{randomBrewery.website}</h3>
-          <p>{randomBrewery.description ? randomBrewery.description : 'no description provided'}</p>
-        </div>
-      );
-    }
-  }
-
-
-
   render() {
     return (
       <div className='landing'>
-        <h1>Landing & Search Here</h1>
-        <input placeholder="Search" onChange= {(event ) => this.handleChange(event)}></input>
-        <Link to='/searchresults'>
-          <button onClick={ () => this.searchClick() }>Go</button>
-        </Link>
-        <div className='random-breweries'>
-          <h2>Random Breweries</h2>
-          {this.renderRandomBrewery()}
+        <div className='search-area'>
+          <h1>Search for Beers & Breweries</h1>
+          <input placeholder="Search" onChange= {(event ) => this.handleChange(event)}></input>
+          <Link to='/searchresults'>
+            <button onClick={ () => this.searchClick() }>Go</button>
+          </Link>
+        </div>
+        <div className='random-section'>
+          <RandomBrewery randomBrewery={this.props.randomBrewery} />
         </div>
       </div>
     );

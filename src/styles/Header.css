@@ -1,8 +1,17 @@
 .header {
+  background-color: #eb9122;
+  background-image: url("https://www.transparenttextures.com/patterns/fake-brick.png");
   width: 100%;
-  height: 200px;
-  background-color: blue;
+  height: 10vh;
+  min-height: 94px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px; }
+  margin-top: 0px;
+  color: white;
+  position: fixed;
+  border-bottom: 3px solid white; }
+
+.header img {
+  height: 70px;
+  width: 70px; }
