@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const BeerCard = ({ beer }) => {
-  console.log(beer)
   return (
     <div className='beer-card'>
       <h2>{beer.name}</h2>
