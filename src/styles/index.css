@@ -57,20 +57,13 @@
 
 .feature-brewery, .feature-beer {
   width: 700px;
-  background-color: #eb9122;
-  background-image: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
-  border: 2px solid black;
-  height: 500px;
+  background-color: white;
+  height: 600px;
   overflow: hidden; }
 
 .feature-brewery p {
   padding: 0 20px 20px 20px;
-  height: 70px;
   overflow: hidden; }
-
-.brewery-logo {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black; }
 
 .landing {
   width: 100%;

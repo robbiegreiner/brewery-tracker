@@ -12,7 +12,7 @@ const FeatureBrewery = ({ featureBrewery, getBrewery }) => {
   if (featureBrewery.images) {
     return (
       <div className='feature-brewery' onClick={() => showBrewery(featureBrewery.id)}>
-        <h3>Featured Brewery</h3>
+        <h1>Featured Brewery</h1>
         <h2>{featureBrewery.name}</h2>
         <Link to='/brewery'><img className='brewery-logo' src={featureBrewery.images.large}></img></Link>
         <h3>{featureBrewery.locations[0].locality}, {featureBrewery.locations[0].region}</h3>

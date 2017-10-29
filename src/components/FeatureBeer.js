@@ -12,11 +12,11 @@ const FeatureBeer = ({ featureBeer, getBrewery }) => {
   if (featureBeer.breweries) {
     return (
       <div className='feature-beer' onClick={() => showBrewery(featureBeer.breweries[0].id)}>
-        <h3>Featured Beer</h3>
+        <h1>Featured Beer</h1>
         <h2>{featureBeer.name}</h2>
+        <Link to='/brewery'><img className='brewery-logo' src={featureBeer.labels.medium}></img></Link>
         <h3>{featureBeer.breweries[0].name}</h3>
         <h3>{featureBeer.breweries[0].locations[0].locality}, {featureBeer.breweries[0].locations[0].region}</h3>
-        <Link to='/brewery'><img className='brewery-logo' src={featureBeer.labels.medium}></img></Link>
         <p>{featureBeer.description}</p>
       </div>
     );
