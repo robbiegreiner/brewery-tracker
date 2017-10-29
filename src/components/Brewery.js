@@ -11,6 +11,7 @@ class Brewery extends Component {
   //setup dynamic routing for current list of beers
 
   componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
     if (this.props.brewery !== nextProps.brewery) {
       nextProps.getBreweryBeers(nextProps.brewery.id);
     }

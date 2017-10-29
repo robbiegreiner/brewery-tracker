@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import FeatureBrewery from './FeatureBrewery';
+import FeatureBeer from './FeatureBeer';
 
 
 class Landing extends Component {
@@ -9,7 +10,7 @@ class Landing extends Component {
     super();
     this.state = {
       searchValue: ''
-    }
+    };
   }
 
   componentDidMount() {
@@ -42,6 +43,9 @@ class Landing extends Component {
           <FeatureBrewery
             featureBrewery={this.props.featureBrewery}
             getBrewery ={this.props.getBrewery}/>
+          <FeatureBeer
+            featureBeer={this.props.featureBeer}
+            getBrewery ={this.props.getBrewery}/>
         </div>
       </div>
     );
@@ -52,6 +56,7 @@ class Landing extends Component {
 Landing.propTypes = {
   searchAll: PropTypes.func,
   featureBrewery: PropTypes.object,
+  featureBeer: PropTypes.object,
   getFeatures: PropTypes.func,
   getBrewery: PropTypes.func
 };

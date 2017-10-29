@@ -4,7 +4,8 @@ import { fetchSearch, fetchFeatures, fetchBrewery } from '../actions/actions';
 
 
 const mapStateToProps = store => ({
-  featureBrewery: store.featureBrewery
+  featureBrewery: store.featureBrewery,
+  featureBeer: store.featureBeer
 });
 
 const mapDispatchToProps = dispatch => ({

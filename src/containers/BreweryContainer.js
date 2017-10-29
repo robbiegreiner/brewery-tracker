@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Brewery from '../components/Brewery';
-import { fetchBreweryBeers } from '../actions/actions'
+import { fetchBreweryBeers } from '../actions/actions';
 
 
 const mapStateToProps = store => ({
