@@ -8,7 +8,8 @@
 
 .random-brewery {
   width: 700px;
-  background-color: lightgray;
+  background-color: $primary-color;
+  background-image: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
   border: 2px solid black;
   height: 500px;
   overflow: hidden;
