@@ -1,17 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const RandomBrewery = ({ randomBrewery }) => {
+const RandomBrewery = ({ randomBrewery, getBrewery }) => {
+
+  const showBrewery = id => {
+    getBrewery(id);
+  };
+
+
   if (randomBrewery.images) {
     return (
-      <div className='random-brewery'>
-        <h3>Featured Brewery</h3>
-        {/* click takes you to brewery page */}
-        <h2>{randomBrewery.name}</h2>
-        <img className='brewery-logo' src={randomBrewery.images.large}></img>
-        <h4>{randomBrewery.website}</h4>
-        <p>{randomBrewery.description ? randomBrewery.description : 'no description provided'}</p>
-      </div>
+      <Link to='/brewery'>
+        <div className='random-brewery' onClick={() => showBrewery(randomBrewery.id)}>
+          <h3>Featured Brewery</h3>
+          <h2>{randomBrewery.name}</h2>
+          <img className='brewery-logo' src={randomBrewery.images.large}></img>
+          <h4>{randomBrewery.website}</h4>
+          <p>{randomBrewery.description ? randomBrewery.description : 'no description provided'}</p>
+        </div>
+      </Link>
     );
   } else {
     return (
@@ -21,7 +29,8 @@ const RandomBrewery = ({ randomBrewery }) => {
 };
 
 RandomBrewery.propTypes = {
-  randomBrewery: PropTypes.object
+  randomBrewery: PropTypes.object,
+  getBrewery: PropTypes.func
 };
 
 export default RandomBrewery;

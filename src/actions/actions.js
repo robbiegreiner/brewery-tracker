@@ -58,6 +58,22 @@ export const fetchSearch = searchValue => {
 // random beer fetch
 // https://api.brewerydb.com/v2/beer/random?key=c138c8eb0b70d77459a4c1f2f479533a
 
+export const fetchBrewerySuccess = brewery => {
+  return {
+    type: 'BREWERY_SUCCESS',
+    brewery
+  };
+};
+
+export const fetchBrewery = id => {
+  return dispatch => {
+    fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/${id}?key=c138c8eb0b70d77459a4c1f2f479533a`)
+      .then(response => response.json())
+      .then(results => dispatch(fetchBrewerySuccess(results.data)))
+      .catch(error => console.log(error));
+  };
+};
+
 export const randomBrewerySuccess = brewery => {
   return {
     type: 'RANDOM_BREWERY_SUCCESS',

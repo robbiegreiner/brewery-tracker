@@ -38,7 +38,9 @@ class Landing extends Component {
           </Link>
         </div>
         <div className='random-section'>
-          <RandomBrewery randomBrewery={this.props.randomBrewery} />
+          <RandomBrewery
+            randomBrewery={this.props.randomBrewery}
+            getBrewery ={this.props.getBrewery}/>
         </div>
       </div>
     );
@@ -49,7 +51,8 @@ class Landing extends Component {
 Landing.propTypes = {
   searchAll: PropTypes.func,
   randomBrewery: PropTypes.object,
-  getRandomBrewery: PropTypes.func
+  getRandomBrewery: PropTypes.func,
+  getBrewery: PropTypes.func
 };
 
 export default Landing;
