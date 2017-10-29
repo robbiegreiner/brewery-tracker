@@ -55,8 +55,8 @@ export const fetchSearch = searchValue => {
   };
 };
 
-// random beer fetch
-// https://api.brewerydb.com/v2/beer/random?key=c138c8eb0b70d77459a4c1f2f479533a
+// breweries beers fetch
+// https://api.brewerydb.com/v2/brewery/fn89yQ/beers?key=c138c8eb0b70d77459a4c1f2f479533a
 
 export const fetchBrewerySuccess = brewery => {
   return {
@@ -67,12 +67,31 @@ export const fetchBrewerySuccess = brewery => {
 
 export const fetchBrewery = id => {
   return dispatch => {
-    fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/${id}?key=c138c8eb0b70d77459a4c1f2f479533a`)
+    fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/${id}?key=${apikey}`)
       .then(response => response.json())
       .then(results => dispatch(fetchBrewerySuccess(results.data)))
       .catch(error => console.log(error));
   };
 };
+
+export const fetchBreweryBeerSuccess = beers => {
+  return {
+    type: 'BREWERY_BEER_SUCCESS',
+    beers
+  };
+};
+
+export const fetchBreweryBeers = id => {
+  console.log(id);
+  return dispatch => {
+    fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/${id}/beers?key=${apikey}`)
+      .then(response => response.json())
+      .then(results => dispatch(fetchBreweryBeerSuccess(results.data)))
+      .catch(error => console.log(error));
+  };
+};
+
+
 
 export const randomBrewerySuccess = brewery => {
   return {

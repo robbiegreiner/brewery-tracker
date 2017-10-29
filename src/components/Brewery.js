@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
+import BeerCard from './BeerCard.js'
 
 class Brewery extends Component {
   constructor() {
     super();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.brewery !== nextProps.brewery) {
+      nextProps.getBreweryBeers(nextProps.brewery.id);
+    }
   }
 
   renderBrewery() {
@@ -26,10 +33,22 @@ class Brewery extends Component {
     }
   }
 
+  renderBeers() {
+    const { breweryBeers } = this.props;
+    if (breweryBeers) {
+      return breweryBeers.map( beer => {
+        return <BeerCard
+          beer={beer}
+          key={beer.id}/>;
+      });
+    }
+  }
+
   render() {
     return (
       <div>
         {this.renderBrewery()}
+        {this.renderBeers()}
       </div>
     );
   }
@@ -38,7 +57,9 @@ class Brewery extends Component {
 
 
 Brewery.propTypes = {
-  brewery: PropTypes.object
+  brewery: PropTypes.object,
+  breweryBeers: PropTypes.array,
+  getBreweryBeers: PropTypes.func
 };
 
 export default Brewery;
