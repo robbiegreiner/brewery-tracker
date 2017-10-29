@@ -48,7 +48,7 @@ export const searchAllSuccess = searchResults => {
 
 export const fetchSearch = searchValue => {
   return dispatch => {
-    fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/search?q=${searchValue}&key=${apikey}&withBreweries=y&withDescription=y&withLocations=y`)
+    fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/search?q=${searchValue}&key=${apikey}&withBreweries=y&withLocations=y`)
       .then(response => response.json())
       .then(results => dispatch(searchAllSuccess(results.data)))
       .catch(error => console.log(error));
@@ -102,7 +102,7 @@ export const randomBrewerySuccess = brewery => {
 
 export const fetchRandomBrewery = () => {
   return dispatch => {
-    fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/random?key=${apikey}&hasImages=y`)
+    fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/random?key=${apikey}&hasImages=y&withLocations=y`)
       .then(response => response.json())
       .then(results => dispatch(randomBrewerySuccess(results.data)))
       .catch(error => console.log(error));

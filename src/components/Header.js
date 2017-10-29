@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <div className='header'>
-      <h1>Brewery Tracker</h1>
+      <Link to='/'>
+        <h1>Brewery Tracker</h1>
+      </Link>
     </div>
   );
 };
