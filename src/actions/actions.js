@@ -93,18 +93,18 @@ export const fetchBreweryBeers = id => {
 
 
 
-export const randomBrewerySuccess = brewery => {
+export const randomSuccess = randoms => {
   return {
-    type: 'RANDOM_BREWERY_SUCCESS',
-    brewery
+    type: 'RANDOM_SUCCESS',
+    randoms
   };
 };
 
-export const fetchRandomBrewery = () => {
+export const fetchRandoms = () => {
   return dispatch => {
-    fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/random?key=${apikey}&hasImages=y&withLocations=y`)
+    fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/featured/?key=${apikey}`)
       .then(response => response.json())
-      .then(results => dispatch(randomBrewerySuccess(results.data)))
+      .then(results => dispatch(randomSuccess(results.data)))
       .catch(error => console.log(error));
   };
 };

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Landing from '../components/Landing';
-import { fetchSearch, fetchRandomBrewery, fetchBrewery } from '../actions/actions';
+import { fetchSearch, fetchRandoms, fetchBrewery } from '../actions/actions';
 
 
 const mapStateToProps = store => ({
@@ -11,8 +11,8 @@ const mapDispatchToProps = dispatch => ({
   searchAll: (searchValue) => {
     dispatch(fetchSearch(searchValue));
   },
-  getRandomBrewery: () => {
-    dispatch(fetchRandomBrewery());
+  getRandoms: () => {
+    dispatch(fetchRandoms());
   },
   getBrewery: (id) => {
     dispatch(fetchBrewery(id));

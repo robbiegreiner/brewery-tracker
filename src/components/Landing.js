@@ -13,7 +13,7 @@ class Landing extends Component {
   }
 
   componentDidMount() {
-    this.props.getRandomBrewery();
+    this.props.getRandoms();
   }
 
   handleChange(event) {
@@ -52,7 +52,7 @@ class Landing extends Component {
 Landing.propTypes = {
   searchAll: PropTypes.func,
   randomBrewery: PropTypes.object,
-  getRandomBrewery: PropTypes.func,
+  getRandoms: PropTypes.func,
   getBrewery: PropTypes.func
 };
 
