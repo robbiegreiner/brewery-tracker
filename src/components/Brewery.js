@@ -46,9 +46,11 @@ class Brewery extends Component {
 
   render() {
     return (
-      <div>
+      <div className='brewery'>
         {this.renderBrewery()}
-        {this.renderBeers()}
+        <div className='brewery-beers'>
+          {this.renderBeers()}
+        </div>
       </div>
     );
   }
