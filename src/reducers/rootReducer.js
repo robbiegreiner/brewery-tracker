@@ -1,16 +1,16 @@
 import { combineReducers } from 'redux';
 import user from './user';
 import searchResults from './searchResults';
-import randomBrewery from './randomBrewery';
+import featureBrewery from './featureBrewery';
 import brewery from './brewery';
 import breweryBeers from './breweryBeers';
-import randomBeer from './randomBeer';
+import featureBeer from './featureBeer';
 
 const rootReducer = combineReducers({
   user,
   searchResults,
-  randomBrewery,
-  randomBeer,
+  featureBrewery,
+  featureBeer,
   brewery,
   breweryBeers
 });

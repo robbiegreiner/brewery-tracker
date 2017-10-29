@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import RandomBrewery from './RandomBrewery';
+import FeatureBrewery from './FeatureBrewery';
 
 
 class Landing extends Component {
@@ -9,11 +9,11 @@ class Landing extends Component {
     super();
     this.state = {
       searchValue: ''
-    };
+    }
   }
 
   componentDidMount() {
-    this.props.getRandoms();
+    this.props.getFeatures();
   }
 
   handleChange(event) {
@@ -38,9 +38,9 @@ class Landing extends Component {
               onClick={ () => this.searchClick() }>Go</button>
           </Link>
         </div>
-        <div className='random-section'>
-          <RandomBrewery
-            randomBrewery={this.props.randomBrewery}
+        <div className='feature-section'>
+          <FeatureBrewery
+            featureBrewery={this.props.featureBrewery}
             getBrewery ={this.props.getBrewery}/>
         </div>
       </div>
@@ -51,8 +51,8 @@ class Landing extends Component {
 
 Landing.propTypes = {
   searchAll: PropTypes.func,
-  randomBrewery: PropTypes.object,
-  getRandoms: PropTypes.func,
+  featureBrewery: PropTypes.object,
+  getFeatures: PropTypes.func,
   getBrewery: PropTypes.func
 };
 
