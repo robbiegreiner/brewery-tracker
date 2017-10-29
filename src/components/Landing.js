@@ -34,7 +34,8 @@ class Landing extends Component {
           <h1>Search for Beers & Breweries</h1>
           <input placeholder="Search" onChange= {(event ) => this.handleChange(event)}></input>
           <Link to='/searchresults'>
-            <button onClick={ () => this.searchClick() }>Go</button>
+            <button
+              onClick={ () => this.searchClick() }>Go</button>
           </Link>
         </div>
         <div className='random-section'>

@@ -1,20 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const BreweryCard = ({ brewery }) => {
+const BreweryCard = ({ brewery, getBrewery }) => {
   return (
-    <div className='beer-card'>
-      <h2>{brewery.name}</h2>
-      <h3>{brewery.locations[0].locality}, {brewery.locations[0].region}</h3>
-
-      {/* <h3>{beer.style.name}</h3>
-      <h3>{beer.abv}</h3> */}
-    </div>
+    <Link to='/brewery'>
+      <div className='beer-card' onClick={() => getBrewery(brewery.id)}>
+        <h2>{brewery.name}</h2>
+        <h3>{brewery.locations[0].locality}, {brewery.locations[0].region}</h3>
+      </div>
+    </Link>
   );
 };
 
 BreweryCard.propTypes = {
-  brewery: PropTypes.object
+  brewery: PropTypes.object,
+  getBrewery: PropTypes.func
 };
 
 export default BreweryCard;

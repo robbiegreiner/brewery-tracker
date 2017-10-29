@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import BeerCard from './BeerCard.js'
 import BreweryCard from './BreweryCard.js'
 
-const SearchResults = ({ searchResults }) => {
+const SearchResults = ({ searchResults, getBrewery }) => {
 
   const beerResults = searchResults.filter( result => {
     return result.style;
@@ -16,6 +16,7 @@ const SearchResults = ({ searchResults }) => {
 
   const breweryCards = breweryResults.map( brewery => {
     return <BreweryCard
+      getBrewery={getBrewery}
       brewery={brewery}
       key={brewery.id}/>;
   });
@@ -43,7 +44,8 @@ const SearchResults = ({ searchResults }) => {
 
 
 SearchResults.propTypes = {
-  searchResults: PropTypes.array
+  searchResults: PropTypes.array,
+  getBrewery: PropTypes.func
 };
 
 export default SearchResults;
