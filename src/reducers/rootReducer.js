@@ -5,6 +5,7 @@ import featureBrewery from './featureBrewery';
 import brewery from './brewery';
 import breweryBeers from './breweryBeers';
 import featureBeer from './featureBeer';
+import currentBeer from './currentBeer';
 
 const rootReducer = combineReducers({
   user,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   featureBrewery,
   featureBeer,
   brewery,
-  breweryBeers
+  breweryBeers,
+  currentBeer
 });
 
 export default rootReducer;

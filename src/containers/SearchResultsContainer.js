@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import SearchResults from '../components/SearchResults';
-import { fetchBrewery } from '../actions/actions';
+import { fetchBrewery, setCurrentBeer } from '../actions/actions';
+
 
 
 const mapStateToProps = store => ({
@@ -10,6 +11,9 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = dispatch => ({
   getBrewery: (id) => {
     dispatch(fetchBrewery(id));
+  },
+  setCurrentBeer: (beer) => {
+    dispatch(setCurrentBeer(beer));
   }
 });
 

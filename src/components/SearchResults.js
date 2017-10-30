@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import BeerCard from './BeerCard.js'
-import BreweryCard from './BreweryCard.js'
+import BeerCard from './BeerCard.js';
+import BreweryCard from './BreweryCard.js';
 
-const SearchResults = ({ searchResults, getBrewery }) => {
+const SearchResults = ({ searchResults, getBrewery, setCurrentBeer }) => {
 
   const beerResults = searchResults.filter( result => {
     return result.style;
@@ -23,6 +23,7 @@ const SearchResults = ({ searchResults, getBrewery }) => {
 
   const beerCards = beerResults.map( beer => {
     return <BeerCard
+      setCurrentBeer={setCurrentBeer}
       beer={beer}
       key={beer.id}/>;
   });
@@ -45,7 +46,8 @@ const SearchResults = ({ searchResults, getBrewery }) => {
 
 SearchResults.propTypes = {
   searchResults: PropTypes.array,
-  getBrewery: PropTypes.func
+  getBrewery: PropTypes.func,
+  setCurrentBeer: PropTypes.func
 };
 
 export default SearchResults;

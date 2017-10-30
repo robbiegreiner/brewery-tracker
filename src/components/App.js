@@ -6,6 +6,7 @@ import LandingContainer from '../containers/LandingContainer';
 import CreateAccountContainer from '../containers/CreateAccountContainer';
 import SearchResultsContainer from '../containers/SearchResultsContainer';
 import BreweryContainer from '../containers/BreweryContainer';
+import BeerContainer from '../containers/BeerContainer';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
         <Route path="/createaccount" component={ CreateAccountContainer } />
         <Route path="/searchresults" component={ SearchResultsContainer } />
         <Route path="/brewery" component={ BreweryContainer } />
+        <Route path="/beer" component={ BeerContainer } />
       </div>
     );
   }

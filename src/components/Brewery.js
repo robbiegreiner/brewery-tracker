@@ -11,7 +11,6 @@ class Brewery extends Component {
   //setup dynamic routing for current list of beers
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     if (this.props.brewery !== nextProps.brewery) {
       nextProps.getBreweryBeers(nextProps.brewery.id);
     }
@@ -37,10 +36,11 @@ class Brewery extends Component {
   }
 
   renderBeers() {
-    const { breweryBeers } = this.props;
+    const { breweryBeers, setCurrentBeer } = this.props;
     if (breweryBeers) {
       return breweryBeers.map( beer => {
         return <BeerCard
+          setCurrentBeer={setCurrentBeer}
           beer={beer}
           key={beer.id}/>;
       });

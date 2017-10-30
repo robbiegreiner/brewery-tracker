@@ -84,10 +84,17 @@ export const fetchBreweryBeerSuccess = beers => {
 export const fetchBreweryBeers = id => {
   console.log(id);
   return dispatch => {
-    fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/${id}/beers?key=${apikey}`)
+    fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/${id}/beers?key=${apikey}&withBreweries=y`)
       .then(response => response.json())
       .then(results => dispatch(fetchBreweryBeerSuccess(results.data)))
       .catch(error => console.log(error));
+  };
+};
+
+export const setCurrentBeer = beer => {
+  return {
+    type: 'SET_CURRENT_BEER',
+    beer
   };
 };
 
