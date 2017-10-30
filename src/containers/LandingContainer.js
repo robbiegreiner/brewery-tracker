@@ -1,18 +1,25 @@
 import { connect } from 'react-redux';
 import Landing from '../components/Landing';
-import { fetchSearch, fetchRandomBrewery } from '../actions/actions';
+import { fetchSearch, fetchFeatures, fetchBrewery, fetchCity } from '../actions/actions';
 
 
 const mapStateToProps = store => ({
-  randomBrewery: store.randomBrewery
+  featureBrewery: store.featureBrewery,
+  featureBeer: store.featureBeer
 });
 
 const mapDispatchToProps = dispatch => ({
-  searchAll: (searchValue) => {
-    dispatch(fetchSearch(searchValue));
+  searchAll: (searchValue, searchType) => {
+    dispatch(fetchSearch(searchValue, searchType));
   },
-  getRandomBrewery: () => {
-    dispatch(fetchRandomBrewery());
+  searchCity: (city, state, searchType) => {
+    dispatch(fetchCity(city, state, searchType));
+  },
+  getFeatures: () => {
+    dispatch(fetchFeatures());
+  },
+  getBrewery: (id) => {
+    dispatch(fetchBrewery(id));
   }
 });
 

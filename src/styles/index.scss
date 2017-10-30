@@ -1,12 +1,23 @@
+@import './Variables.scss';
 @import './App.scss';
 @import './Header.scss';
 @import './SearchResults.scss';
 @import './BeerCard.scss';
-@import './Randoms.scss';
+@import './Features.scss';
 @import './Landing.scss';
+@import './Brewery.scss';
+@import './Beer.scss';
+
+
+// font-family: 'Rubik', sans-serif;
+// font-family: 'Permanent Marker', cursive;
+// font-family: 'Roboto', sans-serif;
 
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+  a {
+    text-decoration: none;
+  }
 }

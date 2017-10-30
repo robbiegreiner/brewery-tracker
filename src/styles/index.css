@@ -6,8 +6,7 @@
   overflow: hidden; }
 
 .header {
-  background-color: #eb9122;
-  background-image: url("https://www.transparenttextures.com/patterns/fake-brick.png");
+  background: #4A4945;
   width: 100%;
   height: 10vh;
   min-height: 94px;
@@ -17,53 +16,134 @@
   margin-top: 0px;
   color: white;
   position: fixed;
-  border-bottom: 3px solid white; }
+  border-bottom: 3px solid white;
+  font-family: 'Rubik', sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 900;
+  z-index: 1; }
 
 .header img {
-  height: 70px;
-  width: 70px; }
+  height: 50px;
+  width: 50px; }
+
+.header a {
+  color: white; }
+
+/* Dropdown Button */
+.dropbtn {
+  position: absolute;
+  display: none;
+  background-color: #41403D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer; }
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41; }
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block; }
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1; }
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; }
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1; }
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block; }
 
 .search-results {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin-top: 100px; }
+
+.search-container {
+  display: flex; }
+
+.search-container button {
+  margin: 20px 0px 10px 0px;
+  background-color: #868e96;
+  border-color: #868e96;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 2px solid #41403D;
+  padding: .75rem 1rem;
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 1.25;
+  border-radius: .25rem;
+  transition: all .15s ease-in-out; }
+
+.search-container button:hover {
+  background-color: #364248; }
+
+.search-container input {
+  height: 42px;
+  margin-top: 20px;
+  border-radius: .25rem;
+  font-size: 16px;
+  border: 2px solid #41403D; }
 
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 95%; }
 
 .beer-card {
   width: 200px;
   height: 300px;
-  border: 2px solid black; }
+  border: 2px solid black;
+  margin: 15px 15px 15px 15px; }
 
-.random-section {
+.feature-section {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center; }
 
-.random-brewery {
+.feature-brewery, .feature-beer {
   width: 700px;
-  background-color: lightgray;
-  border: 2px solid black;
-  height: 500px;
+  background-color: white;
+  height: 600px;
   overflow: hidden; }
 
-.random-brewery p {
+.feature-brewery p {
   padding: 0 20px 20px 20px;
-  height: 70px;
   overflow: hidden; }
-
-.brewery-logo {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black; }
 
 .landing {
   width: 100%;
@@ -84,7 +164,25 @@
   justify-content: center;
   align-items: center; }
 
+.arrow-down {
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  top: 90vh;
+  z-index: 0; }
+
+.brewery-beers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; }
+
+.big-beer {
+  margin-top: 200px; }
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif; }
+  font-family: 'Roboto', sans-serif; }
+  body a {
+    text-decoration: none; }
