@@ -33,11 +33,23 @@ class Landing extends Component {
       <div className='landing'>
         <div className='search-area'>
           <h1>Search for Beers & Breweries</h1>
-          <input placeholder="Search" onChange= {(event ) => this.handleChange(event)}></input>
-          <Link to='/searchresults'>
-            <button
-              onClick={ () => this.searchClick() }>Go</button>
-          </Link>
+          <div className='search-container'>
+            <input placeholder="Search" onChange= {(event ) => this.handleChange(event)}></input>
+            <Link to='/searchresults'>
+              <button
+                onClick={ () => this.searchClick() }>City, State
+              </button>
+              <button
+                onClick={ () => this.searchClick() }>Beer
+              </button>
+              <button
+                onClick={ () => this.searchClick() }>Brewery
+              </button>
+              <button
+                onClick={ () => this.searchClick() }>Style
+              </button>
+            </Link>
+          </div>
         </div>
         <div className='feature-section'>
           <FeatureBrewery
