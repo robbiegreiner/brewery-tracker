@@ -55,8 +55,21 @@ export const fetchSearch = searchValue => {
   };
 };
 
-// breweries beers fetch
-// https://api.brewerydb.com/v2/brewery/fn89yQ/beers?key=c138c8eb0b70d77459a4c1f2f479533a
+export const citySuccess = searchResults => {
+  return {
+    type: 'CITY_SUCCESS',
+    searchResults
+  };
+};
+
+export const fetchCity = (city, state) => {
+  return dispatch => {
+    fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/locations?key=${apikey}&locality=${city}&region=${state}&withLocations=y`)
+      .then(response => response.json())
+      .then(results => dispatch(citySuccess(results.data)))
+      .catch(error => console.log(error));
+  };
+};
 
 export const fetchBrewerySuccess = brewery => {
   return {

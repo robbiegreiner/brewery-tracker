@@ -28,6 +28,18 @@ class Landing extends Component {
     searchAll(this.state.searchValue);
   }
 
+  searchCity() {
+    const { searchCity } = this.props;
+    const cityAndState = this.state.searchValue.split(',');
+    const city = cityAndState[0];
+    let state = '';
+
+    if (cityAndState[1]) {
+      state = cityAndState[1];
+    }
+    searchCity(city, state);
+  }
+
   render() {
     return (
       <div className='landing'>
@@ -37,7 +49,7 @@ class Landing extends Component {
             <input placeholder="Search" onChange= {(event ) => this.handleChange(event)}></input>
             <Link to='/searchresults'>
               <button
-                onClick={ () => this.searchClick() }>City, State
+                onClick={ () => this.searchCity() }>City, State
               </button>
               <button
                 onClick={ () => this.searchClick() }>Beer
@@ -70,7 +82,8 @@ Landing.propTypes = {
   featureBrewery: PropTypes.object,
   featureBeer: PropTypes.object,
   getFeatures: PropTypes.func,
-  getBrewery: PropTypes.func
+  getBrewery: PropTypes.func,
+  searchCity: PropTypes.func
 };
 
 export default Landing;

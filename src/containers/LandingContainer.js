@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Landing from '../components/Landing';
-import { fetchSearch, fetchFeatures, fetchBrewery } from '../actions/actions';
+import { fetchSearch, fetchFeatures, fetchBrewery, fetchCity } from '../actions/actions';
 
 
 const mapStateToProps = store => ({
@@ -11,6 +11,9 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = dispatch => ({
   searchAll: (searchValue) => {
     dispatch(fetchSearch(searchValue));
+  },
+  searchCity: (city, state) => {
+    dispatch(fetchCity(city, state));
   },
   getFeatures: () => {
     dispatch(fetchFeatures());
