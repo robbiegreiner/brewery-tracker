@@ -5,7 +5,8 @@ import { fetchBrewery, setCurrentBeer } from '../actions/actions';
 
 
 const mapStateToProps = store => ({
-  searchResults: store.searchResults
+  searchResults: store.searchResults,
+  searchType: store.searchType
 });
 
 const mapDispatchToProps = dispatch => ({

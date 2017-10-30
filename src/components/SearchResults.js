@@ -5,7 +5,7 @@ import BeerCard from './BeerCard.js';
 import BreweryCard from './BreweryCard.js';
 import CityCard from './CityCard.js';
 
-const SearchResults = ({ searchResults, getBrewery, setCurrentBeer }) => {
+const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType }) => {
 
   const beerResults = searchResults.filter( result => {
     return result.style;
@@ -44,14 +44,9 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer }) => {
   return (
     <div className='search-results'>
       <h1>Search Results</h1>
-      <h2>Breweries</h2>
       <div className='card-container'>
-        {breweryCards}
-        {cityCards}
-      </div>
-      <h2>Beers</h2>
-      <div className='card-container'>
-        {beerCards}
+        { searchType === 'beer' ? beerCards : null}
+        { searchType === 'brewery' ? breweryCards : null}
       </div>
     </div>
   );
@@ -61,7 +56,8 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer }) => {
 SearchResults.propTypes = {
   searchResults: PropTypes.array,
   getBrewery: PropTypes.func,
-  setCurrentBeer: PropTypes.func
+  setCurrentBeer: PropTypes.func,
+  searchType: PropTypes.string
 };
 
 export default SearchResults;

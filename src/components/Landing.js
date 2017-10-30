@@ -23,9 +23,9 @@ class Landing extends Component {
     });
   }
 
-  searchClick() {
+  searchClick(type) {
     const { searchAll } = this.props;
-    searchAll(this.state.searchValue);
+    searchAll(this.state.searchValue, type);
   }
 
   searchCity() {
@@ -52,10 +52,10 @@ class Landing extends Component {
                 onClick={ () => this.searchCity() }>City, State
               </button>
               <button
-                onClick={ () => this.searchClick() }>Beer
+                onClick={ () => this.searchClick('beer') }>Beer
               </button>
               <button
-                onClick={ () => this.searchClick() }>Brewery
+                onClick={ () => this.searchClick('brewery') }>Brewery
               </button>
               <button
                 onClick={ () => this.searchClick() }>Style

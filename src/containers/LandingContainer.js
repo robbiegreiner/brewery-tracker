@@ -9,8 +9,8 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  searchAll: (searchValue) => {
-    dispatch(fetchSearch(searchValue));
+  searchAll: (searchValue, searchType) => {
+    dispatch(fetchSearch(searchValue, searchType));
   },
   searchCity: (city, state) => {
     dispatch(fetchCity(city, state));

@@ -39,18 +39,18 @@ export const login = (email, password) => {
 };
 
 
-export const searchAllSuccess = searchResults => {
+export const searchAllSuccess = (searchResults, searchType) => {
   return {
     type: 'SEARCH_ALL_SUCCESS',
-    searchResults
+    searchResults, searchType
   };
 };
 
-export const fetchSearch = searchValue => {
+export const fetchSearch = (searchValue, searchType) => {
   return dispatch => {
     fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/search?q=${searchValue}&key=${apikey}&withBreweries=y&withLocations=y`)
       .then(response => response.json())
-      .then(results => dispatch(searchAllSuccess(results.data)))
+      .then(results => dispatch(searchAllSuccess(results.data, searchType)))
       .catch(error => console.log(error));
   };
 };
