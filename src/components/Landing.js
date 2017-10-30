@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import FeatureBrewery from './FeatureBrewery';
 import FeatureBeer from './FeatureBeer';
+import chevron from '../assets/chevron-sign-down.svg';
 
 
 class Landing extends Component {
@@ -28,7 +29,7 @@ class Landing extends Component {
     searchAll(this.state.searchValue, type);
   }
 
-  searchCity() {
+  searchCityState(searchType) {
     const { searchCity } = this.props;
     const cityAndState = this.state.searchValue.split(',');
     const city = cityAndState[0];
@@ -37,7 +38,7 @@ class Landing extends Component {
     if (cityAndState[1]) {
       state = cityAndState[1];
     }
-    searchCity(city, state);
+    searchCity(city, state, searchType);
   }
 
   render() {
@@ -49,19 +50,17 @@ class Landing extends Component {
             <input placeholder="Search" onChange= {(event ) => this.handleChange(event)}></input>
             <Link to='/searchresults'>
               <button
-                onClick={ () => this.searchCity() }>City, State
+                onClick={ () => this.searchClick('beer') }>Beers
               </button>
               <button
-                onClick={ () => this.searchClick('beer') }>Beer
+                onClick={ () => this.searchClick('brewery') }>Breweries
               </button>
               <button
-                onClick={ () => this.searchClick('brewery') }>Brewery
-              </button>
-              <button
-                onClick={ () => this.searchClick() }>Style
+                onClick={ () => this.searchCityState('city') }>City
               </button>
             </Link>
           </div>
+          <img className='arrow-down' src={chevron}></img>
         </div>
         <div className='feature-section'>
           <FeatureBrewery

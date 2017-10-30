@@ -55,18 +55,18 @@ export const fetchSearch = (searchValue, searchType) => {
   };
 };
 
-export const citySuccess = searchResults => {
+export const citySuccess = (searchResults, searchType) => {
   return {
     type: 'CITY_SUCCESS',
-    searchResults
+    searchResults, searchType
   };
 };
 
-export const fetchCity = (city, state) => {
+export const fetchCity = (city, state, searchType) => {
   return dispatch => {
     fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/locations?key=${apikey}&locality=${city}&region=${state}&withLocations=y`)
       .then(response => response.json())
-      .then(results => dispatch(citySuccess(results.data)))
+      .then(results => dispatch(citySuccess(results.data, searchType)))
       .catch(error => console.log(error));
   };
 };

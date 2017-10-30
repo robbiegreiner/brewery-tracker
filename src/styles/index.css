@@ -20,7 +20,8 @@
   font-family: 'Rubik', sans-serif;
   font-size: 30px;
   font-style: italic;
-  font-weight: 900; }
+  font-weight: 900;
+  z-index: 1; }
 
 .header img {
   height: 50px;
@@ -34,7 +35,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin-top: 100px; }
 
 .search-container {
   display: flex; }
@@ -79,7 +81,8 @@
 .beer-card {
   width: 200px;
   height: 300px;
-  border: 2px solid black; }
+  border: 2px solid black;
+  margin: 15px 15px 15px 15px; }
 
 .feature-section {
   width: 100%;
@@ -116,6 +119,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+
+.arrow-down {
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  top: 90vh;
+  z-index: 0; }
 
 .brewery-beers {
   display: flex;

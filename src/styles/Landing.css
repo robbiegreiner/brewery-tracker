@@ -16,3 +16,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+
+.arrow-down {
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  top: 90vh;
+  z-index: 0; }

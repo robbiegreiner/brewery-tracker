@@ -13,7 +13,8 @@
   font-family: 'Rubik', sans-serif;
   font-size: 30px;
   font-style: italic;
-  font-weight: 900; }
+  font-weight: 900;
+  z-index: 1; }
 
 .header img {
   height: 50px;

@@ -12,8 +12,8 @@ const mapDispatchToProps = dispatch => ({
   searchAll: (searchValue, searchType) => {
     dispatch(fetchSearch(searchValue, searchType));
   },
-  searchCity: (city, state) => {
-    dispatch(fetchCity(city, state));
+  searchCity: (city, state, searchType) => {
+    dispatch(fetchCity(city, state, searchType));
   },
   getFeatures: () => {
     dispatch(fetchFeatures());

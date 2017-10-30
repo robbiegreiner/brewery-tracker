@@ -47,6 +47,7 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType }
       <div className='card-container'>
         { searchType === 'beer' ? beerCards : null}
         { searchType === 'brewery' ? breweryCards : null}
+        { searchType === 'city' ? cityCards : null}
       </div>
     </div>
   );
