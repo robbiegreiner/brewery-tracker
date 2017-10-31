@@ -49,4 +49,8 @@ const Header = ({ logout }) => {
   );
 };
 
+Header.propTypes = {
+  logout: PropTypes.func
+};
+
 export default Header;

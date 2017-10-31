@@ -20,6 +20,9 @@
   height: 50px;
   width: 50px; }
 
+.header h3 {
+  cursor: pointer; }
+
 .header a {
   color: white; }
 
