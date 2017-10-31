@@ -37,6 +37,9 @@ const Header = ({ logout }) => {
       <Link to='/'>
         <h1>Brew <img className='header-logo' src={pint}></img> Scout</h1>
       </Link>
+      <Link to='/favorites'>
+        <h3>Favorites</h3>
+      </Link>
       <div className="dropdown">
         <button onClick={dropDown} className="dropbtn">Dropdown</button>
         <div id="myDropdown" className="dropdown-content">
