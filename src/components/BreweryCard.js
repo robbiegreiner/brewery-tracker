@@ -8,7 +8,7 @@ const BreweryCard = ({ brewery, getBrewery, writeUserData, user }) => {
       <div className='beer-card'>
         <h2 onClick={() => getBrewery(brewery.id)}>{brewery.name}</h2>
         <h3>{brewery.locations[0].locality}, {brewery.locations[0].region}</h3>
-        <h4 onClick={() => writeUserData(user.id)}>FAVORITE</h4>
+        <h4 onClick={() => writeUserData(user.id, 'brewery', brewery.id)}>FAVORITE</h4>
       </div>
     </Link>
   );

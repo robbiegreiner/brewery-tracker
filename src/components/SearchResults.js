@@ -8,12 +8,19 @@ import firebase from '../firebase.js';
 
 const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, user }) => {
 
-  function writeUserData(userId) {
+  const writeUserData = (userId, type, id) => {
     console.log('ytho');
-    firebase.database().ref(userId).set({
-      favorites: ['hi', 'this works']
-    });
-  }
+    firebase.database().ref(userId + '/favorites').push({
+      type: [type],
+      id: [id]
+    })
+    // firebase.database().ref(userId).push().set({
+    //   type: [type],
+    //   id: [id]
+    // });
+    // firebase.database().ref(userId).set({favorites: [4,5,6]})
+    // firebase.database().ref(userId).favorites.set([1, 2, 3])
+  };
 
   const beerResults = searchResults.filter( result => {
     return result.style;
@@ -39,6 +46,8 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, 
 
   const beerCards = beerResults.map( beer => {
     return <BeerCard
+      user={user}
+      writeUserData={writeUserData}
       setCurrentBeer={setCurrentBeer}
       beer={beer}
       key={beer.id}/>;
