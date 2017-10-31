@@ -17,7 +17,7 @@ class App extends Component {
         <Route exact path="/" component={ LandingContainer } />
         <Route path="/createaccount" component={ CreateAccountContainer } />
         <Route path="/searchresults" component={ SearchResultsContainer } />
-        <Route path="/brewery" component={ BreweryContainer } />
+        <Route path="/brewery/:brewery_id" component={ BreweryContainer } />
         <Route path="/beer" component={ BeerContainer } />
       </div>
     );

@@ -8,7 +8,17 @@ class Brewery extends Component {
     super();
   }
 
-  //setup dynamic routing for current list of beers
+  //setup dynamic for beer id and make fetch call
+
+  componentDidMount() {
+    console.log('hi');
+    console.log(Object.keys(this.props.brewery));
+    const { brewery, getBrewery } = this.props;
+    if (Object.keys(brewery)) {
+      console.log('hey');
+      getBrewery(this.props.match.params.brewery_id);
+    }
+  }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.brewery !== nextProps.brewery) {
