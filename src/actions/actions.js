@@ -38,6 +38,14 @@ export const login = (email, password) => {
   };
 };
 
+export const logout = () => {
+  return dispatch => {
+    firebase.auth().signOut()
+      .then(response => dispatch(loginSuccess({})))
+      .catch(error => console.log(error));
+  };
+};
+
 
 export const searchAllSuccess = (searchResults, searchType) => {
   return {

@@ -26,12 +26,12 @@ class Brewery extends Component {
 
   renderBrewery() {
     const { brewery } = this.props;
-    if (brewery.images) {
+    if (brewery.name) {
       return (
         <div className='brewery'>
           <h3>Brewery</h3>
           <h2>{brewery.name}</h2>
-          <img className='brewery-logo' src={brewery.images.large}></img>
+          {brewery.images ? <img className='brewery-logo' src={brewery.images.large}></img> : ''}
           <h4>{brewery.website}</h4>
           <p>{brewery.description ? brewery.description : 'no description provided'}</p>
         </div>

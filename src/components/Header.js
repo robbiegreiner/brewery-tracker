@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import pint from '../assets/pint.svg';
 
 
-const Header = () => {
+const Header = ({ logout }) => {
   function dropDown() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
@@ -27,6 +27,13 @@ const Header = () => {
 
   return (
     <div className='header'>
+      <Link to='/login'>
+        <h3>Login</h3>
+      </Link>
+      <Link to='/createaccount'>
+        <h3>Create Account</h3>
+      </Link>
+      <h3 onClick={logout}>Logout</h3>
       <Link to='/'>
         <h1>Brew <img className='header-logo' src={pint}></img> Scout</h1>
       </Link>
