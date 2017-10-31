@@ -11,8 +11,6 @@ class Brewery extends Component {
   //setup dynamic for beer id and make fetch call
 
   componentDidMount() {
-    console.log('hi');
-    console.log(Object.keys(this.props.brewery));
     const { brewery, getBrewery } = this.props;
     if (Object.keys(brewery)) {
       console.log('hey');

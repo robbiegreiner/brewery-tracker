@@ -18,7 +18,7 @@ class App extends Component {
         <Route path="/createaccount" component={ CreateAccountContainer } />
         <Route path="/searchresults" component={ SearchResultsContainer } />
         <Route path="/brewery/:brewery_id" component={ BreweryContainer } />
-        <Route path="/beer" component={ BeerContainer } />
+        <Route path="/beer/:beer_id" component={ BeerContainer } />
       </div>
     );
   }

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const BeerCard = ({ beer, setCurrentBeer }) => {
   return (
-    <Link to='/beer'>
+    <Link to={'/beer/' + beer.id}>
       <div className='beer-card' onClick={() => setCurrentBeer(beer)}>
         <h2>{beer.name}</h2>
         <h3>{beer.breweries[0].name}</h3>
