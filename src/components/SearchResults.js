@@ -10,8 +10,8 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, 
 
   const writeUserData = (userId, type, id) => {
     firebase.database().ref(userId + '/favorites').push({
-      type: [type],
-      id: [id]
+      type,
+      id
     });
   };
 
