@@ -33,7 +33,7 @@ const Header = ({ logout }) => {
       <Link to='/createaccount'>
         <h3>Create Account</h3>
       </Link>
-      <h3 onClick={logout}>Logout</h3>
+      <h3 className='logout' onClick={logout}>Logout</h3>
       <Link to='/'>
         <h1>Brew <img className='header-logo' src={pint}></img> Scout</h1>
       </Link>

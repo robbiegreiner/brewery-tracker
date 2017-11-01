@@ -4,7 +4,14 @@ exports[`Landing component should match snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Header />,
+  Symbol(enzyme.__unrendered__): <Landing
+    featureBeer={Object {}}
+    featureBrewery={Object {}}
+    getBrewery={[Function]}
+    getFeatures={[Function]}
+    searchAll={[Function]}
+    searchCity={[Function]}
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -18,140 +25,97 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Link
-          replace={false}
-          to="/"
+        <div
+          className="search-area"
 >
           <h1>
-                    Brew 
-                    <img
-                              className="header-logo"
-                              src="pint.svg"
-                    />
-                     Scout
+                    Search for Beers & Breweries
           </h1>
-</Link>,
-        <div
-          className="dropdown"
->
-          <button
-                    className="dropbtn"
-                    onClick={[Function]}
-          >
-                    Dropdown
-          </button>
           <div
-                    className="dropdown-content"
-                    id="myDropdown"
+                    className="search-container"
           >
-                    <a
-                              href="#"
+                    <input
+                              onChange={[Function]}
+                              placeholder="Search"
+                    />
+                    <Link
+                              replace={false}
+                              to="/searchresults"
                     >
-                              Link 1
-                    </a>
-                    <a
-                              href="#"
-                    >
-                              Link 2
-                    </a>
-                    <a
-                              href="#"
-                    >
-                              Link 3
-                    </a>
+                              <button
+                                        onClick={[Function]}
+                              >
+                                        Beers
+                              </button>
+                              <button
+                                        onClick={[Function]}
+                              >
+                                        Breweries
+                              </button>
+                              <button
+                                        onClick={[Function]}
+                              >
+                                        City
+                              </button>
+                    </Link>
           </div>
 </div>,
+        <div
+          className="feature-section"
+>
+          <FeatureBrewery
+                    featureBrewery={Object {}}
+                    getBrewery={[Function]}
+          />
+          <FeatureBeer
+                    featureBeer={Object {}}
+                    getBrewery={[Function]}
+          />
+</div>,
       ],
-      "className": "header",
+      "className": "landing",
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
         "key": null,
-        "nodeType": "class",
-        "props": Object {
-          "children": <h1>
-            Brew 
-            <img
-                        className="header-logo"
-                        src="pint.svg"
-            />
-             Scout
-</h1>,
-          "replace": false,
-          "to": "/",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": null,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "Brew ",
-              <img
-                className="header-logo"
-                src="pint.svg"
-/>,
-              " Scout",
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            "Brew ",
-            Object {
-              "instance": null,
-              "key": null,
-              "nodeType": "host",
-              "props": Object {
-                "className": "header-logo",
-                "src": "pint.svg",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "img",
-            },
-            " Scout",
-          ],
-          "type": "h1",
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": null,
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <button
-              className="dropbtn"
-              onClick={[Function]}
->
-              Dropdown
-</button>,
+            <h1>
+              Search for Beers & Breweries
+</h1>,
             <div
-              className="dropdown-content"
-              id="myDropdown"
+              className="search-container"
 >
-              <a
-                            href="#"
+              <input
+                            onChange={[Function]}
+                            placeholder="Search"
+              />
+              <Link
+                            replace={false}
+                            to="/searchresults"
               >
-                            Link 1
-              </a>
-              <a
-                            href="#"
-              >
-                            Link 2
-              </a>
-              <a
-                            href="#"
-              >
-                            Link 3
-              </a>
+                            <button
+                                          onClick={[Function]}
+                            >
+                                          Beers
+                            </button>
+                            <button
+                                          onClick={[Function]}
+                            >
+                                          Breweries
+                            </button>
+                            <button
+                                          onClick={[Function]}
+                            >
+                                          City
+                            </button>
+              </Link>
 </div>,
           ],
-          "className": "dropdown",
+          "className": "search-area",
         },
         "ref": null,
         "rendered": Array [
@@ -160,13 +124,11 @@ ShallowWrapper {
             "key": null,
             "nodeType": "host",
             "props": Object {
-              "children": "Dropdown",
-              "className": "dropbtn",
-              "onClick": [Function],
+              "children": "Search for Beers & Breweries",
             },
             "ref": null,
-            "rendered": "Dropdown",
-            "type": "button",
+            "rendered": "Search for Beers & Breweries",
+            "type": "h1",
           },
           Object {
             "instance": null,
@@ -174,24 +136,32 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <a
-                  href="#"
+                <input
+                  onChange={[Function]}
+                  placeholder="Search"
+/>,
+                <Link
+                  replace={false}
+                  to="/searchresults"
 >
-                  Link 1
-</a>,
-                <a
-                  href="#"
->
-                  Link 2
-</a>,
-                <a
-                  href="#"
->
-                  Link 3
-</a>,
+                  <button
+                                    onClick={[Function]}
+                  >
+                                    Beers
+                  </button>
+                  <button
+                                    onClick={[Function]}
+                  >
+                                    Breweries
+                  </button>
+                  <button
+                                    onClick={[Function]}
+                  >
+                                    City
+                  </button>
+</Link>,
               ],
-              "className": "dropdown-content",
-              "id": "myDropdown",
+              "className": "search-container",
             },
             "ref": null,
             "rendered": Array [
@@ -200,39 +170,127 @@ ShallowWrapper {
                 "key": null,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Link 1",
-                  "href": "#",
+                  "onChange": [Function],
+                  "placeholder": "Search",
                 },
                 "ref": null,
-                "rendered": "Link 1",
-                "type": "a",
+                "rendered": null,
+                "type": "input",
               },
               Object {
                 "instance": null,
                 "key": null,
-                "nodeType": "host",
+                "nodeType": "class",
                 "props": Object {
-                  "children": "Link 2",
-                  "href": "#",
+                  "children": Array [
+                    <button
+                      onClick={[Function]}
+>
+                      Beers
+</button>,
+                    <button
+                      onClick={[Function]}
+>
+                      Breweries
+</button>,
+                    <button
+                      onClick={[Function]}
+>
+                      City
+</button>,
+                  ],
+                  "replace": false,
+                  "to": "/searchresults",
                 },
                 "ref": null,
-                "rendered": "Link 2",
-                "type": "a",
-              },
-              Object {
-                "instance": null,
-                "key": null,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Link 3",
-                  "href": "#",
-                },
-                "ref": null,
-                "rendered": "Link 3",
-                "type": "a",
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Beers",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "Beers",
+                    "type": "button",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Breweries",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "Breweries",
+                    "type": "button",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "City",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "City",
+                    "type": "button",
+                  },
+                ],
+                "type": [Function],
               },
             ],
             "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <FeatureBrewery
+              featureBrewery={Object {}}
+              getBrewery={[Function]}
+/>,
+            <FeatureBeer
+              featureBeer={Object {}}
+              getBrewery={[Function]}
+/>,
+          ],
+          "className": "feature-section",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "function",
+            "props": Object {
+              "featureBrewery": Object {},
+              "getBrewery": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "function",
+            "props": Object {
+              "featureBeer": Object {},
+              "getBrewery": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
           },
         ],
         "type": "div",
@@ -247,140 +305,97 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Link
-            replace={false}
-            to="/"
+          <div
+            className="search-area"
 >
             <h1>
-                        Brew 
-                        <img
-                                    className="header-logo"
-                                    src="pint.svg"
-                        />
-                         Scout
+                        Search for Beers & Breweries
             </h1>
-</Link>,
-          <div
-            className="dropdown"
->
-            <button
-                        className="dropbtn"
-                        onClick={[Function]}
-            >
-                        Dropdown
-            </button>
             <div
-                        className="dropdown-content"
-                        id="myDropdown"
+                        className="search-container"
             >
-                        <a
-                                    href="#"
+                        <input
+                                    onChange={[Function]}
+                                    placeholder="Search"
+                        />
+                        <Link
+                                    replace={false}
+                                    to="/searchresults"
                         >
-                                    Link 1
-                        </a>
-                        <a
-                                    href="#"
-                        >
-                                    Link 2
-                        </a>
-                        <a
-                                    href="#"
-                        >
-                                    Link 3
-                        </a>
+                                    <button
+                                                onClick={[Function]}
+                                    >
+                                                Beers
+                                    </button>
+                                    <button
+                                                onClick={[Function]}
+                                    >
+                                                Breweries
+                                    </button>
+                                    <button
+                                                onClick={[Function]}
+                                    >
+                                                City
+                                    </button>
+                        </Link>
             </div>
 </div>,
+          <div
+            className="feature-section"
+>
+            <FeatureBrewery
+                        featureBrewery={Object {}}
+                        getBrewery={[Function]}
+            />
+            <FeatureBeer
+                        featureBeer={Object {}}
+                        getBrewery={[Function]}
+            />
+</div>,
         ],
-        "className": "header",
+        "className": "landing",
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
           "key": null,
-          "nodeType": "class",
-          "props": Object {
-            "children": <h1>
-              Brew 
-              <img
-                            className="header-logo"
-                            src="pint.svg"
-              />
-               Scout
-</h1>,
-            "replace": false,
-            "to": "/",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": null,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                "Brew ",
-                <img
-                  className="header-logo"
-                  src="pint.svg"
-/>,
-                " Scout",
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              "Brew ",
-              Object {
-                "instance": null,
-                "key": null,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "header-logo",
-                  "src": "pint.svg",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "img",
-              },
-              " Scout",
-            ],
-            "type": "h1",
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": null,
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <button
-                className="dropbtn"
-                onClick={[Function]}
->
-                Dropdown
-</button>,
+              <h1>
+                Search for Beers & Breweries
+</h1>,
               <div
-                className="dropdown-content"
-                id="myDropdown"
+                className="search-container"
 >
-                <a
-                                href="#"
+                <input
+                                onChange={[Function]}
+                                placeholder="Search"
+                />
+                <Link
+                                replace={false}
+                                to="/searchresults"
                 >
-                                Link 1
-                </a>
-                <a
-                                href="#"
-                >
-                                Link 2
-                </a>
-                <a
-                                href="#"
-                >
-                                Link 3
-                </a>
+                                <button
+                                                onClick={[Function]}
+                                >
+                                                Beers
+                                </button>
+                                <button
+                                                onClick={[Function]}
+                                >
+                                                Breweries
+                                </button>
+                                <button
+                                                onClick={[Function]}
+                                >
+                                                City
+                                </button>
+                </Link>
 </div>,
             ],
-            "className": "dropdown",
+            "className": "search-area",
           },
           "ref": null,
           "rendered": Array [
@@ -389,13 +404,11 @@ ShallowWrapper {
               "key": null,
               "nodeType": "host",
               "props": Object {
-                "children": "Dropdown",
-                "className": "dropbtn",
-                "onClick": [Function],
+                "children": "Search for Beers & Breweries",
               },
               "ref": null,
-              "rendered": "Dropdown",
-              "type": "button",
+              "rendered": "Search for Beers & Breweries",
+              "type": "h1",
             },
             Object {
               "instance": null,
@@ -403,24 +416,32 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <a
-                    href="#"
+                  <input
+                    onChange={[Function]}
+                    placeholder="Search"
+/>,
+                  <Link
+                    replace={false}
+                    to="/searchresults"
 >
-                    Link 1
-</a>,
-                  <a
-                    href="#"
->
-                    Link 2
-</a>,
-                  <a
-                    href="#"
->
-                    Link 3
-</a>,
+                    <button
+                                        onClick={[Function]}
+                    >
+                                        Beers
+                    </button>
+                    <button
+                                        onClick={[Function]}
+                    >
+                                        Breweries
+                    </button>
+                    <button
+                                        onClick={[Function]}
+                    >
+                                        City
+                    </button>
+</Link>,
                 ],
-                "className": "dropdown-content",
-                "id": "myDropdown",
+                "className": "search-container",
               },
               "ref": null,
               "rendered": Array [
@@ -429,39 +450,127 @@ ShallowWrapper {
                   "key": null,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Link 1",
-                    "href": "#",
+                    "onChange": [Function],
+                    "placeholder": "Search",
                   },
                   "ref": null,
-                  "rendered": "Link 1",
-                  "type": "a",
+                  "rendered": null,
+                  "type": "input",
                 },
                 Object {
                   "instance": null,
                   "key": null,
-                  "nodeType": "host",
+                  "nodeType": "class",
                   "props": Object {
-                    "children": "Link 2",
-                    "href": "#",
+                    "children": Array [
+                      <button
+                        onClick={[Function]}
+>
+                        Beers
+</button>,
+                      <button
+                        onClick={[Function]}
+>
+                        Breweries
+</button>,
+                      <button
+                        onClick={[Function]}
+>
+                        City
+</button>,
+                    ],
+                    "replace": false,
+                    "to": "/searchresults",
                   },
                   "ref": null,
-                  "rendered": "Link 2",
-                  "type": "a",
-                },
-                Object {
-                  "instance": null,
-                  "key": null,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Link 3",
-                    "href": "#",
-                  },
-                  "ref": null,
-                  "rendered": "Link 3",
-                  "type": "a",
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Beers",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": "Beers",
+                      "type": "button",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Breweries",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": "Breweries",
+                      "type": "button",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "City",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": "City",
+                      "type": "button",
+                    },
+                  ],
+                  "type": [Function],
                 },
               ],
               "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <FeatureBrewery
+                featureBrewery={Object {}}
+                getBrewery={[Function]}
+/>,
+              <FeatureBeer
+                featureBeer={Object {}}
+                getBrewery={[Function]}
+/>,
+            ],
+            "className": "feature-section",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "function",
+              "props": Object {
+                "featureBrewery": Object {},
+                "getBrewery": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "function",
+              "props": Object {
+                "featureBeer": Object {},
+                "getBrewery": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
             },
           ],
           "type": "div",

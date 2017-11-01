@@ -20,6 +20,28 @@ ShallowWrapper {
       "children": Array [
         <Link
           replace={false}
+          to="/login"
+>
+          <h3>
+                    Login
+          </h3>
+</Link>,
+        <Link
+          replace={false}
+          to="/createaccount"
+>
+          <h3>
+                    Create Account
+          </h3>
+</Link>,
+        <h3
+          className="logout"
+          onClick={undefined}
+>
+          Logout
+</h3>,
+        <Link
+          replace={false}
           to="/"
 >
           <h1>
@@ -30,6 +52,14 @@ ShallowWrapper {
                     />
                      Scout
           </h1>
+</Link>,
+        <Link
+          replace={false}
+          to="/favorites"
+>
+          <h3>
+                    Favorites
+          </h3>
 </Link>,
         <div
           className="dropdown"
@@ -66,6 +96,69 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "children": <h3>
+            Login
+</h3>,
+          "replace": false,
+          "to": "/login",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Login",
+          },
+          "ref": null,
+          "rendered": "Login",
+          "type": "h3",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "children": <h3>
+            Create Account
+</h3>,
+          "replace": false,
+          "to": "/createaccount",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Create Account",
+          },
+          "ref": null,
+          "rendered": "Create Account",
+          "type": "h3",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Logout",
+          "className": "logout",
+          "onClick": undefined,
+        },
+        "ref": null,
+        "rendered": "Logout",
+        "type": "h3",
+      },
       Object {
         "instance": null,
         "key": null,
@@ -115,6 +208,31 @@ ShallowWrapper {
             " Scout",
           ],
           "type": "h1",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "children": <h3>
+            Favorites
+</h3>,
+          "replace": false,
+          "to": "/favorites",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Favorites",
+          },
+          "ref": null,
+          "rendered": "Favorites",
+          "type": "h3",
         },
         "type": [Function],
       },
@@ -249,6 +367,28 @@ ShallowWrapper {
         "children": Array [
           <Link
             replace={false}
+            to="/login"
+>
+            <h3>
+                        Login
+            </h3>
+</Link>,
+          <Link
+            replace={false}
+            to="/createaccount"
+>
+            <h3>
+                        Create Account
+            </h3>
+</Link>,
+          <h3
+            className="logout"
+            onClick={undefined}
+>
+            Logout
+</h3>,
+          <Link
+            replace={false}
             to="/"
 >
             <h1>
@@ -259,6 +399,14 @@ ShallowWrapper {
                         />
                          Scout
             </h1>
+</Link>,
+          <Link
+            replace={false}
+            to="/favorites"
+>
+            <h3>
+                        Favorites
+            </h3>
 </Link>,
           <div
             className="dropdown"
@@ -295,6 +443,69 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "children": <h3>
+              Login
+</h3>,
+            "replace": false,
+            "to": "/login",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Login",
+            },
+            "ref": null,
+            "rendered": "Login",
+            "type": "h3",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "children": <h3>
+              Create Account
+</h3>,
+            "replace": false,
+            "to": "/createaccount",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Create Account",
+            },
+            "ref": null,
+            "rendered": "Create Account",
+            "type": "h3",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Logout",
+            "className": "logout",
+            "onClick": undefined,
+          },
+          "ref": null,
+          "rendered": "Logout",
+          "type": "h3",
+        },
         Object {
           "instance": null,
           "key": null,
@@ -344,6 +555,31 @@ ShallowWrapper {
               " Scout",
             ],
             "type": "h1",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "children": <h3>
+              Favorites
+</h3>,
+            "replace": false,
+            "to": "/favorites",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Favorites",
+            },
+            "ref": null,
+            "rendered": "Favorites",
+            "type": "h3",
           },
           "type": [Function],
         },

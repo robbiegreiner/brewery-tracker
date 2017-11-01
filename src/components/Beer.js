@@ -7,11 +7,8 @@ class Beer extends Component {
   }
 
   componentDidMount() {
-    const { currentBeer, getBeerByID } = this.props;
-    if (Object.keys(currentBeer)) {
-      console.log('hey');
-      getBeerByID(this.props.match.params.beer_id);
-    }
+    const { currentBeer, getBeerByID, match } = this.props;
+    getBeerByID(match.params.beer_id);
   }
   renderBeer(beer){
     if (beer){
@@ -42,7 +39,8 @@ class Beer extends Component {
 }
 
 Beer.propTypes = {
-  currentBeer: PropTypes.object
+  currentBeer: PropTypes.object,
+  match: PropTypes.object
 };
 
 export default Beer;

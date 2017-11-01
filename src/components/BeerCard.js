@@ -7,7 +7,7 @@ const BeerCard = ({ beer, setCurrentBeer, writeUserData, user }) => {
     <Link to={'/beer/' + beer.id}>
       <div className='beer-card' >
         <h2 onClick={() => setCurrentBeer(beer)}>{beer.name}</h2>
-        <h3>{beer.breweries[0].name}</h3>
+        <h3>{beer.brewies ? beer.breweries[0].name : 'no brewery info'}</h3>
         <h3>{beer.style ? beer.style.name : 'no style'}</h3>
         <h3>{beer.abv}</h3>
         <h4 onClick={() => writeUserData(user.id, 'beer', beer.id)}>FAVORITE</h4>
@@ -18,7 +18,9 @@ const BeerCard = ({ beer, setCurrentBeer, writeUserData, user }) => {
 
 BeerCard.propTypes = {
   beer: PropTypes.object,
-  setCurrentBeer: PropTypes.func
+  setCurrentBeer: PropTypes.func,
+  writeUserData: PropTypes.func,
+  user: PropTypes.object
 };
 
 export default BeerCard;

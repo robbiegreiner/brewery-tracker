@@ -3,14 +3,18 @@ import Landing from '../Landing';
 import { shallow } from "enzyme";
 
 describe('Landing component', () => {
-  let wrapper;
+  const mockFn = jest.fn();
+  const wrapper = shallow(<Landing
+    featureBrewery={{}}
+    featureBeer={{}}
+    searchAll={mockFn}
+    searchCity={mockFn}
+    getFeatures={mockFn}
+    getBrewery={mockFn}/>);
 
 
   it('should match snapshot', () => {
-    wrapper = shallow(<Landing />);
     // console.log(wrapper.debug());
     expect(wrapper).toMatchSnapshot();
   });
-
-
 });

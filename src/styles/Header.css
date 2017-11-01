@@ -26,6 +26,10 @@
 .header a {
   color: white; }
 
+.header h1 {
+  margin-left: 60px;
+  margin-right: 280px; }
+
 /* Dropdown Button */
 .dropbtn {
   position: absolute;

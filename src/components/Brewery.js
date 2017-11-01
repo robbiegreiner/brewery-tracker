@@ -26,7 +26,9 @@ class Brewery extends Component {
 
   renderBrewery() {
     const { brewery } = this.props;
+
     if (brewery.name) {
+      console.log(brewery);
       return (
         <div className='brewery'>
           <h3>Brewery</h3>
