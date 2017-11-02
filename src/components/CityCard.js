@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const CityCard = ({ brewery, getBrewery }) => {
   if (brewery){
     return (
-      <Link to='/brewery'>
+      <Link to={'/brewery/' + brewery.brewery.id}>
         <div className='beer-card' onClick={() => getBrewery(brewery.breweryId)}>
           <h2>{brewery.brewery.name}</h2>
           <h3>{brewery.locationTypeDisplay}</h3>

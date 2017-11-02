@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import pint from '../assets/pint.svg';
 
 
-const Header = () => {
+const Header = ({ logout }) => {
   function dropDown() {
     document.getElementById("myDropdown").classList.toggle("show");
-  } 
+  }
 
   window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
@@ -27,8 +27,18 @@ const Header = () => {
 
   return (
     <div className='header'>
+      <Link to='/login'>
+        <h3>Login</h3>
+      </Link>
+      <Link to='/createaccount'>
+        <h3>Create Account</h3>
+      </Link>
+      <h3 className='logout' onClick={logout}>Logout</h3>
       <Link to='/'>
-        <h1>Brewery <img className='header-logo' src={pint}></img> Tracker</h1>
+        <h1>Brew <img className='header-logo' src={pint}></img> Scout</h1>
+      </Link>
+      <Link to='/favorites'>
+        <h3>Favorites</h3>
       </Link>
       <div className="dropdown">
         <button onClick={dropDown} className="dropbtn">Dropdown</button>
@@ -40,6 +50,10 @@ const Header = () => {
       </div>
     </div>
   );
+};
+
+Header.propTypes = {
+  logout: PropTypes.func
 };
 
 export default Header;

@@ -4,8 +4,16 @@ import { Link } from 'react-router-dom';
 import BeerCard from './BeerCard.js';
 import BreweryCard from './BreweryCard.js';
 import CityCard from './CityCard.js';
+import firebase from '../firebase.js';
 
-const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType }) => {
+const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, user }) => {
+
+  const writeUserData = (userId, type, id) => {
+    firebase.database().ref(userId + '/favorites').push({
+      type,
+      id
+    });
+  };
 
   const beerResults = searchResults.filter( result => {
     return result.style;
@@ -21,6 +29,8 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType }
 
   const breweryCards = breweryResults.map( brewery => {
     return <BreweryCard
+      user={user}
+      writeUserData={writeUserData}
       getBrewery={getBrewery}
       brewery={brewery}
       key={brewery.id}/>;
@@ -29,6 +39,8 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType }
 
   const beerCards = beerResults.map( beer => {
     return <BeerCard
+      user={user}
+      writeUserData={writeUserData}
       setCurrentBeer={setCurrentBeer}
       beer={beer}
       key={beer.id}/>;

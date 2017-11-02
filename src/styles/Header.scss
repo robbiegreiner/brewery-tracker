@@ -23,8 +23,17 @@
   width: 50px;
 }
 
+.header h3 {
+  cursor: pointer;
+}
+
 .header a {
   color: white;
+}
+
+.header h1 {
+  margin-left: 60px;
+  margin-right: 280px;
 }
 
 /* Dropdown Button */

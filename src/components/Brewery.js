@@ -8,7 +8,15 @@ class Brewery extends Component {
     super();
   }
 
-  //setup dynamic routing for current list of beers
+  //setup dynamic for beer id and make fetch call
+
+  componentDidMount() {
+    const { brewery, getBrewery } = this.props;
+    if (Object.keys(brewery)) {
+      console.log('hey');
+      getBrewery(this.props.match.params.brewery_id);
+    }
+  }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.brewery !== nextProps.brewery) {
@@ -18,12 +26,14 @@ class Brewery extends Component {
 
   renderBrewery() {
     const { brewery } = this.props;
-    if (brewery.images) {
+
+    if (brewery.name) {
+      console.log(brewery);
       return (
         <div className='brewery'>
           <h3>Brewery</h3>
           <h2>{brewery.name}</h2>
-          <img className='brewery-logo' src={brewery.images.large}></img>
+          {brewery.images ? <img className='brewery-logo' src={brewery.images.large}></img> : ''}
           <h4>{brewery.website}</h4>
           <p>{brewery.description ? brewery.description : 'no description provided'}</p>
         </div>

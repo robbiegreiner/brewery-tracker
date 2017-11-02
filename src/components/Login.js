@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Login extends Component {
   constructor() {
@@ -25,6 +25,7 @@ class Login extends Component {
   render() {
     return (
       <div className='login'>
+        { this.props.user.id ? <Redirect to='/'/> : null}
         <h1>Login Here</h1>
         <input placeholder="email" onChange={(event) => this.handleChange('email', event) }></input>
         <input placeholder="password" onChange={(event) => this.handleChange('password', event) }></input>

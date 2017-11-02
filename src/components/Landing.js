@@ -60,7 +60,6 @@ class Landing extends Component {
               </button>
             </Link>
           </div>
-          <img className='arrow-down' src={chevron}></img>
         </div>
         <div className='feature-section'>
           <FeatureBrewery

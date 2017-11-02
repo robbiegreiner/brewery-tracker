@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import firebase, { auth, provider } from '../firebase.js';
 
 class CreateAccount extends Component {
@@ -24,20 +24,10 @@ class CreateAccount extends Component {
     createAccount(this.state.email, this.state.password);
   }
 
-
-  // create action
-  // pass user up as payload to reducer
-  // set store
-
-
-  // take id from dynamic route and then make api call for beers with that id
-  // should search be broad or narrow
-
-
-
   render() {
     return (
       <div className='create-account'>
+        { this.props.user.id ? <Redirect to='/'/> : null}
         <h1>Create Account Here</h1>
         <input placeholder="email" onChange={(event) => this.handleChange('email', event) }></input>
         <input placeholder="password" onChange={(event) => this.handleChange('password', event) }></input>
@@ -49,7 +39,8 @@ class CreateAccount extends Component {
 }
 
 CreateAccount.propTypes = {
-  createAccount: PropTypes.func
+  createAccount: PropTypes.func,
+  user: PropTypes.object
 };
 
 export default CreateAccount;
