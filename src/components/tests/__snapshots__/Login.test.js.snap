@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login component should match snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Login
+    getBrewery={[Function]}
+    user={
+        Object {
+            "id": "vafahiuweh",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Redirect
+          push={false}
+          to="/"
+/>,
+        <h1>
+          Login Here
+</h1>,
+        <input
+          onChange={[Function]}
+          placeholder="email"
+/>,
+        <input
+          onChange={[Function]}
+          placeholder="password"
+/>,
+        <button
+          className="login-btn"
+          onClick={[Function]}
+>
+          submit
+</button>,
+      ],
+      "className": "login",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "push": false,
+          "to": "/",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Login Here",
+        },
+        "ref": null,
+        "rendered": "Login Here",
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "onChange": [Function],
+          "placeholder": "email",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "onChange": [Function],
+          "placeholder": "password",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "submit",
+          "className": "login-btn",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "submit",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Redirect
+            push={false}
+            to="/"
+/>,
+          <h1>
+            Login Here
+</h1>,
+          <input
+            onChange={[Function]}
+            placeholder="email"
+/>,
+          <input
+            onChange={[Function]}
+            placeholder="password"
+/>,
+          <button
+            className="login-btn"
+            onClick={[Function]}
+>
+            submit
+</button>,
+        ],
+        "className": "login",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "push": false,
+            "to": "/",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Login Here",
+          },
+          "ref": null,
+          "rendered": "Login Here",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "onChange": [Function],
+            "placeholder": "email",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "onChange": [Function],
+            "placeholder": "password",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "submit",
+            "className": "login-btn",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "submit",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

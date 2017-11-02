@@ -1,19 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BeerCard component should match snapshot 1`] = `
+exports[`BreweryCard component should match snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <BeerCard
-    beer={Object {}}
-    match={
-        Object {
-            "params": Object {
-              "beer_id": "vcxy7z",
-            },
-          }
-    }
-    setCurrentBeer={[Function]}
+  Symbol(enzyme.__unrendered__): <BreweryCard
+    brewery={Object {}}
+    getBrewery={[Function]}
     user={Object {}}
     writeUserData={[Function]}
 />,
@@ -35,12 +28,6 @@ ShallowWrapper {
         <h2
                 onClick={[Function]}
         />
-        <h3>
-                no brewery info
-        </h3>
-        <h3>
-                no style
-        </h3>
         <h3 />
         <h4
                 onClick={[Function]}
@@ -49,7 +36,7 @@ ShallowWrapper {
         </h4>
 </div>,
       "replace": false,
-      "to": "/beer/undefined",
+      "to": "/brewery/undefined",
     },
     "ref": null,
     "rendered": Object {
@@ -61,12 +48,6 @@ ShallowWrapper {
           <h2
             onClick={[Function]}
 />,
-          <h3>
-            no brewery info
-</h3>,
-          <h3>
-            no style
-</h3>,
           <h3 />,
           <h4
             onClick={[Function]}
@@ -95,32 +76,10 @@ ShallowWrapper {
           "key": null,
           "nodeType": "host",
           "props": Object {
-            "children": "no brewery info",
+            "children": "",
           },
           "ref": null,
-          "rendered": "no brewery info",
-          "type": "h3",
-        },
-        Object {
-          "instance": null,
-          "key": null,
-          "nodeType": "host",
-          "props": Object {
-            "children": "no style",
-          },
-          "ref": null,
-          "rendered": "no style",
-          "type": "h3",
-        },
-        Object {
-          "instance": null,
-          "key": null,
-          "nodeType": "host",
-          "props": Object {
-            "children": undefined,
-          },
-          "ref": null,
-          "rendered": null,
+          "rendered": "",
           "type": "h3",
         },
         Object {
@@ -152,12 +111,6 @@ ShallowWrapper {
           <h2
                     onClick={[Function]}
           />
-          <h3>
-                    no brewery info
-          </h3>
-          <h3>
-                    no style
-          </h3>
           <h3 />
           <h4
                     onClick={[Function]}
@@ -166,7 +119,7 @@ ShallowWrapper {
           </h4>
 </div>,
         "replace": false,
-        "to": "/beer/undefined",
+        "to": "/brewery/undefined",
       },
       "ref": null,
       "rendered": Object {
@@ -178,12 +131,6 @@ ShallowWrapper {
             <h2
               onClick={[Function]}
 />,
-            <h3>
-              no brewery info
-</h3>,
-            <h3>
-              no style
-</h3>,
             <h3 />,
             <h4
               onClick={[Function]}
@@ -212,32 +159,10 @@ ShallowWrapper {
             "key": null,
             "nodeType": "host",
             "props": Object {
-              "children": "no brewery info",
+              "children": "",
             },
             "ref": null,
-            "rendered": "no brewery info",
-            "type": "h3",
-          },
-          Object {
-            "instance": null,
-            "key": null,
-            "nodeType": "host",
-            "props": Object {
-              "children": "no style",
-            },
-            "ref": null,
-            "rendered": "no style",
-            "type": "h3",
-          },
-          Object {
-            "instance": null,
-            "key": null,
-            "nodeType": "host",
-            "props": Object {
-              "children": undefined,
-            },
-            "ref": null,
-            "rendered": null,
+            "rendered": "",
             "type": "h3",
           },
           Object {

@@ -29,14 +29,15 @@ class Login extends Component {
         <h1>Login Here</h1>
         <input placeholder="email" onChange={(event) => this.handleChange('email', event) }></input>
         <input placeholder="password" onChange={(event) => this.handleChange('password', event) }></input>
-        <button onClick={ () => this.userLogin()}>submit</button>
+        <button className='login-btn' onClick={ () => this.userLogin()}>submit</button>
       </div>
     );
   }
 }
 
 Login.propTypes = {
-  login: PropTypes.func
+  login: PropTypes.func,
+  user: PropTypes.object
 };
 
 export default Login;

@@ -31,7 +31,7 @@ class CreateAccount extends Component {
         <h1>Create Account Here</h1>
         <input placeholder="email" onChange={(event) => this.handleChange('email', event) }></input>
         <input placeholder="password" onChange={(event) => this.handleChange('password', event) }></input>
-        <button onClick={ () => this.createNewUser()}>submit</button>
+        <button className='create-btn' onClick={ () => this.createNewUser()}>submit</button>
       </div>
     );
 
