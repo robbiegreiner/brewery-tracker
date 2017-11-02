@@ -27,7 +27,6 @@ describe('BeerContainer', () => {
   const wrapper = mount(<BeerContainer
     store={store}
     currentBeer={initialState.currentBeer}
-    // beer_id undefined???!!
     match={ {match: { params: { beer_id: 'vcxy7z' } } } }
     getBeerByID={mockGetBeerByID}/>, { context });
 
