@@ -16,6 +16,9 @@ class Landing extends Component {
 
   componentDidMount() {
     this.props.getFeatures();
+    if (this.props.user) {
+      this.props.getFavorites(this.props.user.id);
+    }
   }
 
   handleChange(event) {
@@ -81,7 +84,9 @@ Landing.propTypes = {
   featureBeer: PropTypes.object,
   getFeatures: PropTypes.func,
   getBrewery: PropTypes.func,
-  searchCity: PropTypes.func
+  searchCity: PropTypes.func,
+  user: PropTypes.object,
+  getFavorites: PropTypes.func
 };
 
 export default Landing;

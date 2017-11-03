@@ -5,27 +5,39 @@ import PropTypes from 'prop-types';
 class Favorites extends Component {
   constructor() {
     super();
-    this.state = {
-    };
   }
 
   componentDidMount() {
     this.props.getFavorites(this.props.user.id);
   }
 
-  render() {
-    return (
-      <div className='favorites'>
-        <h1>Favorites Here!</h1>
-      </div>
-    );
+  renderFavorites() {
+    const { favorites } = this.props;
+    console.log(favorites);
   }
 
+  render() {
+    if (this.props.favorites){
+      return (
+        <div className='favorites'>
+          {this.renderFavorites()}
+          <h1>Favorites Here!</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div className='favorites'>
+          <h1>Favorites Here!</h1>
+        </div>
+      );
+    }
+  }
 }
 
 Favorites.propTypes = {
   user: PropTypes.object,
-  getFavorites: PropTypes.func
+  getFavorites: PropTypes.func,
+  favorites: PropTypes.object
 };
 
 export default Favorites;

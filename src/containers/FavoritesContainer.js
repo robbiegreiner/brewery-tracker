@@ -3,7 +3,8 @@ import Favorites from '../components/Favorites';
 import { fetchFavorites } from '../actions/actions.js';
 
 const mapStateToProps = store => ({
-  user: store.user
+  user: store.user,
+  favorites: store.favorites
 });
 
 const mapDispatchToProps = dispatch => ({
