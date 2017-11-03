@@ -70,7 +70,8 @@ SearchResults.propTypes = {
   searchResults: PropTypes.array,
   getBrewery: PropTypes.func,
   setCurrentBeer: PropTypes.func,
-  searchType: PropTypes.string
+  searchType: PropTypes.string,
+  user: PropTypes.object
 };
 
 export default SearchResults;

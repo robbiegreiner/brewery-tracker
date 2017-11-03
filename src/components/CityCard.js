@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const CityCard = ({ brewery, getBrewery }) => {
-  if (brewery){
+  if (brewery.brewery){
     return (
       <Link to={'/brewery/' + brewery.brewery.id}>
         <div className='beer-card' onClick={() => getBrewery(brewery.breweryId)}>
