@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import FeatureBrewery from './FeatureBrewery';
 import FeatureBeer from './FeatureBeer';
-import chevron from '../assets/chevron-sign-down.svg';
 
 
 class Landing extends Component {

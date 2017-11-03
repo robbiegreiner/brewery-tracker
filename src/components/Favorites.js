@@ -7,14 +7,25 @@ class Favorites extends Component {
     super();
   }
 
-  componentDidMount() {
-    this.props.getFavorites(this.props.user.id);
+  //currently favorites are getting loaded after login
+  //when this component loads
+  //clean favorites data split up into beers and Breweries
+  //fetch call thru array (promise all)
+  //return to beer and brewery arrays
+
+  cleanFavorites(favorites) {
+    const keys = Object.keys(favorites);
+    // if type brewery return to brewery array
+    // if type beer return to beer array
   }
 
   renderFavorites() {
     const { favorites } = this.props;
     console.log(favorites);
   }
+
+  // -KxoYn06nNczpUPCm4f5: {id: "VGRuro", type: "brewery"}
+  // -Ky1RKwKgQuMK3qVhd40: {id: "ugYYEh", type: "beer"}
 
   render() {
     if (this.props.favorites){
@@ -36,7 +47,6 @@ class Favorites extends Component {
 
 Favorites.propTypes = {
   user: PropTypes.object,
-  getFavorites: PropTypes.func,
   favorites: PropTypes.object
 };
 
