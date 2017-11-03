@@ -1,4 +1,4 @@
-import firebase from '../firebase.js';
+// import firebase from '../firebase.js';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -10,21 +10,18 @@ class Favorites extends Component {
   }
 
   componentDidMount() {
-    this.getFavorites();
+    this.props.getFavorites(this.props.user.id);
   }
 
-  getFavorites() {
-    const { user } = this.props;
-    const faves = firebase.database().ref(user.id + '/favorites');
-    faves.on('value', (snapshot) => {
-      this.setState({
-        favoritesData: snapshot.val()
-      });
-    });
-
-    // iterate through and split up types by beer and brewery
-    // fetch call for each favorite
-  }
+  // getFavorites() {
+  //   const { user } = this.props;
+  //   const faves = firebase.database().ref(user.id + '/favorites');
+  //   faves.on('value', (snapshot) => {
+  //     this.setState({
+  //       favoritesData: snapshot.val()
+  //     });
+  //   });
+  // }
 
   render() {
     return (
@@ -37,7 +34,8 @@ class Favorites extends Component {
 }
 
 Favorites.propTypes = {
-  user: PropTypes.object
+  user: PropTypes.object,
+  getFavorites: PropTypes.func
 };
 
 export default Favorites;

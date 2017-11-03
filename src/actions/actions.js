@@ -145,3 +145,19 @@ export const fetchFeatures = () => {
       .catch(error => console.log(error));
   };
 };
+
+export const favoriteSuccess = favorites => {
+  return {
+    type: 'FAVORITE_SUCCESS',
+    favorites
+  };
+};
+
+export const fetchFavorites = (userID) => {
+  return dispatch => {
+    const faves = firebase.database().ref(userID + '/favorites');
+    faves.on('value', (snapshot) => {
+      dispatch(favoriteSuccess(snapshot.val()));
+    });
+  };
+};
