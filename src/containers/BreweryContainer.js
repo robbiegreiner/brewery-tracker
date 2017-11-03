@@ -5,7 +5,8 @@ import { fetchBreweryBeers, setCurrentBeer, fetchBrewery } from '../actions/acti
 
 const mapStateToProps = store => ({
   brewery: store.brewery,
-  breweryBeers: store.breweryBeers
+  breweryBeers: store.breweryBeers,
+  user: store.user
 });
 
 const mapDispatchToProps = dispatch => ({

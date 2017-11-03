@@ -13,16 +13,6 @@ class Favorites extends Component {
     this.props.getFavorites(this.props.user.id);
   }
 
-  // getFavorites() {
-  //   const { user } = this.props;
-  //   const faves = firebase.database().ref(user.id + '/favorites');
-  //   faves.on('value', (snapshot) => {
-  //     this.setState({
-  //       favoritesData: snapshot.val()
-  //     });
-  //   });
-  // }
-
   render() {
     return (
       <div className='favorites'>

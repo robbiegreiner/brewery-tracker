@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
-import BeerCard from './BeerCard.js'
+import BeerCard from './BeerCard.js';
+import firebase from '../firebase.js';
 
 class Brewery extends Component {
   constructor() {
@@ -24,11 +25,17 @@ class Brewery extends Component {
     }
   }
 
+  writeUserData = (userId, type, id) => {
+    firebase.database().ref(userId + '/favorites').push({
+      type,
+      id
+    });
+  };
+
   renderBrewery() {
     const { brewery } = this.props;
 
     if (brewery.name) {
-      console.log(brewery);
       return (
         <div className='brewery'>
           <h3>Brewery</h3>
@@ -46,10 +53,12 @@ class Brewery extends Component {
   }
 
   renderBeers() {
-    const { breweryBeers, setCurrentBeer } = this.props;
+    const { breweryBeers, setCurrentBeer, user} = this.props;
     if (breweryBeers) {
       return breweryBeers.map( beer => {
         return <BeerCard
+          user={user}
+          writeUserData={this.writeUserData}
           setCurrentBeer={setCurrentBeer}
           beer={beer}
           key={beer.id}/>;
@@ -74,7 +83,10 @@ class Brewery extends Component {
 Brewery.propTypes = {
   brewery: PropTypes.object,
   breweryBeers: PropTypes.array,
-  getBreweryBeers: PropTypes.func
+  getBreweryBeers: PropTypes.func,
+  setCurrentBeer: PropTypes.func,
+  match: PropTypes.object,
+  user: PropTypes.object
 };
 
 export default Brewery;
