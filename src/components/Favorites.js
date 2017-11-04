@@ -49,10 +49,9 @@ class Favorites extends Component {
   };
 
   renderBeers() {
-    const { favoriteBeers, user, setCurrentBeer, removeFavoriteBeer, addFavoriteBeer } = this.props;
+    const { favoriteBeers, user, setCurrentBeer, removeFavoriteBeer } = this.props;
     return favoriteBeers.map( beer => {
       return <BeerCard
-        addFavoriteBeer={addFavoriteBeer}
         deleteFavorite = {this.deleteFavorite}
         user={user}
         writeUserData={this.writeUserData}
@@ -64,10 +63,9 @@ class Favorites extends Component {
   }
 
   renderBreweries() {
-    const { favoriteBreweries, user, getBrewery, removeFavoriteBrewery, addFavoriteBrewery } = this.props;
+    const { favoriteBreweries, user, getBrewery, removeFavoriteBrewery } = this.props;
     return favoriteBreweries.map( brewery => {
       return <BreweryCard
-        addFavoriteBrewery={addFavoriteBrewery}
         user={user}
         writeUserData={this.writeUserData}
         getBrewery={getBrewery}

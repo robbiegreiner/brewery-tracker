@@ -33,8 +33,7 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, 
       addFavoriteBrewery={addFavoriteBrewery}
       getBrewery={getBrewery}
       brewery={brewery}
-      key={brewery.id}
-      removeFavoriteBrewery={removeFavoriteBrewery}/>;
+      key={brewery.id}/>;
   });
 
 
@@ -44,8 +43,7 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, 
       addFavoriteBeer={addFavoriteBeer}
       setCurrentBeer={setCurrentBeer}
       beer={beer}
-      key={beer.id}
-      removeFavoriteBeer={removeFavoriteBeer}/>;
+      key={beer.id}/>;
   });
 
   const cityCards = cityResults.map( brewery => {
@@ -54,8 +52,7 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, 
       addFavoriteBrewery={addFavoriteBrewery}
       user={user}
       brewery={brewery}
-      key={brewery.id}
-      removeFavoriteBrewery={removeFavoriteBrewery}/>;
+      key={brewery.id}/>;
   });
 
   return (

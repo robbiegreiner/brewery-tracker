@@ -10,8 +10,7 @@ const BeerCard = ({ beer, setCurrentBeer, addFavoriteBeer, user, removeFavoriteB
       <h3>{beer.style ? beer.style.name : 'no style'}</h3>
       <h3>{beer.abv}</h3>
       <Link to={'/beer/' + beer.id}><h4>View Beer Details</h4></Link>
-      <h4 onClick={() => addFavoriteBeer(user.id, 'beer', beer.id, beer )}>FAVORITE</h4>
-      <h4 onClick={() => removeFavoriteBeer(user.id, beer.firebaseID)}>UNFAVORITE</h4>
+      { removeFavoriteBeer ? <h4 onClick={() => removeFavoriteBeer(user.id, beer.firebaseID)}>UNFAVORITE</h4> : <h4 onClick={() => addFavoriteBeer(user.id, 'beer', beer.id, beer )}>FAVORITE</h4>}
     </div>
   );
 };
