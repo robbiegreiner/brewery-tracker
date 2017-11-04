@@ -28,8 +28,8 @@ const mapDispatchToProps = dispatch => ({
   addFavoriteBeer: (userId, type, id, beer) => {
     dispatch(addFavoriteBeer(userId, type, id, beer));
   },
-  addFavoriteBrewery: (userId, type, id, brewery) => {
-    dispatch(addFavoriteBrewery(userId, type, id, brewery));
+  addFavoriteBrewery: (favorites, userId, type, id, brewery) => {
+    dispatch(addFavoriteBrewery(favorites, userId, type, id, brewery));
   }
 });
 

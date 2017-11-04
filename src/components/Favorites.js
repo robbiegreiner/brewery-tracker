@@ -41,20 +41,12 @@ class Favorites extends Component {
     return beerIDs;
   }
 
-  writeUserData = (userId, type, id) => {
-    firebase.database().ref(userId + '/favorites').push({
-      type,
-      id
-    });
-  };
-
   renderBeers() {
     const { favoriteBeers, user, setCurrentBeer, removeFavoriteBeer } = this.props;
     return favoriteBeers.map( beer => {
       return <BeerCard
         deleteFavorite = {this.deleteFavorite}
         user={user}
-        writeUserData={this.writeUserData}
         setCurrentBeer={setCurrentBeer}
         beer={beer}
         key={beer.id}
@@ -67,7 +59,6 @@ class Favorites extends Component {
     return favoriteBreweries.map( brewery => {
       return <BreweryCard
         user={user}
-        writeUserData={this.writeUserData}
         getBrewery={getBrewery}
         brewery={brewery}
         key={brewery.id}

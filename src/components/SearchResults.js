@@ -6,7 +6,7 @@ import BreweryCard from './BreweryCard.js';
 import CityCard from './CityCard.js';
 import firebase from '../firebase.js';
 
-const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, user, removeFavoriteBeer, removeFavoriteBrewery, addFavoriteBrewery, addFavoriteBeer }) => {
+const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, user, removeFavoriteBeer, removeFavoriteBrewery, addFavoriteBrewery, addFavoriteBeer, favorites }) => {
 
   // const writeUserData = (userId, type, id, beerOrBreweryObj) => {
   //   firebase.database().ref(userId + '/favorites').push({
@@ -31,6 +31,7 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, 
     return <BreweryCard
       user={user}
       addFavoriteBrewery={addFavoriteBrewery}
+      favorites={favorites}
       getBrewery={getBrewery}
       brewery={brewery}
       key={brewery.id}/>;

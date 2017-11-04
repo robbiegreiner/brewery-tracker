@@ -255,6 +255,8 @@ export const addFavoriteBeer = (userId, type, id, beer) => {
         id
       })
         .then(dispatch(addFavoriteBeerSuccess(beer)));
+    } else {
+      return;
     }
   };
 };
@@ -266,14 +268,20 @@ export const addFavoriteBrewerySuccess = (brewery) => {
   };
 };
 
-export const addFavoriteBrewery = (userId, type, id, brewery) => {
-  if (!brewery.isFav){
-    return dispatch => {
+export const addFavoriteBrewery = (favorites, userId, type, id, brewery) => {
+  const match = Object.keys(favorites).filter( favorite => {
+    return favorites[favorite].id === id;
+  });
+
+  return dispatch => {
+    if (!match.length){
       firebase.database().ref(userId + '/favorites').push({
         type,
         id
       })
         .then(dispatch(addFavoriteBrewerySuccess(brewery)));
-    };
-  }
+    } else {
+      return;
+    }
+  };
 };
