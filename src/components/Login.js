@@ -26,9 +26,9 @@ class Login extends Component {
     return (
       <div className='login'>
         { this.props.user.id ? <Redirect to='/'/> : null}
-        <h1>Login Here</h1>
+        <h1>Login</h1>
         <input placeholder="email" className="email-input" onChange={(event) => this.handleChange('email', event) }></input>
-        <input placeholder="password" className="password-input" onChange={(event) => this.handleChange('password', event) }></input>
+        <input placeholder="password" type="password" className="password-input" onChange={(event) => this.handleChange('password', event) }></input>
         <button className='login-btn' onClick={ () => this.userLogin()}>submit</button>
       </div>
     );

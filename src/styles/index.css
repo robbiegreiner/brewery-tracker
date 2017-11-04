@@ -68,6 +68,12 @@
   top: 50px;
   right: 20px; }
 
+@media screen and (max-width: 1160px) {
+  .header {
+    justify-content: start; }
+  .header h1 {
+    margin-left: 40px; } }
+
 .search-results {
   width: 100%;
   display: flex;
@@ -216,7 +222,8 @@
   border-bottom: 1px solid #bdbdbd;
   font-size: 20px;
   font-weight: lighter;
-  margin: 20px 0; }
+  margin: 20px 0;
+  color: white; }
 
 .password-input:focus,
 .email-input:focus {

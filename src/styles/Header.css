@@ -60,3 +60,9 @@
   position: absolute;
   top: 50px;
   right: 20px; }
+
+@media screen and (max-width: 1160px) {
+  .header {
+    justify-content: start; }
+  .header h1 {
+    margin-left: 40px; } }
