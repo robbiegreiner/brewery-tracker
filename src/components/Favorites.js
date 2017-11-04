@@ -48,30 +48,31 @@ class Favorites extends Component {
     });
   };
 
-  // need to keep firebase ID with it
-
   renderBeers() {
     // this.deleteFavorite();
-    const { favoriteBeers, user, setCurrentBeer } = this.props;
+    const { favoriteBeers, user, setCurrentBeer, removeFavorite } = this.props;
     return favoriteBeers.map( beer => {
       return <BeerCard
+        deleteFavorite = {this.deleteFavorite}
         user={user}
         writeUserData={this.writeUserData}
         setCurrentBeer={setCurrentBeer}
         beer={beer}
-        key={beer.id}/>;
+        key={beer.id}
+        removeFavorite={removeFavorite}/>;
     });
   }
 
   renderBreweries() {
-    const { favoriteBreweries, user, getBrewery } = this.props;
+    const { favoriteBreweries, user, getBrewery, removeFavorite } = this.props;
     return favoriteBreweries.map( brewery => {
       return <BreweryCard
         user={user}
         writeUserData={this.writeUserData}
         getBrewery={getBrewery}
         brewery={brewery}
-        key={brewery.id}/>;
+        key={brewery.id}
+        removeFavorite={removeFavorite}/>;
     });
   }
 
@@ -104,7 +105,8 @@ Favorites.propTypes = {
   favoriteBeers: PropTypes.array,
   favoriteBreweries: PropTypes.array,
   setCurrentBeer: PropTypes.func,
-  getBrewery: PropTypes.func
+  getBrewery: PropTypes.func,
+  removeFavorite: PropTypes.func
 };
 
 export default Favorites;

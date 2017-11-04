@@ -2,18 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const CityCard = ({ brewery, getBrewery }) => {
+const CityCard = ({ brewery, getBrewery, writeUserData, user }) => {
   if (brewery.brewery){
     return (
-      <Link to={'/brewery/' + brewery.brewery.id}>
-        <div className='beer-card' onClick={() => getBrewery(brewery.breweryId)}>
-          <h2>{brewery.brewery.name}</h2>
-          <h3>{brewery.locationTypeDisplay}</h3>
-          {/* <img className='brewery-icon' src={brewery.images.large}></img> */}
-          <h4>{brewery.streetAddress}</h4>
-          <h4>{brewery.locality} , {brewery.region} {brewery.postalCode}</h4>
-        </div>
-      </Link>
+      <div className='beer-card'>
+        <Link to={'/brewery/' + brewery.id}>
+          <h2 onClick={() => getBrewery(brewery.id)}>{brewery.name}</h2>
+        </Link>
+        <h3>{brewery.location ? brewery.locations[0].locality + ", " + brewery.locations[0].region : ''}</h3>
+        <h4 onClick={() => writeUserData(user.id, 'brewery', brewery.id)}>FAVORITE</h4>
+      </div>
     );
   } else {
     return (
@@ -24,7 +22,9 @@ const CityCard = ({ brewery, getBrewery }) => {
 
 CityCard.propTypes = {
   brewery: PropTypes.object,
-  getBrewery: PropTypes.func
+  getBrewery: PropTypes.func,
+  writeUserData: PropTypes.func,
+  user: PropTypes.object
 };
 
 export default CityCard;

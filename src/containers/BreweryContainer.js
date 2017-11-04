@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Brewery from '../components/Brewery';
-import { fetchBreweryBeers, setCurrentBeer, fetchBrewery } from '../actions/actions';
+import { fetchBreweryBeers, setCurrentBeer, fetchBrewery, deleteFavorite } from '../actions/actions';
 
 
 const mapStateToProps = store => ({
@@ -18,6 +18,9 @@ const mapDispatchToProps = dispatch => ({
   },
   getBrewery: (id) => {
     dispatch(fetchBrewery(id));
+  },
+  removeFavorite: (userId, firebaseID) => {
+    dispatch(deleteFavorite(userId, firebaseID));
   }
 });
 

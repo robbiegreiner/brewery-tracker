@@ -211,3 +211,16 @@ export const fetchFavoriteBreweries = (breweryIDs) => {
     });
   };
 };
+
+export const deleteFavoriteSuccess = () => {
+  return {
+    type: 'DELETE_FAV_SUCCESS'
+  };
+};
+
+export const deleteFavorite = (userId, firebaseID) => {
+  return dispatch => {
+    firebase.database().ref(userId + '/favorites/' + firebaseID ).remove()
+      .then(dispatch(deleteFavoriteSuccess));
+  };
+};
