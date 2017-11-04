@@ -200,7 +200,8 @@ export const fetchFavoriteBreweries = (breweryIDs) => {
     const unresolvedPromises = breweryIDs.map( ID => {
       return fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/${ID.id}?key=c138c8eb0b70d77459a4c1f2f479533a&withLocations=y`)
         .then(response => response.json())
-        .then(results => results.data);
+        .then(results => results.data)
+        .then(breweryObject => Object.assign({}, breweryObject, {firebaseID: ID.firebaseID }));
     });
 
     const promiseAll = Promise.all(unresolvedPromises);
