@@ -1,43 +1,104 @@
-import firebase from '../firebase.js';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import BeerCard from './BeerCard.js';
+import BreweryCard from './BreweryCard.js';
+import firebase from '../firebase.js';
+
 
 class Favorites extends Component {
   constructor() {
     super();
-    this.state = {
-    };
   }
 
   componentDidMount() {
-    this.getFavorites();
+    const { favorites, getFavoriteBeers, getFavoriteBreweries } = this.props;
+    const brewIDs = this.cleanBreweryFavorites(favorites);
+    const beerIDs = this.cleanBeerFavorites(favorites);
+    getFavoriteBeers(beerIDs);
+    getFavoriteBreweries(brewIDs);
   }
 
-  getFavorites() {
-    const { user } = this.props;
-    const faves = firebase.database().ref(user.id + '/favorites');
-    faves.on('value', (snapshot) => {
-      this.setState({
-        favoritesData: snapshot.val()
-      });
+  cleanBreweryFavorites(favorites) {
+    const keys = Object.keys(favorites);
+    const breweryTags = keys.filter( key => {
+      return favorites[key].type === 'brewery';
     });
 
-    // iterate through and split up types by beer and brewery
-    // fetch call for each favorite
+    const breweryIDs = breweryTags.map( tag => {
+      return Object.assign({}, { id: favorites[tag].id, firebaseID: tag });
+    });
+    return breweryIDs;
+  }
+
+  cleanBeerFavorites(favorites) {
+    const keys = Object.keys(favorites);
+    const beerTags = keys.filter( key => {
+      return favorites[key].type === 'beer';
+    });
+    const beerIDs = beerTags.map( tag => {
+      return Object.assign({}, { id: favorites[tag].id, firebaseID: tag });
+    });
+    return beerIDs;
+  }
+
+  renderBeers() {
+    const { favoriteBeers, user, setCurrentBeer, removeFavoriteBeer } = this.props;
+    return favoriteBeers.map( beer => {
+      return <BeerCard
+        deleteFavorite = {this.deleteFavorite}
+        user={user}
+        setCurrentBeer={setCurrentBeer}
+        beer={beer}
+        key={beer.id}
+        removeFavoriteBeer={removeFavoriteBeer}/>;
+    });
+  }
+
+  renderBreweries() {
+    const { favoriteBreweries, user, getBrewery, removeFavoriteBrewery } = this.props;
+    return favoriteBreweries.map( brewery => {
+      return <BreweryCard
+        user={user}
+        getBrewery={getBrewery}
+        brewery={brewery}
+        key={brewery.id}
+        removeFavoriteBrewery={removeFavoriteBrewery}/>;
+    });
   }
 
   render() {
-    return (
-      <div className='favorites'>
-        <h1>Favorites Here!</h1>
-      </div>
-    );
+    if (this.props.favoriteBeers){
+      return (
+        <div className='favorites'>
+          <h1>Favorites</h1>
+          <div className='card-container'>
+            {this.renderBreweries()}
+            {this.renderBeers()}
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className='favorites'>
+          <h1>Favorites Not Here!</h1>
+        </div>
+      );
+    }
   }
-
 }
 
 Favorites.propTypes = {
-  user: PropTypes.object
+  user: PropTypes.object,
+  favorites: PropTypes.object,
+  getFavoriteBeers: PropTypes.func,
+  getFavoriteBreweries: PropTypes.func,
+  favoriteBeers: PropTypes.array,
+  favoriteBreweries: PropTypes.array,
+  setCurrentBeer: PropTypes.func,
+  getBrewery: PropTypes.func,
+  removeFavorite: PropTypes.func,
+  removeFavoriteBeer: PropTypes.func,
+  removeFavoriteBrewery: PropTypes.func
 };
 
 export default Favorites;

@@ -40,7 +40,8 @@ class Beer extends Component {
 
 Beer.propTypes = {
   currentBeer: PropTypes.object,
-  match: PropTypes.object
+  match: PropTypes.object,
+  removeFavorite: PropTypes.func
 };
 
 export default Beer;

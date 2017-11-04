@@ -145,3 +145,139 @@ export const fetchFeatures = () => {
       .catch(error => console.log(error));
   };
 };
+
+export const favoriteSuccess = favorites => {
+  return {
+    type: 'FAVORITE_SUCCESS',
+    favorites
+  };
+};
+
+export const fetchFavorites = (userID) => {
+  return dispatch => {
+    const faves = firebase.database().ref(userID + '/favorites');
+    faves.on('value', (snapshot) => {
+      dispatch(favoriteSuccess(snapshot.val()));
+    });
+  };
+};
+
+export const favBeerSuccess = favBeerData => {
+  return {
+    type: 'FAV_BEER_SUCCESS',
+    favBeerData
+  };
+};
+
+export const fetchFavoriteBeers = (beerIDs) => {
+  return dispatch => {
+
+    const unresolvedPromises = beerIDs.map( ID => {
+      return fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/beer/${ID.id}?key=c138c8eb0b70d77459a4c1f2f479533a&withBreweries=y`)
+        .then(response => response.json())
+        .then(results => results.data)
+        .then(beerObject => Object.assign({}, beerObject, {firebaseID: ID.firebaseID, isFav: true }));
+    });
+
+    const promiseAll = Promise.all(unresolvedPromises);
+
+    promiseAll.then( favBeerData => {
+      dispatch(favBeerSuccess(favBeerData));
+    });
+  };
+};
+
+export const favBrewerySuccess = favBeerData => {
+  return {
+    type: 'FAV_BREWERY_SUCCESS',
+    favBeerData
+  };
+};
+
+export const fetchFavoriteBreweries = (breweryIDs) => {
+  return dispatch => {
+
+    const unresolvedPromises = breweryIDs.map( ID => {
+      return fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/${ID.id}?key=c138c8eb0b70d77459a4c1f2f479533a&withLocations=y`)
+        .then(response => response.json())
+        .then(results => results.data)
+        .then(breweryObject => Object.assign({}, breweryObject, {firebaseID: ID.firebaseID, isFav: true }));
+    });
+
+    const promiseAll = Promise.all(unresolvedPromises);
+
+    promiseAll.then( favBeerData => {
+      dispatch(favBrewerySuccess(favBeerData));
+    });
+  };
+};
+
+export const deleteFavoriteBrewerySuccess = (firebaseID) => {
+  return {
+    type: 'DELETE_FAV_BREWERY_SUCCESS',
+    firebaseID
+  };
+};
+
+export const deleteFavoriteBrewery = (userId, firebaseID) => {
+  return dispatch => {
+    firebase.database().ref(userId + '/favorites/' + firebaseID ).remove()
+      .then(dispatch(deleteFavoriteBrewerySuccess(firebaseID)));
+  };
+};
+
+export const deleteFavoriteBeerSuccess = (firebaseID) => {
+  return {
+    type: 'DELETE_FAV_BEER_SUCCESS',
+    firebaseID
+  };
+};
+
+export const deleteFavoriteBeer = (userId, firebaseID) => {
+  return dispatch => {
+    firebase.database().ref(userId + '/favorites/' + firebaseID ).remove()
+      .then(dispatch(deleteFavoriteBeerSuccess(firebaseID)));
+  };
+};
+
+export const addFavoriteBeerSuccess = (beer) => {
+  return {
+    type: 'ADD_FAV_BEER_SUCCESS',
+    beer
+  };
+};
+
+export const addFavoriteBeer = (userId, type, id, beer) => {
+  return dispatch => {
+    if (!beer.isFav){
+      firebase.database().ref(userId + '/favorites').push({
+        type,
+        id
+      })
+        .then(dispatch(addFavoriteBeerSuccess(beer)));
+    } else {
+      return;
+    }
+  };
+};
+
+export const addFavoriteBrewerySuccess = (brewery) => {
+  return {
+    type: 'ADD_FAV_BREWERY_SUCCESS',
+    brewery
+  };
+};
+
+export const addFavoriteBrewery = (favorites, userId, type, id, brewery) => {
+  return dispatch => {
+    if (!brewery.isFav){
+      firebase.database().ref(userId + '/favorites').push({
+        type,
+        id
+      })
+        .then(dispatch(addFavoriteBrewerySuccess(brewery)));
+    } else {
+      return;
+    }
+  };
+};

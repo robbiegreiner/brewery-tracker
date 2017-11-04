@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
-import BeerCard from './BeerCard.js'
+import BeerCard from './BeerCard.js';
+import firebase from '../firebase.js';
 
 class Brewery extends Component {
   constructor() {
     super();
   }
 
-  //setup dynamic for beer id and make fetch call
-
   componentDidMount() {
     const { brewery, getBrewery } = this.props;
     if (Object.keys(brewery)) {
-      console.log('hey');
       getBrewery(this.props.match.params.brewery_id);
     }
   }
@@ -28,7 +26,6 @@ class Brewery extends Component {
     const { brewery } = this.props;
 
     if (brewery.name) {
-      console.log(brewery);
       return (
         <div className='brewery'>
           <h3>Brewery</h3>
@@ -46,13 +43,16 @@ class Brewery extends Component {
   }
 
   renderBeers() {
-    const { breweryBeers, setCurrentBeer } = this.props;
+    const { breweryBeers, setCurrentBeer, user, addFavoriteBeer, removeFavoriteBeer, favorites } = this.props;
     if (breweryBeers) {
       return breweryBeers.map( beer => {
         return <BeerCard
+          user={user}
+          favorites={favorites}
           setCurrentBeer={setCurrentBeer}
           beer={beer}
-          key={beer.id}/>;
+          key={beer.id}
+          addFavoriteBeer={addFavoriteBeer}/>;
       });
     }
   }
@@ -74,7 +74,14 @@ class Brewery extends Component {
 Brewery.propTypes = {
   brewery: PropTypes.object,
   breweryBeers: PropTypes.array,
-  getBreweryBeers: PropTypes.func
+  getBreweryBeers: PropTypes.func,
+  setCurrentBeer: PropTypes.func,
+  match: PropTypes.object,
+  user: PropTypes.object,
+  removeFavorite: PropTypes.func,
+  removeFavoriteBeer: PropTypes.func,
+  removeFavoriteBrewery: PropTypes.func,
+  getBrewery: PropTypes.func
 };
 
 export default Brewery;

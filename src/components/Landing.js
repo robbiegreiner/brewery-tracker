@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import FeatureBrewery from './FeatureBrewery';
 import FeatureBeer from './FeatureBeer';
-import chevron from '../assets/chevron-sign-down.svg';
 
 
 class Landing extends Component {
@@ -16,6 +15,9 @@ class Landing extends Component {
 
   componentDidMount() {
     this.props.getFeatures();
+    if (this.props.user) {
+      this.props.getFavorites(this.props.user.id);
+    }
   }
 
   handleChange(event) {
@@ -81,7 +83,9 @@ Landing.propTypes = {
   featureBeer: PropTypes.object,
   getFeatures: PropTypes.func,
   getBrewery: PropTypes.func,
-  searchCity: PropTypes.func
+  searchCity: PropTypes.func,
+  user: PropTypes.object,
+  getFavorites: PropTypes.func
 };
 
 export default Landing;
