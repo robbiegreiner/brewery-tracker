@@ -8,13 +8,6 @@ import firebase from '../firebase.js';
 
 const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, user, removeFavoriteBeer, removeFavoriteBrewery, addFavoriteBrewery, addFavoriteBeer, favorites }) => {
 
-  // const writeUserData = (userId, type, id, beerOrBreweryObj) => {
-  //   firebase.database().ref(userId + '/favorites').push({
-  //     type,
-  //     id
-  //   });
-  // };
-
   const beerResults = searchResults.filter( result => {
     return result.style;
   });
@@ -27,27 +20,31 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, 
     return result.breweryId;
   });
 
-  const favoriteIDs = Object.keys(favorites).map( favorite => {
-    return favorites[favorite].id;
-  });
+  if (favorites){
+    const favoriteIDs = Object.keys(favorites).map( favorite => {
+      return favorites[favorite].id;
+    });
 
-  breweryResults.forEach( brewery => {
-    if (favoriteIDs.includes(brewery.id)){
-      brewery.isFav = true;
-    }
-  });
+    breweryResults.forEach( brewery => {
+      if (favoriteIDs.includes(brewery.id)){
+        brewery.isFav = true;
+      }
+    });
 
-  beerResults.forEach( beer => {
-    if (favoriteIDs.includes(beer.id)){
-      beer.isFav = true;
-    }
-  });
+    beerResults.forEach( beer => {
+      if (favoriteIDs.includes(beer.id)){
+        beer.isFav = true;
+      }
+    });
+  }
+
 
 
   const breweryCards = breweryResults.map( brewery => {
     return <BreweryCard
       user={user}
       addFavoriteBrewery={addFavoriteBrewery}
+      removeFavoriteBrewery={removeFavoriteBrewery}
       favorites={favorites}
       getBrewery={getBrewery}
       brewery={brewery}
@@ -58,7 +55,9 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, 
   const beerCards = beerResults.map( beer => {
     return <BeerCard
       user={user}
+      favorites={favorites}
       addFavoriteBeer={addFavoriteBeer}
+      removeFavoriteBeer={removeFavoriteBeer}
       setCurrentBeer={setCurrentBeer}
       beer={beer}
       key={beer.id}/>;
@@ -67,7 +66,9 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, 
   const cityCards = cityResults.map( brewery => {
     return <CityCard
       getBrewery={getBrewery}
+      favorites={favorites}
       addFavoriteBrewery={addFavoriteBrewery}
+      removeFavoriteBrewery={removeFavoriteBrewery}
       user={user}
       brewery={brewery}
       key={brewery.id}/>;

@@ -269,12 +269,8 @@ export const addFavoriteBrewerySuccess = (brewery) => {
 };
 
 export const addFavoriteBrewery = (favorites, userId, type, id, brewery) => {
-  const match = Object.keys(favorites).filter( favorite => {
-    return favorites[favorite].id === id;
-  });
-
   return dispatch => {
-    if (!match.length){
+    if (!brewery.isFav){
       firebase.database().ref(userId + '/favorites').push({
         type,
         id

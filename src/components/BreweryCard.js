@@ -9,7 +9,7 @@ const BreweryCard = ({ brewery, getBrewery, addFavoriteBrewery, user, removeFavo
         <h2 onClick={() => getBrewery(brewery.id)}>{brewery.name}</h2>
       </Link>
       <h3>{brewery.location ? brewery.locations[0].locality + ", " + brewery.locations[0].region : ''}</h3>
-      { removeFavoriteBrewery ? <h4 onClick={() => removeFavoriteBrewery(user.id, brewery.firebaseID)}>UNFAVORITE</h4> : <h4 onClick={() => addFavoriteBrewery(favorites, user.id, 'brewery', brewery.id, brewery)}>FAVORITE</h4> }
+      { brewery.isFav ? <h4 onClick={() => removeFavoriteBrewery(user.id, brewery.firebaseID)}>UNFAVORITE</h4> : <h4 onClick={() => addFavoriteBrewery(favorites, user.id, 'brewery', brewery.id, brewery)}>FAVORITE</h4> }
     </div>
   );
 };

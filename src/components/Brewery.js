@@ -43,16 +43,17 @@ class Brewery extends Component {
   }
 
   renderBeers() {
-    const { breweryBeers, setCurrentBeer, user, addFavoriteBeer } = this.props;
+    const { breweryBeers, setCurrentBeer, user, addFavoriteBeer, removeFavoriteBeer, favorites } = this.props;
     if (breweryBeers) {
       return breweryBeers.map( beer => {
         return <BeerCard
           user={user}
-          writeUserData={this.writeUserData}
+          favorites={favorites}
           setCurrentBeer={setCurrentBeer}
           beer={beer}
           key={beer.id}
-          addFavoriteBeer={addFavoriteBeer}/>;
+          addFavoriteBeer={addFavoriteBeer}
+          removeFavoriteBeer={removeFavoriteBeer}/>;
       });
     }
   }
