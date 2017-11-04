@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const BreweryCard = ({ brewery, getBrewery, addFavoriteBrewery, user, removeFavoriteBrewery, favorites }) => {
   return (
-    <div className='beer-card'>
+    <div className={ brewery.isFav ? 'favorite-card' : 'beer-card' }>
       <Link to={'/brewery/' + brewery.id}>
         <h2 onClick={() => getBrewery(brewery.id)}>{brewery.name}</h2>
       </Link>

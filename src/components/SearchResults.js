@@ -27,6 +27,23 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, 
     return result.breweryId;
   });
 
+  const favoriteIDs = Object.keys(favorites).map( favorite => {
+    return favorites[favorite].id;
+  });
+
+  breweryResults.forEach( brewery => {
+    if (favoriteIDs.includes(brewery.id)){
+      brewery.isFav = true;
+    }
+  });
+
+  beerResults.forEach( beer => {
+    if (favoriteIDs.includes(beer.id)){
+      beer.isFav = true;
+    }
+  });
+
+
   const breweryCards = breweryResults.map( brewery => {
     return <BreweryCard
       user={user}
