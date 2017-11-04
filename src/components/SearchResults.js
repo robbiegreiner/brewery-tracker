@@ -6,14 +6,14 @@ import BreweryCard from './BreweryCard.js';
 import CityCard from './CityCard.js';
 import firebase from '../firebase.js';
 
-const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, user, removeFavoriteBeer, removeFavoriteBrewery }) => {
+const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, user, removeFavoriteBeer, removeFavoriteBrewery, addFavoriteBrewery, addFavoriteBeer }) => {
 
-  const writeUserData = (userId, type, id) => {
-    firebase.database().ref(userId + '/favorites').push({
-      type,
-      id
-    });
-  };
+  // const writeUserData = (userId, type, id, beerOrBreweryObj) => {
+  //   firebase.database().ref(userId + '/favorites').push({
+  //     type,
+  //     id
+  //   });
+  // };
 
   const beerResults = searchResults.filter( result => {
     return result.style;
@@ -30,7 +30,7 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, 
   const breweryCards = breweryResults.map( brewery => {
     return <BreweryCard
       user={user}
-      writeUserData={writeUserData}
+      addFavoriteBrewery={addFavoriteBrewery}
       getBrewery={getBrewery}
       brewery={brewery}
       key={brewery.id}
@@ -41,7 +41,7 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, 
   const beerCards = beerResults.map( beer => {
     return <BeerCard
       user={user}
-      writeUserData={writeUserData}
+      addFavoriteBeer={addFavoriteBeer}
       setCurrentBeer={setCurrentBeer}
       beer={beer}
       key={beer.id}
@@ -51,6 +51,7 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, 
   const cityCards = cityResults.map( brewery => {
     return <CityCard
       getBrewery={getBrewery}
+      addFavoriteBrewery={addFavoriteBrewery}
       user={user}
       brewery={brewery}
       key={brewery.id}

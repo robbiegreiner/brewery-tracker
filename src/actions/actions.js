@@ -176,7 +176,7 @@ export const fetchFavoriteBeers = (beerIDs) => {
       return fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/beer/${ID.id}?key=c138c8eb0b70d77459a4c1f2f479533a&withBreweries=y`)
         .then(response => response.json())
         .then(results => results.data)
-        .then(beerObject => Object.assign({}, beerObject, {firebaseID: ID.firebaseID }));
+        .then(beerObject => Object.assign({}, beerObject, {firebaseID: ID.firebaseID, isFav: true }));
     });
 
     const promiseAll = Promise.all(unresolvedPromises);
@@ -201,7 +201,7 @@ export const fetchFavoriteBreweries = (breweryIDs) => {
       return fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/${ID.id}?key=c138c8eb0b70d77459a4c1f2f479533a&withLocations=y`)
         .then(response => response.json())
         .then(results => results.data)
-        .then(breweryObject => Object.assign({}, breweryObject, {firebaseID: ID.firebaseID }));
+        .then(breweryObject => Object.assign({}, breweryObject, {firebaseID: ID.firebaseID, isFav: true }));
     });
 
     const promiseAll = Promise.all(unresolvedPromises);
@@ -238,4 +238,42 @@ export const deleteFavoriteBeer = (userId, firebaseID) => {
     firebase.database().ref(userId + '/favorites/' + firebaseID ).remove()
       .then(dispatch(deleteFavoriteBeerSuccess(firebaseID)));
   };
+};
+
+export const addFavoriteBeerSuccess = (beer) => {
+  return {
+    type: 'ADD_FAV_BEER_SUCCESS',
+    beer
+  };
+};
+
+export const addFavoriteBeer = (userId, type, id, beer) => {
+  return dispatch => {
+    if (!beer.isFav){
+      firebase.database().ref(userId + '/favorites').push({
+        type,
+        id
+      })
+        .then(dispatch(addFavoriteBeerSuccess(beer)));
+    }
+  };
+};
+
+export const addFavoriteBrewerySuccess = (brewery) => {
+  return {
+    type: 'ADD_FAV_BREWERY_SUCCESS',
+    brewery
+  };
+};
+
+export const addFavoriteBrewery = (userId, type, id, brewery) => {
+  if (!brewery.isFav){
+    return dispatch => {
+      firebase.database().ref(userId + '/favorites').push({
+        type,
+        id
+      })
+        .then(dispatch(addFavoriteBrewerySuccess(brewery)));
+    };
+  }
 };

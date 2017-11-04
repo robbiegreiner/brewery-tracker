@@ -9,8 +9,6 @@ class Brewery extends Component {
     super();
   }
 
-  //setup dynamic for beer id and make fetch call
-
   componentDidMount() {
     const { brewery, getBrewery } = this.props;
     if (Object.keys(brewery)) {
@@ -23,13 +21,6 @@ class Brewery extends Component {
       nextProps.getBreweryBeers(nextProps.brewery.id);
     }
   }
-
-  writeUserData = (userId, type, id) => {
-    firebase.database().ref(userId + '/favorites').push({
-      type,
-      id
-    });
-  };
 
   renderBrewery() {
     const { brewery } = this.props;
@@ -52,7 +43,7 @@ class Brewery extends Component {
   }
 
   renderBeers() {
-    const { breweryBeers, setCurrentBeer, user, removeFavoriteBeer } = this.props;
+    const { breweryBeers, setCurrentBeer, user, removeFavoriteBeer, addFavoriteBeer } = this.props;
     if (breweryBeers) {
       return breweryBeers.map( beer => {
         return <BeerCard
@@ -61,6 +52,7 @@ class Brewery extends Component {
           setCurrentBeer={setCurrentBeer}
           beer={beer}
           key={beer.id}
+          addFavoriteBeer={addFavoriteBeer}
           removeFavoriteBeer={removeFavoriteBeer}/>;
       });
     }
