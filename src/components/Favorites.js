@@ -60,12 +60,27 @@ class Favorites extends Component {
     });
   }
 
+  renderBreweries() {
+    const { favoriteBreweries, user, getBrewery } = this.props;
+    return favoriteBreweries.map( brewery => {
+      return <BreweryCard
+        user={user}
+        writeUserData={this.writeUserData}
+        getBrewery={getBrewery}
+        brewery={brewery}
+        key={brewery.id}/>;
+    });
+  }
+
   render() {
     if (this.props.favoriteBeers){
       return (
         <div className='favorites'>
-          {this.renderBeers()}
-          <h1>Favorites Here!</h1>
+          <h1>Favorites</h1>
+          <div className='card-container'>
+            {this.renderBreweries()}
+            {this.renderBeers()}
+          </div>
         </div>
       );
     } else {
@@ -84,7 +99,9 @@ Favorites.propTypes = {
   getFavoriteBeers: PropTypes.func,
   getFavoriteBreweries: PropTypes.func,
   favoriteBeers: PropTypes.array,
-  setCurrentBeer: PropTypes.func
+  favoriteBreweries: PropTypes.array,
+  setCurrentBeer: PropTypes.func,
+  getBrewery: PropTypes.func
 };
 
 export default Favorites;
