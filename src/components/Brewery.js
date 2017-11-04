@@ -52,8 +52,7 @@ class Brewery extends Component {
           setCurrentBeer={setCurrentBeer}
           beer={beer}
           key={beer.id}
-          addFavoriteBeer={addFavoriteBeer}
-          removeFavoriteBeer={removeFavoriteBeer}/>;
+          addFavoriteBeer={addFavoriteBeer}/>;
       });
     }
   }
