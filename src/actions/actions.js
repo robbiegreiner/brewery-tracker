@@ -212,15 +212,16 @@ export const fetchFavoriteBreweries = (breweryIDs) => {
   };
 };
 
-export const deleteFavoriteSuccess = () => {
+export const deleteFavoriteSuccess = (firebaseID) => {
   return {
-    type: 'DELETE_FAV_SUCCESS'
+    type: 'DELETE_FAV_SUCCESS',
+    firebaseID
   };
 };
 
 export const deleteFavorite = (userId, firebaseID) => {
   return dispatch => {
     firebase.database().ref(userId + '/favorites/' + firebaseID ).remove()
-      .then(dispatch(deleteFavoriteSuccess));
+      .then(dispatch(deleteFavoriteSuccess(firebaseID)));
   };
 };

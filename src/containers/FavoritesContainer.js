@@ -10,6 +10,9 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  getFavorites: (userID) => {
+    dispatch(fetchFavorites(userID));
+  },
   getFavoriteBeers: (beerIDs) => {
     dispatch(fetchFavoriteBeers(beerIDs));
   },

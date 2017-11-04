@@ -49,7 +49,6 @@ class Favorites extends Component {
   };
 
   renderBeers() {
-    // this.deleteFavorite();
     const { favoriteBeers, user, setCurrentBeer, removeFavorite } = this.props;
     return favoriteBeers.map( beer => {
       return <BeerCard
