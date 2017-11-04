@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
 import Favorites from '../components/Favorites';
-import { fetchFavorites, fetchFavoriteBeers, fetchFavoriteBreweries } from '../actions/actions.js';
+import { fetchFavorites, fetchFavoriteBeers, fetchFavoriteBreweries, setCurrentBeer } from '../actions/actions.js';
 
 const mapStateToProps = store => ({
   user: store.user,
-  favorites: store.favorites
+  favorites: store.favorites,
+  favoriteBeers: store.favoriteBeers,
+  favoriteBreweries: store.favoriteBreweries
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -13,6 +15,9 @@ const mapDispatchToProps = dispatch => ({
   },
   getFavoriteBreweries: (beerIDs) => {
     dispatch(fetchFavoriteBreweries(beerIDs));
+  },
+  setCurrentBeer: (beer) => {
+    dispatch(setCurrentBeer(beer));
   }
 });
 

@@ -1,6 +1,8 @@
-// import firebase from '../firebase.js';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import BeerCard from './BeerCard.js';
+import BreweryCard from './BreweryCard.js';
+import firebase from '../firebase.js';
 
 
 class Favorites extends Component {
@@ -39,25 +41,37 @@ class Favorites extends Component {
     return beerIDs;
   }
 
-  renderFavorites() {
+  writeUserData = (userId, type, id) => {
+    firebase.database().ref(userId + '/favorites').push({
+      type,
+      id
+    });
+  };
 
+  renderBeers() {
+    const { favoriteBeers, user, setCurrentBeer } = this.props;
+    return favoriteBeers.map( beer => {
+      return <BeerCard
+        user={user}
+        writeUserData={this.writeUserData}
+        setCurrentBeer={setCurrentBeer}
+        beer={beer}
+        key={beer.id}/>;
+    });
   }
 
-  // -KxoYn06nNczpUPCm4f5: {id: "VGRuro", type: "brewery"}
-  // -Ky1RKwKgQuMK3qVhd40: {id: "ugYYEh", type: "beer"}
-
   render() {
-    if (this.props.favorites){
+    if (this.props.favoriteBeers){
       return (
         <div className='favorites'>
-          {this.renderFavorites()}
+          {this.renderBeers()}
           <h1>Favorites Here!</h1>
         </div>
       );
     } else {
       return (
         <div className='favorites'>
-          <h1>Favorites Here!</h1>
+          <h1>Favorites Not Here!</h1>
         </div>
       );
     }
@@ -68,7 +82,9 @@ Favorites.propTypes = {
   user: PropTypes.object,
   favorites: PropTypes.object,
   getFavoriteBeers: PropTypes.func,
-  getFavoriteBreweries: PropTypes.func
+  getFavoriteBreweries: PropTypes.func,
+  favoriteBeers: PropTypes.array,
+  setCurrentBeer: PropTypes.func
 };
 
 export default Favorites;
