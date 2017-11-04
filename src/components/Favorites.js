@@ -9,10 +9,11 @@ class Favorites extends Component {
   }
 
   componentDidMount() {
-    const { favorites, getFavoriteBeers } = this.props;
+    const { favorites, getFavoriteBeers, getFavoriteBreweries } = this.props;
     const brewIDs = this.cleanBreweryFavorites(favorites);
     const beerIDs = this.cleanBeerFavorites(favorites);
-    getFavoriteBeers(beerIDs)
+    getFavoriteBeers(beerIDs);
+    getFavoriteBreweries(brewIDs);
   }
 
   cleanBreweryFavorites(favorites) {
@@ -66,7 +67,8 @@ class Favorites extends Component {
 Favorites.propTypes = {
   user: PropTypes.object,
   favorites: PropTypes.object,
-  getFavoriteBeers: PropTypes.func
+  getFavoriteBeers: PropTypes.func,
+  getFavoriteBreweries: PropTypes.func
 };
 
 export default Favorites;

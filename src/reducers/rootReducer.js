@@ -9,6 +9,7 @@ import currentBeer from './currentBeer';
 import searchType from './searchType';
 import favorites from './favorites';
 import favoriteBeers from './favoriteBeers';
+import favoriteBreweries from './favoriteBreweries';
 
 const rootReducer = combineReducers({
   user,
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
   currentBeer,
   searchType,
   favorites,
-  favoriteBeers
+  favoriteBeers,
+  favoriteBreweries
 });
 
 export default rootReducer;

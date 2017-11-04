@@ -185,3 +185,27 @@ export const fetchFavoriteBeers = (beerIDs) => {
     });
   };
 };
+
+export const favBrewerySuccess = favBeerData => {
+  return {
+    type: 'FAV_BREWERY_SUCCESS',
+    favBeerData
+  };
+};
+
+export const fetchFavoriteBreweries = (breweryIDs) => {
+  return dispatch => {
+
+    const unresolvedPromises = breweryIDs.map( ID => {
+      return fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/${ID}?key=c138c8eb0b70d77459a4c1f2f479533a&withLocations=y`)
+        .then(response => response.json())
+        .then(results => results.data);
+    });
+
+    const promiseAll = Promise.all(unresolvedPromises);
+
+    promiseAll.then( favBeerData => {
+      dispatch(favBrewerySuccess(favBeerData));
+    });
+  };
+};
