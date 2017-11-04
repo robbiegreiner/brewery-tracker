@@ -162,14 +162,26 @@ export const fetchFavorites = (userID) => {
   };
 };
 
+export const favBeerSuccess = favBeerData => {
+  return {
+    type: 'FAV_BEER_SUCCESS',
+    favBeerData
+  };
+};
+
 export const fetchFavoriteBeers = (beerIDs) => {
   return dispatch => {
 
     const unresolvedPromises = beerIDs.map( ID => {
       return fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/beer/${ID}?key=c138c8eb0b70d77459a4c1f2f479533a&withBreweries=y`)
         .then(response => response.json())
-        .then(response => console.log(response.data))
+        .then(results => results.data);
+    });
 
+    const promiseAll = Promise.all(unresolvedPromises);
+
+    promiseAll.then( favBeerData => {
+      dispatch(favBeerSuccess(favBeerData));
     });
   };
 };
