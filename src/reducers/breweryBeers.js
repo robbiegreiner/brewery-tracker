@@ -9,13 +9,6 @@ const breweryBeers = (state = [], action) => {
       }
     });
     return state;
-  case 'ADD_FAV_BREWERY_SUCCESS':
-    state.forEach( brewery => {
-      if (brewery.id === action.brewery.id){
-        brewery.isFav = true;
-      }
-    });
-    return state;
   default:
     return state;
   }
