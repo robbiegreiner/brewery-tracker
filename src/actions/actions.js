@@ -173,9 +173,10 @@ export const fetchFavoriteBeers = (beerIDs) => {
   return dispatch => {
 
     const unresolvedPromises = beerIDs.map( ID => {
-      return fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/beer/${ID}?key=c138c8eb0b70d77459a4c1f2f479533a&withBreweries=y`)
+      return fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/beer/${ID.id}?key=c138c8eb0b70d77459a4c1f2f479533a&withBreweries=y`)
         .then(response => response.json())
-        .then(results => results.data);
+        .then(results => results.data)
+        .then(beerObject => Object.assign({}, beerObject, {firebaseID: ID.firebaseID }));
     });
 
     const promiseAll = Promise.all(unresolvedPromises);
@@ -197,7 +198,7 @@ export const fetchFavoriteBreweries = (breweryIDs) => {
   return dispatch => {
 
     const unresolvedPromises = breweryIDs.map( ID => {
-      return fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/${ID}?key=c138c8eb0b70d77459a4c1f2f479533a&withLocations=y`)
+      return fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/${ID.id}?key=c138c8eb0b70d77459a4c1f2f479533a&withLocations=y`)
         .then(response => response.json())
         .then(results => results.data);
     });

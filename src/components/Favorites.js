@@ -25,7 +25,7 @@ class Favorites extends Component {
     });
 
     const breweryIDs = breweryTags.map( tag => {
-      return favorites[tag].id;
+      return Object.assign({}, { id: favorites[tag].id, firebaseID: tag });
     });
     return breweryIDs;
   }
@@ -36,7 +36,7 @@ class Favorites extends Component {
       return favorites[key].type === 'beer';
     });
     const beerIDs = beerTags.map( tag => {
-      return favorites[tag].id;
+      return Object.assign({}, { id: favorites[tag].id, firebaseID: tag });
     });
     return beerIDs;
   }
@@ -48,7 +48,10 @@ class Favorites extends Component {
     });
   };
 
+  // need to keep firebase ID with it
+
   renderBeers() {
+    // this.deleteFavorite();
     const { favoriteBeers, user, setCurrentBeer } = this.props;
     return favoriteBeers.map( beer => {
       return <BeerCard

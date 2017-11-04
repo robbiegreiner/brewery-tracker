@@ -14,7 +14,6 @@ class Brewery extends Component {
   componentDidMount() {
     const { brewery, getBrewery } = this.props;
     if (Object.keys(brewery)) {
-      console.log('hey');
       getBrewery(this.props.match.params.brewery_id);
     }
   }
