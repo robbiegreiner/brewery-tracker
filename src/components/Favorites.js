@@ -15,13 +15,33 @@ class Favorites extends Component {
 
   cleanFavorites(favorites) {
     const keys = Object.keys(favorites);
-    // if type brewery return to brewery array
-    // if type beer return to beer array
+
+    const breweryTags = keys.filter( key => {
+      favorites[key].type === 'brewery';
+    });
+    const beerTags = keys.filter( key => {
+      return favorites[key].type === 'beer';
+    });
+
+    const breweryIDs = breweryTags.map( tag => {
+      console.log('brew firing');
+      return favorites[tag].id;
+    });
+
+    const beerIDs = beerTags.map( tag => {
+      console.log('beer firing');
+      return favorites[tag].id;
+    });
+
+
+
+    console.log('beer ', beerIDs);
+    console.log('brewery ', breweryIDs )
   }
 
   renderFavorites() {
     const { favorites } = this.props;
-    console.log(favorites);
+    this.cleanFavorites(favorites);
   }
 
   // -KxoYn06nNczpUPCm4f5: {id: "VGRuro", type: "brewery"}
