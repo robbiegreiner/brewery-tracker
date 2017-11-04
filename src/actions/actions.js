@@ -212,16 +212,30 @@ export const fetchFavoriteBreweries = (breweryIDs) => {
   };
 };
 
-export const deleteFavoriteSuccess = (firebaseID) => {
+export const deleteFavoriteBrewerySuccess = (firebaseID) => {
   return {
-    type: 'DELETE_FAV_SUCCESS',
+    type: 'DELETE_FAV_BREWERY_SUCCESS',
     firebaseID
   };
 };
 
-export const deleteFavorite = (userId, firebaseID) => {
+export const deleteFavoriteBrewery = (userId, firebaseID) => {
   return dispatch => {
     firebase.database().ref(userId + '/favorites/' + firebaseID ).remove()
-      .then(dispatch(deleteFavoriteSuccess(firebaseID)));
+      .then(dispatch(deleteFavoriteBrewerySuccess(firebaseID)));
+  };
+};
+
+export const deleteFavoriteBeerSuccess = (firebaseID) => {
+  return {
+    type: 'DELETE_FAV_BEER_SUCCESS',
+    firebaseID
+  };
+};
+
+export const deleteFavoriteBeer = (userId, firebaseID) => {
+  return dispatch => {
+    firebase.database().ref(userId + '/favorites/' + firebaseID ).remove()
+      .then(dispatch(deleteFavoriteBeerSuccess(firebaseID)));
   };
 };

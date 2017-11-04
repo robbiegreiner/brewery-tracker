@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const CityCard = ({ brewery, getBrewery, writeUserData, user }) => {
+const CityCard = ({ brewery, getBrewery, writeUserData, user, removeFavoriteBrewery }) => {
   if (brewery.brewery){
     return (
       <div className='beer-card'>
@@ -11,6 +11,7 @@ const CityCard = ({ brewery, getBrewery, writeUserData, user }) => {
         </Link>
         <h3>{brewery.location ? brewery.locations[0].locality + ", " + brewery.locations[0].region : ''}</h3>
         <h4 onClick={() => writeUserData(user.id, 'brewery', brewery.id)}>FAVORITE</h4>
+        <h4 onClick={() => removeFavoriteBrewery(user.id, brewery.firebaseID)}>UNFAVORITE</h4>
       </div>
     );
   } else {
@@ -24,7 +25,8 @@ CityCard.propTypes = {
   brewery: PropTypes.object,
   getBrewery: PropTypes.func,
   writeUserData: PropTypes.func,
-  user: PropTypes.object
+  user: PropTypes.object,
+  removeFavoriteBrewery: PropTypes.func
 };
 
 export default CityCard;

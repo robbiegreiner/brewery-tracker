@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SearchResults from '../components/SearchResults';
-import { fetchBrewery, setCurrentBeer, deleteFavorite } from '../actions/actions';
+import { fetchBrewery, setCurrentBeer, deleteFavoriteBeer, deleteFavoriteBrewery } from '../actions/actions';
 
 
 
@@ -17,8 +17,11 @@ const mapDispatchToProps = dispatch => ({
   setCurrentBeer: (beer) => {
     dispatch(setCurrentBeer(beer));
   },
-  removeFavorite: (userId, firebaseID) => {
-    dispatch(deleteFavorite(userId, firebaseID));
+  removeFavoriteBeer: (userId, firebaseID) => {
+    dispatch(deleteFavoriteBeer(userId, firebaseID));
+  },
+  removeFavoriteBrewery: (userId, firebaseID) => {
+    dispatch(deleteFavoriteBrewery(userId, firebaseID));
   }
 });
 

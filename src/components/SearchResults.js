@@ -6,7 +6,7 @@ import BreweryCard from './BreweryCard.js';
 import CityCard from './CityCard.js';
 import firebase from '../firebase.js';
 
-const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, user, removeFavorite }) => {
+const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, user, removeFavoriteBeer, removeFavoriteBrewery }) => {
 
   const writeUserData = (userId, type, id) => {
     firebase.database().ref(userId + '/favorites').push({
@@ -34,7 +34,7 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, 
       getBrewery={getBrewery}
       brewery={brewery}
       key={brewery.id}
-      removeFavorite={removeFavorite}/>;
+      removeFavoriteBrewery={removeFavoriteBrewery}/>;
   });
 
 
@@ -45,7 +45,7 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, 
       setCurrentBeer={setCurrentBeer}
       beer={beer}
       key={beer.id}
-      removeFavorite={removeFavorite}/>;
+      removeFavoriteBeer={removeFavoriteBeer}/>;
   });
 
   const cityCards = cityResults.map( brewery => {
@@ -54,7 +54,7 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, 
       user={user}
       brewery={brewery}
       key={brewery.id}
-      removeFavorite={removeFavorite}/>;
+      removeFavoriteBrewery={removeFavoriteBrewery}/>;
   });
 
   return (
@@ -76,7 +76,8 @@ SearchResults.propTypes = {
   setCurrentBeer: PropTypes.func,
   searchType: PropTypes.string,
   user: PropTypes.object,
-  removeFavorite: PropTypes.func
+  removeFavoriteBeer: PropTypes.func,
+  removeFavoriteBrewery: PropTypes.func
 };
 
 export default SearchResults;

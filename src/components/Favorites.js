@@ -49,7 +49,7 @@ class Favorites extends Component {
   };
 
   renderBeers() {
-    const { favoriteBeers, user, setCurrentBeer, removeFavorite } = this.props;
+    const { favoriteBeers, user, setCurrentBeer, removeFavoriteBeer } = this.props;
     return favoriteBeers.map( beer => {
       return <BeerCard
         deleteFavorite = {this.deleteFavorite}
@@ -58,12 +58,12 @@ class Favorites extends Component {
         setCurrentBeer={setCurrentBeer}
         beer={beer}
         key={beer.id}
-        removeFavorite={removeFavorite}/>;
+        removeFavoriteBeer={removeFavoriteBeer}/>;
     });
   }
 
   renderBreweries() {
-    const { favoriteBreweries, user, getBrewery, removeFavorite } = this.props;
+    const { favoriteBreweries, user, getBrewery, removeFavoriteBrewery } = this.props;
     return favoriteBreweries.map( brewery => {
       return <BreweryCard
         user={user}
@@ -71,7 +71,7 @@ class Favorites extends Component {
         getBrewery={getBrewery}
         brewery={brewery}
         key={brewery.id}
-        removeFavorite={removeFavorite}/>;
+        removeFavoriteBrewery={removeFavoriteBrewery}/>;
     });
   }
 
@@ -105,7 +105,9 @@ Favorites.propTypes = {
   favoriteBreweries: PropTypes.array,
   setCurrentBeer: PropTypes.func,
   getBrewery: PropTypes.func,
-  removeFavorite: PropTypes.func
+  removeFavorite: PropTypes.func,
+  removeFavoriteBeer: PropTypes.func,
+  removeFavoriteBrewery: PropTypes.func
 };
 
 export default Favorites;

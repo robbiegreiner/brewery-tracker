@@ -52,7 +52,7 @@ class Brewery extends Component {
   }
 
   renderBeers() {
-    const { breweryBeers, setCurrentBeer, user, removeFavorite} = this.props;
+    const { breweryBeers, setCurrentBeer, user, removeFavoriteBeer } = this.props;
     if (breweryBeers) {
       return breweryBeers.map( beer => {
         return <BeerCard
@@ -61,7 +61,7 @@ class Brewery extends Component {
           setCurrentBeer={setCurrentBeer}
           beer={beer}
           key={beer.id}
-          removeFavorite={removeFavorite}/>;
+          removeFavoriteBeer={removeFavoriteBeer}/>;
       });
     }
   }
@@ -87,7 +87,10 @@ Brewery.propTypes = {
   setCurrentBeer: PropTypes.func,
   match: PropTypes.object,
   user: PropTypes.object,
-  removeFavorite: PropTypes.func
+  removeFavorite: PropTypes.func,
+  removeFavoriteBeer: PropTypes.func,
+  removeFavoriteBrewery: PropTypes.func,
+  getBrewery: PropTypes.func
 };
 
 export default Brewery;
