@@ -1,5 +1,6 @@
 import * as actions from './actions.js';
-import mockBeersData from '../mockData/mockBeersData'
+import mockBeersData from '../mockData/mockBeersData';
+import mockBreweriesData from '../mockData/mockBreweriesData';
 
 describe('actions', () => {
   const mockUser = { email: 'robbieg@mailg.com', id:'vxyd' };
@@ -30,6 +31,16 @@ describe('actions', () => {
     };
 
     expect(actions.searchAllSuccess(mockBeersData.data, 'beer')).toEqual(expectedAction);
+  });
+
+  it('should create an action if city search succeeds', () => {
+    const expectedAction = {
+      type: 'CITY_SUCCESS',
+      searchResults: mockBreweriesData,
+      searchType: 'city'
+    };
+
+    expect(actions.citySuccess(mockBreweriesData, 'city')).toEqual(expectedAction);
   });
 
 
