@@ -1,6 +1,7 @@
 import * as actions from './actions.js';
 import mockBeersData from '../mockData/mockBeersData';
 import mockBreweriesData from '../mockData/mockBreweriesData';
+import mockBreweryBeers from '../mockData/mockBreweryBeers';
 
 describe('actions', () => {
   const mockUser = { email: 'robbieg@mailg.com', id:'vxyd' };
@@ -41,6 +42,15 @@ describe('actions', () => {
     };
 
     expect(actions.citySuccess(mockBreweriesData, 'city')).toEqual(expectedAction);
+  });
+
+  it('should create an action if fetch brewerys beers succeeds', () => {
+    const expectedAction = {
+      type: 'BREWERY_BEER_SUCCESS',
+      beers: mockBreweryBeers.data
+    };
+
+    expect(actions.fetchBreweryBeerSuccess(mockBreweryBeers.data)).toEqual(expectedAction);
   });
 
 
