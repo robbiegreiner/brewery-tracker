@@ -4,17 +4,15 @@ import { Link } from 'react-router-dom';
 
 const FeatureBrewery = ({ featureBrewery, getBrewery }) => {
 
-  const showBrewery = id => {
-    getBrewery(id);
-  };
-
 
   if (featureBrewery.images) {
     return (
-      <div className='feature-brewery' onClick={() => showBrewery(featureBrewery.id)}>
+      <div className='feature-brewery'>
         <h1>Featured Brewery</h1>
-        <h2>{featureBrewery.name}</h2>
-        <Link to='/brewery'><img className='brewery-logo-2' src={featureBrewery.images.large}></img></Link>
+        <Link to={'/brewery/' + featureBrewery.id} onClick={() => getBrewery(featureBrewery.id)}>
+          <h2>{featureBrewery.name}</h2>
+          <img className='brewery-logo-2' src={featureBrewery.images.large}></img>
+        </Link>
         <h3>{featureBrewery.locations[0].locality}, {featureBrewery.locations[0].region}</h3>
         <a href={featureBrewery.website}>{featureBrewery.website}</a>
         <p>{featureBrewery.description ? featureBrewery.description : 'no description provided'}</p>

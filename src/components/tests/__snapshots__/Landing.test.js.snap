@@ -69,7 +69,7 @@ ShallowWrapper {
           />
           <FeatureBeer
                     featureBeer={Object {}}
-                    getBrewery={[Function]}
+                    setCurrentBeer={undefined}
           />
 </div>,
       ],
@@ -261,7 +261,7 @@ ShallowWrapper {
 />,
             <FeatureBeer
               featureBeer={Object {}}
-              getBrewery={[Function]}
+              setCurrentBeer={undefined}
 />,
           ],
           "className": "feature-section",
@@ -286,7 +286,7 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "featureBeer": Object {},
-              "getBrewery": [Function],
+              "setCurrentBeer": undefined,
             },
             "ref": null,
             "rendered": null,
@@ -349,7 +349,7 @@ ShallowWrapper {
             />
             <FeatureBeer
                         featureBeer={Object {}}
-                        getBrewery={[Function]}
+                        setCurrentBeer={undefined}
             />
 </div>,
         ],
@@ -541,7 +541,7 @@ ShallowWrapper {
 />,
               <FeatureBeer
                 featureBeer={Object {}}
-                getBrewery={[Function]}
+                setCurrentBeer={undefined}
 />,
             ],
             "className": "feature-section",
@@ -566,7 +566,7 @@ ShallowWrapper {
               "nodeType": "function",
               "props": Object {
                 "featureBeer": Object {},
-                "getBrewery": [Function],
+                "setCurrentBeer": undefined,
               },
               "ref": null,
               "rendered": null,

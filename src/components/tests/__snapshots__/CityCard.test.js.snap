@@ -5,7 +5,13 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <CityCard
-    brewery={Object {}}
+    brewery={
+        Object {
+            "brewery": Object {
+              "isFav": true,
+            },
+          }
+    }
     getBrewery={[Function]}
     user={Object {}}
     writeUserData={[Function]}
@@ -22,11 +28,192 @@ ShallowWrapper {
     "key": null,
     "nodeType": "host",
     "props": Object {
-      "children": "No Match",
+      "children": Array [
+        <Link
+          replace={false}
+          to="/brewery/undefined"
+>
+          <h2
+                    onClick={[Function]}
+          />
+</Link>,
+        <h3>
+          undefined, undefined
+</h3>,
+        <Link
+          replace={false}
+          to="/brewery/undefined"
+>
+          <img
+                    className="brewery-icon"
+                    onClick={[Function]}
+                    src="beer-tap.svg"
+          />
+</Link>,
+        <h3
+          className="type"
+/>,
+        <Link
+          replace={false}
+          to="/brewery/undefined"
+>
+          <h4
+                    onClick={[Function]}
+          >
+                    DETAILS
+          </h4>
+</Link>,
+        <Link
+          replace={false}
+          to="/login"
+>
+          <h4
+                    className="favorite"
+          >
+                    FAVORITE
+          </h4>
+</Link>,
+      ],
+      "className": "beer-card brewery-card favorite-card",
     },
     "ref": null,
-    "rendered": "No Match",
-    "type": "h1",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "children": <h2
+            onClick={[Function]}
+/>,
+          "replace": false,
+          "to": "/brewery/undefined",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": undefined,
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "h2",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "undefined, undefined",
+        },
+        "ref": null,
+        "rendered": "undefined, undefined",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "children": <img
+            className="brewery-icon"
+            onClick={[Function]}
+            src="beer-tap.svg"
+/>,
+          "replace": false,
+          "to": "/brewery/undefined",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "className": "brewery-icon",
+            "onClick": [Function],
+            "src": "beer-tap.svg",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": undefined,
+          "className": "type",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "children": <h4
+            onClick={[Function]}
+>
+            DETAILS
+</h4>,
+          "replace": false,
+          "to": "/brewery/undefined",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "DETAILS",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "DETAILS",
+          "type": "h4",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "children": <h4
+            className="favorite"
+>
+            FAVORITE
+</h4>,
+          "replace": false,
+          "to": "/login",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "FAVORITE",
+            "className": "favorite",
+          },
+          "ref": null,
+          "rendered": "FAVORITE",
+          "type": "h4",
+        },
+        "type": [Function],
+      },
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -34,11 +221,192 @@ ShallowWrapper {
       "key": null,
       "nodeType": "host",
       "props": Object {
-        "children": "No Match",
+        "children": Array [
+          <Link
+            replace={false}
+            to="/brewery/undefined"
+>
+            <h2
+                        onClick={[Function]}
+            />
+</Link>,
+          <h3>
+            undefined, undefined
+</h3>,
+          <Link
+            replace={false}
+            to="/brewery/undefined"
+>
+            <img
+                        className="brewery-icon"
+                        onClick={[Function]}
+                        src="beer-tap.svg"
+            />
+</Link>,
+          <h3
+            className="type"
+/>,
+          <Link
+            replace={false}
+            to="/brewery/undefined"
+>
+            <h4
+                        onClick={[Function]}
+            >
+                        DETAILS
+            </h4>
+</Link>,
+          <Link
+            replace={false}
+            to="/login"
+>
+            <h4
+                        className="favorite"
+            >
+                        FAVORITE
+            </h4>
+</Link>,
+        ],
+        "className": "beer-card brewery-card favorite-card",
       },
       "ref": null,
-      "rendered": "No Match",
-      "type": "h1",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "children": <h2
+              onClick={[Function]}
+/>,
+            "replace": false,
+            "to": "/brewery/undefined",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "h2",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "undefined, undefined",
+          },
+          "ref": null,
+          "rendered": "undefined, undefined",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "children": <img
+              className="brewery-icon"
+              onClick={[Function]}
+              src="beer-tap.svg"
+/>,
+            "replace": false,
+            "to": "/brewery/undefined",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "className": "brewery-icon",
+              "onClick": [Function],
+              "src": "beer-tap.svg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": undefined,
+            "className": "type",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "children": <h4
+              onClick={[Function]}
+>
+              DETAILS
+</h4>,
+            "replace": false,
+            "to": "/brewery/undefined",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "DETAILS",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "DETAILS",
+            "type": "h4",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "children": <h4
+              className="favorite"
+>
+              FAVORITE
+</h4>,
+            "replace": false,
+            "to": "/login",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "FAVORITE",
+              "className": "favorite",
+            },
+            "ref": null,
+            "rendered": "FAVORITE",
+            "type": "h4",
+          },
+          "type": [Function],
+        },
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

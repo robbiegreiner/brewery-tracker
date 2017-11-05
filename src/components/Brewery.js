@@ -28,10 +28,14 @@ class Brewery extends Component {
     if (brewery.name) {
       return (
         <div className='brewery'>
-          <h3>Brewery</h3>
-          <h2>{brewery.name}</h2>
-          {brewery.images ? <img className='brewery-logo' src={brewery.images.large}></img> : ''}
-          <h4>{brewery.website}</h4>
+          <h1>{brewery.name}</h1>
+          {brewery.images ? <img className='brewery-page-logo' src={brewery.images.large}></img> : ''}
+          <div className='location-box'>
+            <h2>{brewery.locations[0].name}</h2>
+            <h3>{brewery.locations[0].streetAddress}</h3>
+            <h3>{brewery.locations[0].locality + ", " + brewery.locations[0].region + " " + brewery.locations[0].postalCode }</h3>
+            <h4>{brewery.website}</h4>
+          </div>
           <p>{brewery.description ? brewery.description : 'no description provided'}</p>
         </div>
       );
@@ -61,6 +65,7 @@ class Brewery extends Component {
     return (
       <div className='brewery'>
         {this.renderBrewery()}
+        <h2>{this.props.brewery.name + " Beers"}</h2>
         <div className='brewery-beers'>
           {this.renderBeers()}
         </div>

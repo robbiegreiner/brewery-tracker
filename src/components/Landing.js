@@ -69,7 +69,7 @@ class Landing extends Component {
             getBrewery ={this.props.getBrewery}/>
           <FeatureBeer
             featureBeer={this.props.featureBeer}
-            getBrewery ={this.props.getBrewery}/>
+            setCurrentBeer ={this.props.setCurrentBeer}/>
         </div>
       </div>
     );
@@ -85,7 +85,8 @@ Landing.propTypes = {
   getBrewery: PropTypes.func,
   searchCity: PropTypes.func,
   user: PropTypes.object,
-  getFavorites: PropTypes.func
+  getFavorites: PropTypes.func,
+  setCurrentBeer: PropTypes.func
 };
 
 export default Landing;
