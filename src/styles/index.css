@@ -187,12 +187,6 @@
 .type {
   margin-top: 10px; }
 
-.description {
-  width: 100px;
-  height: 100px;
-  white-space: nowrap;
-  overflow: hidden; }
-
 .feature-section {
   width: 100%;
   display: flex;
@@ -261,7 +255,7 @@
   left: 50%;
   z-index: 100;
   transform: translate(-50%, -50%);
-  background-color: #41403D;
+  background-color: #27394A;
   height: 340px;
   width: 400px;
   border-radius: 5px;
@@ -293,7 +287,7 @@
   border-bottom: 2px solid #D23321; }
 
 .login-btn {
-  background-color: #D23321;
+  background-color: #FF644E;
   border: none;
   border-radius: 10px;
   color: #fff;
