@@ -1,5 +1,5 @@
-import firebase, { auth, provider } from '../firebase.js';
-import apikey from '../apikey.js'
+import firebase from '../firebase.js';
+import apikey from '../apikey.js';
 
 export const createAccountSuccess = (user) => {
   return {
@@ -16,7 +16,7 @@ export const createAccount = (email, password) => {
         id: response.uid,
         email: response.email
       }))))
-      .catch(error => alert(error))
+      .catch(error => alert(error));
   };
 };
 

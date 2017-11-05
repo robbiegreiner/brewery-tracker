@@ -7,7 +7,7 @@ import SearchResultsContainer from '../SearchResultsContainer';
 import SearchResults from '../../components/SearchResults';
 import thunk from 'redux-thunk';
 import * as actions from '../../actions/actions';
-import mockBeersData from '../../mockData/mockBeersData'
+import mockBeersData from '../../mockData/mockBeersData';
 
 describe('SearchResultsContainer', () => {
   const middlewares = [thunk];
