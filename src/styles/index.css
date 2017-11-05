@@ -139,16 +139,24 @@
   margin-top: 20px;
   margin-bottom: 10px; }
 
-.beer-logo {
+.beer-logo, .brewery-logo {
   width: 300px;
   height: 250px;
   margin: 0;
   filter: opacity(0.7); }
 
-.beer-icon {
+.brewery-logo {
+  height: 220px;
+  margin-top: 20px;
+  margin-bottom: 10px; }
+
+.beer-icon, .brewery-icon {
   width: 200px;
   margin-top: 30px;
   margin-bottom: 20px; }
+
+.brewery-icon {
+  width: 150px; }
 
 .favorite-card {
   border: 3px solid #FF644E; }
@@ -170,6 +178,20 @@
 
 .favorite {
   cursor: pointer; }
+
+.website {
+  font-size: 12px;
+  margin-bottom: 20px;
+  color: white; }
+
+.type {
+  margin-top: 10px; }
+
+.description {
+  width: 100px;
+  height: 100px;
+  white-space: nowrap;
+  overflow: hidden; }
 
 .feature-section {
   width: 100%;
