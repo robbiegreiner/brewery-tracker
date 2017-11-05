@@ -30,6 +30,7 @@ class Login extends Component {
         <input placeholder="email" className="email-input" onChange={(event) => this.handleChange('email', event) }></input>
         <input placeholder="password" type="password" className="password-input" onChange={(event) => this.handleChange('password', event) }></input>
         <button className='login-btn' onClick={ () => this.userLogin()}>submit</button>
+        <Link to='/createaccount'><h4>Not a member? Create an account!</h4></Link>
       </div>
     );
   }
