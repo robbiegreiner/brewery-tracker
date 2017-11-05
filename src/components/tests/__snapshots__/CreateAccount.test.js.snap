@@ -23,24 +23,35 @@ ShallowWrapper {
       "children": Array [
         null,
         <h1>
-          Create Account Here
+          Create Account
 </h1>,
         <input
+          className="email-input"
           onChange={[Function]}
           placeholder="email"
 />,
         <input
+          className="password-input"
           onChange={[Function]}
           placeholder="password"
+          type="password"
 />,
         <button
-          className="create-btn"
+          className="login-btn"
           onClick={[Function]}
 >
           submit
 </button>,
+        <Link
+          replace={false}
+          to="/login"
+>
+          <h4>
+                    Already a member?  Sign in here!
+          </h4>
+</Link>,
       ],
-      "className": "create-account",
+      "className": "login",
     },
     "ref": null,
     "rendered": Array [
@@ -50,10 +61,10 @@ ShallowWrapper {
         "key": null,
         "nodeType": "host",
         "props": Object {
-          "children": "Create Account Here",
+          "children": "Create Account",
         },
         "ref": null,
-        "rendered": "Create Account Here",
+        "rendered": "Create Account",
         "type": "h1",
       },
       Object {
@@ -61,6 +72,7 @@ ShallowWrapper {
         "key": null,
         "nodeType": "host",
         "props": Object {
+          "className": "email-input",
           "onChange": [Function],
           "placeholder": "email",
         },
@@ -73,8 +85,10 @@ ShallowWrapper {
         "key": null,
         "nodeType": "host",
         "props": Object {
+          "className": "password-input",
           "onChange": [Function],
           "placeholder": "password",
+          "type": "password",
         },
         "ref": null,
         "rendered": null,
@@ -86,12 +100,37 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "submit",
-          "className": "create-btn",
+          "className": "login-btn",
           "onClick": [Function],
         },
         "ref": null,
         "rendered": "submit",
         "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "children": <h4>
+            Already a member?  Sign in here!
+</h4>,
+          "replace": false,
+          "to": "/login",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Already a member?  Sign in here!",
+          },
+          "ref": null,
+          "rendered": "Already a member?  Sign in here!",
+          "type": "h4",
+        },
+        "type": [Function],
       },
     ],
     "type": "div",
@@ -105,24 +144,35 @@ ShallowWrapper {
         "children": Array [
           null,
           <h1>
-            Create Account Here
+            Create Account
 </h1>,
           <input
+            className="email-input"
             onChange={[Function]}
             placeholder="email"
 />,
           <input
+            className="password-input"
             onChange={[Function]}
             placeholder="password"
+            type="password"
 />,
           <button
-            className="create-btn"
+            className="login-btn"
             onClick={[Function]}
 >
             submit
 </button>,
+          <Link
+            replace={false}
+            to="/login"
+>
+            <h4>
+                        Already a member?  Sign in here!
+            </h4>
+</Link>,
         ],
-        "className": "create-account",
+        "className": "login",
       },
       "ref": null,
       "rendered": Array [
@@ -132,10 +182,10 @@ ShallowWrapper {
           "key": null,
           "nodeType": "host",
           "props": Object {
-            "children": "Create Account Here",
+            "children": "Create Account",
           },
           "ref": null,
-          "rendered": "Create Account Here",
+          "rendered": "Create Account",
           "type": "h1",
         },
         Object {
@@ -143,6 +193,7 @@ ShallowWrapper {
           "key": null,
           "nodeType": "host",
           "props": Object {
+            "className": "email-input",
             "onChange": [Function],
             "placeholder": "email",
           },
@@ -155,8 +206,10 @@ ShallowWrapper {
           "key": null,
           "nodeType": "host",
           "props": Object {
+            "className": "password-input",
             "onChange": [Function],
             "placeholder": "password",
+            "type": "password",
           },
           "ref": null,
           "rendered": null,
@@ -168,12 +221,37 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "submit",
-            "className": "create-btn",
+            "className": "login-btn",
             "onClick": [Function],
           },
           "ref": null,
           "rendered": "submit",
           "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "children": <h4>
+              Already a member?  Sign in here!
+</h4>,
+            "replace": false,
+            "to": "/login",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Already a member?  Sign in here!",
+            },
+            "ref": null,
+            "rendered": "Already a member?  Sign in here!",
+            "type": "h4",
+          },
+          "type": [Function],
         },
       ],
       "type": "div",

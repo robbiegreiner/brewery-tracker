@@ -16,7 +16,7 @@ export const createAccount = (email, password) => {
         id: response.uid,
         email: response.email
       }))))
-      .catch(error => console.log(error))
+      .catch(error => alert(error))
   };
 };
 
@@ -34,7 +34,7 @@ export const login = (email, password) => {
         id: response.uid,
         email: response.email
       }))))
-      .catch(error => console.log(error));
+      .catch(error => alert(error.message));
   };
 };
 
@@ -42,7 +42,7 @@ export const logout = () => {
   return dispatch => {
     firebase.auth().signOut()
       .then(response => dispatch(loginSuccess({})))
-      .catch(error => console.log(error));
+      .catch(error => alert(error.message));
   };
 };
 
@@ -59,7 +59,7 @@ export const fetchSearch = (searchValue, searchType) => {
     fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/search?q=${searchValue}&key=${apikey}&withBreweries=y&withLocations=y`)
       .then(response => response.json())
       .then(results => dispatch(searchAllSuccess(results.data, searchType)))
-      .catch(error => console.log(error));
+      .catch(error => alert(error.message));
   };
 };
 
@@ -75,7 +75,7 @@ export const fetchCity = (city, state, searchType) => {
     fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/locations?key=${apikey}&locality=${city}&region=${state}&withLocations=y`)
       .then(response => response.json())
       .then(results => dispatch(citySuccess(results.data, searchType)))
-      .catch(error => console.log(error));
+      .catch(error => alert(error.message));
   };
 };
 
@@ -91,7 +91,7 @@ export const fetchBrewery = id => {
     fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/${id}?key=${apikey}&withLocations=y`)
       .then(response => response.json())
       .then(results => dispatch(fetchBrewerySuccess(results.data)))
-      .catch(error => console.log(error));
+      .catch(error => alert(error.message));
   };
 };
 
@@ -107,7 +107,7 @@ export const fetchBreweryBeers = id => {
     fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/${id}/beers?key=${apikey}&withBreweries=y`)
       .then(response => response.json())
       .then(results => dispatch(fetchBreweryBeerSuccess(results.data)))
-      .catch(error => console.log(error));
+      .catch(error => alert(error.message));
   };
 };
 
@@ -124,7 +124,7 @@ export const fetchBeerByID = id => {
     fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/beer/${id}?key=c138c8eb0b70d77459a4c1f2f479533a&withBreweries=y`)
       .then(response => response.json())
       .then(results => dispatch(setCurrentBeer(results.data)))
-      .catch(error => console.log(error));
+      .catch(error => alert(error.message));
   };
 };
 
@@ -142,7 +142,7 @@ export const fetchFeatures = () => {
     fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/featured/?key=${apikey}`)
       .then(response => response.json())
       .then(results => dispatch(featureSuccess(results.data)))
-      .catch(error => console.log(error));
+      .catch(error => alert(error.message));
   };
 };
 

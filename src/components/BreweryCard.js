@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import beer1 from '../assets/tap.svg';
+import beer1 from '../assets/beer-tap.svg';
 
 const BreweryCard = ({ brewery, getBrewery, addFavoriteBrewery, user, removeFavoriteBrewery, favorites }) => {
   if (user.email) {

@@ -164,7 +164,9 @@
   margin-bottom: 20px; }
 
 .brewery-icon {
-  width: 150px; }
+  width: 180px;
+  margin-top: 40px;
+  margin-bottom: 30px; }
 
 .favorite-card {
   border: 3px solid #FF644E; }
@@ -270,7 +272,7 @@
 
 .brewery p {
   width: 700px;
-  text-align: justify;
+  text-align: center;
   margin-bottom: 50px; }
 
 .brewery-beers {
@@ -298,7 +300,7 @@
 
 .big-beer p {
   width: 700px;
-  text-align: justify; }
+  text-align: center; }
 
 .big-beer-logo {
   width: 400px; }

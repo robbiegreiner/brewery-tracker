@@ -9,7 +9,7 @@ describe('CityCard component', () => {
     user={{}}
     writeUserData={mockFn}
     getBrewery={mockFn}
-    brewery={{}}
+    brewery={{ brewery : { isFav: true }}}
     key={'vxySde'}/>);
 
 

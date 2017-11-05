@@ -32,7 +32,9 @@
   margin-bottom: 20px; }
 
 .brewery-icon {
-  width: 150px; }
+  width: 180px;
+  margin-top: 40px;
+  margin-bottom: 30px; }
 
 .favorite-card {
   border: 3px solid #FF644E; }
