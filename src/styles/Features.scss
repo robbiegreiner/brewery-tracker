@@ -14,7 +14,6 @@
   // background-image: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
   // border: 2px solid black;
   height: 600px;
-  overflow: hidden;
 }
 
 .brewery-logo-2{
@@ -30,7 +29,7 @@
   // border-bottom: 2px solid black;
 }
 
-.feature-brewery a {
+.feature-brewery a, .feature-beer a {
   color: black;
 }
 
@@ -40,4 +39,9 @@
 
 .feature-beer p {
   margin-top: 0;
+  line-height: 140%;
+}
+
+.feature-brewery p {
+  line-height: 140%;
 }

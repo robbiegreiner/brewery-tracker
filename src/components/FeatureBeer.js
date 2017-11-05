@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const FeatureBeer = ({ featureBeer, getBrewery }) => {
+const FeatureBeer = ({ featureBeer, getBrewery, setCurrentBeer }) => {
 
   const showBrewery = id => {
     getBrewery(id);
@@ -30,7 +30,8 @@ const FeatureBeer = ({ featureBeer, getBrewery }) => {
 
 FeatureBeer.propTypes = {
   featureBeer: PropTypes.object,
-  getBrewery: PropTypes.func
+  getBrewery: PropTypes.func,
+  setCurrentBeer: PropTypes.func
 };
 
 export default FeatureBeer;

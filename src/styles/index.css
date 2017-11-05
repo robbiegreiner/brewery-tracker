@@ -206,8 +206,7 @@
 .feature-brewery, .feature-beer {
   width: 800px;
   background-color: white;
-  height: 600px;
-  overflow: hidden; }
+  height: 600px; }
 
 .brewery-logo-2 {
   filter: opacity(0.9); }
@@ -215,14 +214,18 @@
 .feature-brewery p, .feature-beer p {
   padding: 20px 50px 20px 50px; }
 
-.feature-brewery a {
+.feature-brewery a, .feature-beer a {
   color: black; }
 
 .feature-location {
   margin-top: 20px; }
 
 .feature-beer p {
-  margin-top: 0; }
+  margin-top: 0;
+  line-height: 140%; }
+
+.feature-brewery p {
+  line-height: 140%; }
 
 .landing {
   width: 100%;
@@ -278,8 +281,11 @@
   width: 400px;
   filter: opacity(0.9); }
 
-.big-beer h3 {
+.big-beer h3, .big-beer h2 {
   margin-bottom: 10px; }
+
+.big-beer a {
+  color: black; }
 
 .login {
   margin-top: 120px; }

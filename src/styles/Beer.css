@@ -17,5 +17,8 @@
   width: 400px;
   filter: opacity(0.9); }
 
-.big-beer h3 {
+.big-beer h3, .big-beer h2 {
   margin-bottom: 10px; }
+
+.big-beer a {
+  color: black; }
