@@ -17,7 +17,7 @@ class Beer extends Component {
       return (
         <div className='big-beer'>
           <h1>{beer.name}</h1>
-          {beer.labels ? <img className='big-beer-logo' src={beer.labels.large}></img> : <img src={beer2}></img>}
+          {beer.labels ? <img className='big-beer-logo' src={beer.labels.large}></img> : <img className='big-beer-icon' src={beer2}></img>}
           <h2>{beer.breweries ? <Link to={'/brewery/' + beer.breweries[0].id}>{beer.breweries[0].name}</Link> : 'no brewery'}</h2>
           <h3>{beer.style ? beer.style.name : 'no style'}</h3>
           <h3>{beer.abv}% ABV</h3>

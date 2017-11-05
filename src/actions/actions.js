@@ -88,7 +88,7 @@ export const fetchBrewerySuccess = brewery => {
 
 export const fetchBrewery = id => {
   return dispatch => {
-    fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/${id}?key=${apikey}`)
+    fetch(`https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/brewery/${id}?key=${apikey}&withLocations=y`)
       .then(response => response.json())
       .then(results => dispatch(fetchBrewerySuccess(results.data)))
       .catch(error => console.log(error));

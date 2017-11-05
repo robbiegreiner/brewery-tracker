@@ -10,15 +10,22 @@
 
 .big-beer h1 {
   margin-top: 150px;
+  font-size: 50px;
 }
 
 .big-beer p {
   width: 700px;
+  text-align: justify;
 }
 
 .big-beer-logo {
   width: 400px;
-  filter: opacity(.9);
+}
+
+.big-beer-icon {
+  width: 300px;
+  margin-left: 50px;
+  margin-bottom: 50px;
 }
 
 .big-beer h3, .big-beer h2{
