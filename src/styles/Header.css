@@ -24,7 +24,11 @@
   cursor: pointer; }
 
 .header a {
-  color: white; }
+  color: white;
+  transition: all .15s ease-in-out; }
+
+.header a:hover {
+  color: #FF644E; }
 
 .header h1 {
   text-align: center; }
