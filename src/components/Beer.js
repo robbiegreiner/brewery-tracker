@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import beer2 from '../assets/beer4.svg';
 
 class Beer extends Component {
   constructor() {
@@ -15,10 +17,10 @@ class Beer extends Component {
       return (
         <div className='big-beer'>
           <h1>{beer.name}</h1>
-          {beer.labels ? <img className='brewery-logo' src={beer.labels.medium}></img> : ''}
-          <h3>{beer.breweries ? beer.breweries[0].name : 'no brewery'}</h3>
+          {beer.labels ? <img className='big-beer-logo' src={beer.labels.large}></img> : <img src={beer2}></img>}
+          <h3>{beer.breweries ? <Link to={'/brewery/' + beer.breweries[0].id}>{beer.breweries[0].name}</Link> : 'no brewery'}</h3>
           <h3>{beer.style ? beer.style.name : 'no style'}</h3>
-          <h3>{beer.abv}</h3>
+          <h3>{beer.abv}% ABV</h3>
           <p>{beer.description}</p>
         </div>
       );
@@ -41,7 +43,8 @@ class Beer extends Component {
 Beer.propTypes = {
   currentBeer: PropTypes.object,
   match: PropTypes.object,
-  removeFavorite: PropTypes.func
+  removeFavorite: PropTypes.func,
+  getBrewery: PropTypes.func
 };
 
 export default Beer;
