@@ -7,7 +7,8 @@ describe('Header component', () => {
 
 
   it('should match snapshot', () => {
-    wrapper = shallow(<Header />)
+    wrapper = shallow(<Header
+      user={{email: 'robbieg@mailg.com'}}/>);
     // console.log(wrapper.debug());
     expect(wrapper).toMatchSnapshot();
   });

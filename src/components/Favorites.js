@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import BeerCard from './BeerCard.js';
 import BreweryCard from './BreweryCard.js';
-import firebase from '../firebase.js';
 
 
 class Favorites extends Component {
@@ -12,10 +11,12 @@ class Favorites extends Component {
 
   componentDidMount() {
     const { favorites, getFavoriteBeers, getFavoriteBreweries } = this.props;
-    const brewIDs = this.cleanBreweryFavorites(favorites);
-    const beerIDs = this.cleanBeerFavorites(favorites);
-    getFavoriteBeers(beerIDs);
-    getFavoriteBreweries(brewIDs);
+    if (favorites!== null){
+      const brewIDs = this.cleanBreweryFavorites(favorites);
+      const beerIDs = this.cleanBeerFavorites(favorites);
+      getFavoriteBeers(beerIDs);
+      getFavoriteBreweries(brewIDs);
+    }
   }
 
   cleanBreweryFavorites(favorites) {

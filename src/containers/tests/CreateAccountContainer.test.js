@@ -36,7 +36,7 @@ describe('CreateAccountContainer', () => {
       store={store}
       user={initialState.user}
       createAccount={mockCreateAccount}/>, { context });
-    const createUser = altWrapper.find('.create-btn').first();
+    const createUser = altWrapper.find('.login-btn').first();
 
     createUser.simulate('click');
     expect(mockCreateAccount).toHaveBeenCalledTimes(1);

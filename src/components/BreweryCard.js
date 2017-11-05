@@ -18,7 +18,7 @@ const BreweryCard = ({ brewery, getBrewery, addFavoriteBrewery, user, removeFavo
         <Link to={'/brewery/' + brewery.id}>
           <h4 onClick={() => getBrewery(brewery.id)}>DETAILS</h4>
         </Link>
-        { removeFavoriteBrewery ? <h4 className='favorite' onClick={() => removeFavoriteBrewery(user.id, brewery.firebaseID)}>UNFAVORITE</h4> : <h4 className='favorite' onClick={() => addFavoriteBrewery(favorites, user.id, 'brewery', brewery.id, brewery)}>FAVORITE</h4> }
+        { removeFavoriteBrewery ? <h4 className='unfavorite favorite' onClick={() => removeFavoriteBrewery(user.id, brewery.firebaseID)}>UNFAVORITE</h4> : <h4 className='favorite' onClick={() => addFavoriteBrewery(favorites, user.id, 'brewery', brewery.id, brewery)}>FAVORITE</h4> }
       </div>
     );
   } else {

@@ -2,7 +2,7 @@ import React from "react";
 import Brewery from '../Brewery';
 import { shallow } from "enzyme";
 
-describe('BeerCard component', () => {
+describe.skip('BeerCard component', () => {
   const mockFn = jest.fn();
 
   const wrapper = shallow(<Brewery

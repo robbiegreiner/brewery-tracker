@@ -5,33 +5,33 @@ import createRouterContext from 'react-router-test-context';
 import { mount } from 'enzyme';
 import * as actions from '../../actions/actions';
 import thunk from 'redux-thunk';
-import BeerContainer from '../BeerContainer';
-import Beer from '../../components/Beer';
+import BreweryContainer from '../BreweryContainer';
+import Brewery from '../../components/Brewery';
 
-describe.skip('BeerContainer', () => {
+describe.skip('BreweryContainer', () => {
   const middlewaress = [thunk];
   const mockStore = configureStore();
   const initialState = {
-    currentBeer: {}
+    currentBrewery: {}
   };
-  const mockGetBeerByID = jest.fn();
+  const mockGetBreweryByID = jest.fn();
   const store= mockStore(initialState);
   const context = createRouterContext();
 
-  actions.fetchBeerByID = () => ({type: 'SET_CURRENT_BEER'});
+  actions.fetchBreweryByID = () => ({type: 'SET_CURRENT_BEER'});
 
-  BeerContainer.contextTypes = {
+  BreweryContainer.contextTypes = {
     router: PropTypes.object
   };
 
-  const wrapper = mount(<BeerContainer
+  const wrapper = mount(<BreweryContainer
     store={store}
-    currentBeer={initialState.currentBeer}
+    currentBrewery={initialState.currentBrewery}
     match={ {match: { params: { beer_id: 'vcxy7z' } } } }
-    getBeerByID={mockGetBeerByID}/>, { context });
+    getBreweryByID={mockGetBreweryByID}/>, { context });
 
   it.skip('should have a default state', () => {
-    expect(wrapper.instance().props.currentBeer).toEqual({});
+    expect(wrapper.instance().props.currentBrewery).toEqual({});
   });
 
 });

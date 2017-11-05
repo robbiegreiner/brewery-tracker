@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import BeerCard from './BeerCard.js';
 import BreweryCard from './BreweryCard.js';
 import CityCard from './CityCard.js';
-import firebase from '../firebase.js';
 
-const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, user, removeFavoriteBeer, removeFavoriteBrewery, addFavoriteBrewery, addFavoriteBeer, favorites }) => {
+const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, user, addFavoriteBrewery, addFavoriteBeer, favorites }) => {
 
   const beerResults = searchResults.filter( result => {
     return result.style;
@@ -90,8 +88,9 @@ SearchResults.propTypes = {
   setCurrentBeer: PropTypes.func,
   searchType: PropTypes.string,
   user: PropTypes.object,
-  removeFavoriteBeer: PropTypes.func,
-  removeFavoriteBrewery: PropTypes.func
+  addFavoriteBeer: PropTypes.func,
+  addFavoriteBrewery: PropTypes.func,
+  favorites: PropTypes.object
 };
 
 export default SearchResults;

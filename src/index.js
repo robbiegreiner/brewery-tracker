@@ -13,7 +13,7 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <App />
-        {/* <DevTools /> */}
+        <DevTools />
       </div>
     </BrowserRouter>
   </Provider>,
