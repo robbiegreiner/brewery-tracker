@@ -13,8 +13,7 @@
 
 .search-container button {
     margin: 20px 0px 10px 0px;
-    background-color: #868e96;
-    border-color: #868e96;
+    background-color: #2C4154;
     color: white;
     text-align: center;
     white-space: nowrap;
@@ -33,7 +32,12 @@
 }
 
 .search-container button:hover {
-  background-color: #364248;
+  background-color: #FF644E;
+  border: 2px solid #2C4154;
+}
+
+.search-container input:focus{
+  outline: 2px solid #FF644E;
 }
 
 .search-container input {
@@ -42,6 +46,7 @@
   border-radius: .25rem;
   font-size: 16px;
   border: 2px solid #41403D;
+  padding-left: 5px;
 }
 
 .card-container {

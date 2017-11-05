@@ -14,9 +14,9 @@ const FeatureBrewery = ({ featureBrewery, getBrewery }) => {
       <div className='feature-brewery' onClick={() => showBrewery(featureBrewery.id)}>
         <h1>Featured Brewery</h1>
         <h2>{featureBrewery.name}</h2>
-        <Link to='/brewery'><img className='brewery-logo' src={featureBrewery.images.large}></img></Link>
+        <Link to='/brewery'><img className='brewery-logo-2' src={featureBrewery.images.large}></img></Link>
         <h3>{featureBrewery.locations[0].locality}, {featureBrewery.locations[0].region}</h3>
-        <h4>{featureBrewery.website}</h4>
+        <a href={featureBrewery.website}>{featureBrewery.website}</a>
         <p>{featureBrewery.description ? featureBrewery.description : 'no description provided'}</p>
       </div>
     );
