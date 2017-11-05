@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import beer1 from '../assets/beer2.svg';
 
 const BeerCard = ({ beer, setCurrentBeer, addFavoriteBeer, user, removeFavoriteBeer }) => {
-  if (user.email){
+  if (user.email && beer.breweries){
     return (
       <div className={ beer.isFav ? 'favorite-card' : 'beer-card' }>
         <Link to={'/beer/' + beer.id}>
@@ -21,11 +21,11 @@ const BeerCard = ({ beer, setCurrentBeer, addFavoriteBeer, user, removeFavoriteB
         <h3 className='abv'>{beer.abv}% ABV</h3>
         <div className='bottom-btns'>
           <Link to={'/beer/' + beer.id}><h4 className='view-beer'>DETAILS</h4></Link>
-          { removeFavoriteBeer ? <h4 className='favorite' onClick={() => removeFavoriteBeer(user.id, beer.firebaseID)}>UNFAVORITE</h4> : <h4 className='favorite' onClick={() => addFavoriteBeer(user.id, 'beer', beer.id, beer )}>FAVORITE</h4>}
+          { removeFavoriteBeer ? <h4 className='favorite unfavorite' onClick={() => removeFavoriteBeer(user.id, beer.firebaseID)}>UNFAVORITE</h4> : <h4 className='favorite unfavorite' onClick={() => addFavoriteBeer(user.id, 'beer', beer.id, beer )}>FAVORITE</h4>}
         </div>
       </div>
     );
-  } else {
+  } else if (beer.breweries) {
     return (
       <div className={ beer.isFav ? 'favorite-card' : 'beer-card' }>
         <Link to={'/beer/' + beer.id}>
@@ -44,6 +44,12 @@ const BeerCard = ({ beer, setCurrentBeer, addFavoriteBeer, user, removeFavoriteB
           <Link to={'/beer/' + beer.id}><h4 className='view-beer'>DETAILS</h4></Link>
           <Link to='/login'><h4 className='favorite'>FAVORITE</h4></Link>
         </div>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        No Results
       </div>
     );
   }

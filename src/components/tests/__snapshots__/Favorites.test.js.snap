@@ -5,14 +5,11 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Favorites
-    addFavoriteBeer={[Function]}
-    addFavoriteBrewery={[Function]}
     favoriteBeers={Array []}
     favoriteBreweries={Array []}
     favorites={Object {}}
     getFavoriteBeers={[Function]}
     getFavoriteBreweries={[Function]}
-    getFavorites={[Function]}
     removeFavoriteBeer={[Function]}
     removeFavoriteBreweries={[Function]}
     setCurrentBeer={[Function]}

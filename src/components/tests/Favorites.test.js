@@ -9,14 +9,11 @@ describe('Favorites component', () => {
     favorites={{}}
     favoriteBeers={[]}
     favoriteBreweries={[]}
-    getFavorites={mockFn}
     getFavoriteBeers={mockFn}
     getFavoriteBreweries={mockFn}
     setCurrentBeer={mockFn}
     removeFavoriteBeer={mockFn}
-    removeFavoriteBreweries={mockFn}
-    addFavoriteBeer={mockFn}
-    addFavoriteBrewery={mockFn}/>);
+    removeFavoriteBreweries={mockFn}/>);
 
 
   it('should match snapshot', () => {
