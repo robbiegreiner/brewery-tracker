@@ -68,12 +68,16 @@ class Favorites extends Component {
   }
 
   render() {
-    if (this.props.favoriteBeers){
+    if (this.props.favoriteBeers.length || this.props.favoriteBreweries.length){
       return (
         <div className='favorites'>
           <h1>Favorites</h1>
+          {this.props.favoriteBreweries.length ? <h1>Breweries</h1> : ''}
           <div className='card-container'>
             {this.renderBreweries()}
+          </div>
+          {this.props.favoriteBeers.length ? <h1>Beers</h1> : ''}
+          <div className='card-container'>
             {this.renderBeers()}
           </div>
         </div>
@@ -81,7 +85,7 @@ class Favorites extends Component {
     } else {
       return (
         <div className='favorites'>
-          <h1>Favorites Not Here!</h1>
+          <h1>Your Favorites Are Empty!</h1>
         </div>
       );
     }
