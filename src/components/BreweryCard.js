@@ -14,11 +14,14 @@ const BreweryCard = ({ brewery, getBrewery, addFavoriteBrewery, user, removeFavo
         <Link to={'/brewery/' + brewery.id}>
           {brewery.images ? <img onClick={() => getBrewery(brewery.id)} className='brewery-logo' src={brewery.images.squareMedium}></img>: <img onClick={() => getBrewery(brewery.id)} className='brewery-icon' src={beer1}></img>}
         </Link>
+        <a className='website' href={brewery.website}>{brewery.website}</a>
         <h3 className='type'>{brewery.locations ? brewery.locations[0].locationTypeDisplay : ''}</h3>
-        <Link to={'/brewery/' + brewery.id}>
-          <h4 onClick={() => getBrewery(brewery.id)}>DETAILS</h4>
-        </Link>
-        { removeFavoriteBrewery ? <h4 className='unfavorite favorite' onClick={() => removeFavoriteBrewery(user.id, brewery.firebaseID)}>UNFAVORITE</h4> : <h4 className='favorite' onClick={() => addFavoriteBrewery(favorites, user.id, 'brewery', brewery.id, brewery)}>FAVORITE</h4> }
+        <div className='bottom-btns'>
+          <Link to={'/brewery/' + brewery.id}>
+            <button className='view-beer' onClick={() => getBrewery(brewery.id)}>DETAILS</button>
+          </Link>
+          { removeFavoriteBrewery ? <button className='unfavorite favorite' onClick={() => removeFavoriteBrewery(user.id, brewery.firebaseID)}>UNFAVORITE</button> : <button className='favorite' onClick={() => addFavoriteBrewery(favorites, user.id, 'brewery', brewery.id, brewery)}>FAVORITE</button> }
+        </div>
       </div>
     );
   } else {
@@ -33,10 +36,12 @@ const BreweryCard = ({ brewery, getBrewery, addFavoriteBrewery, user, removeFavo
         </Link>
         <a className='website' href={brewery.website}>{brewery.website}</a>
         <h3 className='type'>{brewery.locations ? brewery.locations[0].locationTypeDisplay : ''}</h3>
-        <Link to={'/brewery/' + brewery.id}>
-          <h4 onClick={() => getBrewery(brewery.id)}>DETAILS</h4>
-        </Link>
-        <Link to='/login'><h4 className='favorite'>FAVORITE</h4></Link>
+        <div className='bottom-btns'>
+          <Link to={'/brewery/' + brewery.id}>
+            <button className='view-beer' onClick={() => getBrewery(brewery.id)}>DETAILS</button>
+          </Link>
+          <Link to='/login'><button className='favorite'>FAVORITE</button></Link>
+        </div>
       </div>
     );
   }

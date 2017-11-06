@@ -18,10 +18,10 @@ const BeerCard = ({ beer, setCurrentBeer, addFavoriteBeer, user, removeFavoriteB
           {beer.labels ? <img className='beer-logo' src={beer.labels.medium}></img> : <img className='beer-icon' src={beer1}></img> }
         </Link>
         <h3 className='style'>{beer.style ? beer.style.name : ''}</h3>
-        <h3 className='abv'>{beer.abv}% ABV</h3>
+        <h3 className='abv'>{beer.abv ? beer.abv + "% ABV" : ''}</h3>
         <div className='bottom-btns'>
-          <Link to={'/beer/' + beer.id}><h4 className='view-beer'>DETAILS</h4></Link>
-          { removeFavoriteBeer ? <h4 className='favorite unfavorite' onClick={() => removeFavoriteBeer(user.id, beer.firebaseID)}>UNFAVORITE</h4> : <h4 className='favorite unfavorite' onClick={() => addFavoriteBeer(user.id, 'beer', beer.id, beer )}>FAVORITE</h4>}
+          <Link to={'/beer/' + beer.id}><button className='view-beer'>DETAILS</button></Link>
+          { removeFavoriteBeer ? <button className='favorite unfavorite' onClick={() => removeFavoriteBeer(user.id, beer.firebaseID)}>UNFAVORITE</button> : <button className='favorite unfavorite' onClick={() => addFavoriteBeer(user.id, 'beer', beer.id, beer )}>FAVORITE</button>}
         </div>
       </div>
     );
@@ -39,10 +39,10 @@ const BeerCard = ({ beer, setCurrentBeer, addFavoriteBeer, user, removeFavoriteB
           {beer.labels ? <img className='beer-logo' src={beer.labels.medium}></img> : <img className='beer-icon' src={beer1}></img> }
         </Link>
         <h3 className='style'>{beer.style ? beer.style.name : ''}</h3>
-        <h3 className='abv'>ABV: {beer.abv}</h3>
+        <h3 className='abv'>{beer.abv ? beer.abv + "% ABV" : ''}</h3>
         <div className='bottom-btns'>
-          <Link to={'/beer/' + beer.id}><h4 className='view-beer'>DETAILS</h4></Link>
-          <Link to='/login'><h4 className='favorite'>FAVORITE</h4></Link>
+          <Link to={'/beer/' + beer.id}><button className='view-beer'>DETAILS</button></Link>
+          <Link to='/login'><button className='favorite'>FAVORITE</button></Link>
         </div>
       </div>
     );
