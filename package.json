@@ -2,6 +2,7 @@
   "name": "brewery-tracker",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://www.robbieg.io/brewscout/",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "css-loader": "^0.28.7",
