@@ -138,10 +138,12 @@
   margin: 15px 15px 15px 15px;
   background-color: #2C4154;
   color: white;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  position: relative; }
 
 .beer-card a, .favorite-card a {
-  color: white; }
+  color: white;
+  word-wrap: break-word; }
 
 .beer-card h2, .favorite-card h2 {
   margin-top: 20px;
@@ -163,6 +165,9 @@
   margin-top: 30px;
   margin-bottom: 20px; }
 
+.beer-icon {
+  width: 200px; }
+
 .brewery-icon {
   width: 180px;
   margin-top: 40px;
@@ -174,6 +179,9 @@
 .style, .abv {
   margin-bottom: 10px; }
 
+.style {
+  margin: 10px; }
+
 .view-beer {
   margin-bottom: 0px;
   margin-top: 0px;
@@ -184,10 +192,22 @@
   width: 100%;
   justify-content: center;
   margin-top: 20px;
-  font-size: 20px; }
+  font-size: 20px;
+  position: absolute;
+  bottom: 10px; }
 
-.favorite {
-  cursor: pointer; }
+.favorite, .unfavorite, .view-beer {
+  cursor: pointer;
+  height: 30px;
+  width: 100px;
+  background-color: #2C4154;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white; }
+
+.favorite:hover, .unfavorite:hover, .view-beer:hover {
+  background-color: #EF4937; }
 
 .website {
   font-size: 12px;
