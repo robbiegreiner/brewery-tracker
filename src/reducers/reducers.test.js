@@ -2,7 +2,7 @@ import brewery from './brewery';
 import breweryBeers from './breweryBeers';
 import currentBeer from './currentBeer';
 import favorites from './favorites';
-import featureBeer from './featureBrewery';
+import featureBeer from './featureBeer';
 import featureBrewery from './featureBrewery';
 import searchResults from './searchResults';
 import searchType from './searchType';
@@ -50,18 +50,6 @@ describe('currentBeer reducer', () => {
   });
 });
 
-// describe('favorites reducer', () => {
-//   // it('should have a default state', () => {
-//   //   expect(currentBeer(undefined, {})).toEqual({});
-//   // });
-//   //
-//   // it('should give a beer', () => {
-//   //   const action = { type: 'SET_CURRENT_BEER', beer: mockBeerData };
-//   //
-//   //   expect(currentBeer(undefined, action)).toEqual(mockBeerData);
-//   // });
-// });
-
 describe('featureBeer reducer', () => {
   it('should have a default state', () => {
     expect(featureBeer(undefined, {})).toEqual({});
@@ -82,7 +70,7 @@ describe('featureBrewery reducer', () => {
   it('should give a brewery', () => {
     const action = { type: 'FEATURE_SUCCESS', features: mockFeaturesData.data };
 
-    expect(featureBeer(undefined, action)).toEqual(mockFeaturesData.data.brewery);
+    expect(featureBrewery(undefined, action)).toEqual(mockFeaturesData.data.brewery);
   });
 });
 
