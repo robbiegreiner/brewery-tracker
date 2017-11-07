@@ -9,7 +9,8 @@ import CreateAccount from '../../components/CreateAccount';
 describe('CreateAccountContainer', () => {
   const mockStore = configureStore();
   const initialState = {
-    user: {}
+    user: {},
+    errorMessage: ''
   };
   const mockCreateAccount = jest.fn();
   const store= mockStore(initialState);
@@ -21,6 +22,7 @@ describe('CreateAccountContainer', () => {
 
   const wrapper = mount(<CreateAccountContainer
     store={store}
+    errorMessage=''
     user={initialState.user}
     createAccount={mockCreateAccount}/>, { context });
 
@@ -34,6 +36,7 @@ describe('CreateAccountContainer', () => {
     };
     const altWrapper = mount(<CreateAccount
       store={store}
+      errorMessage=''
       user={initialState.user}
       createAccount={mockCreateAccount}/>, { context });
     const createUser = altWrapper.find('.login-btn').first();

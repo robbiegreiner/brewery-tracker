@@ -7,6 +7,7 @@ describe('Login component', () => {
 
   const wrapper = shallow(<Login
     user={{id:'vafahiuweh'}}
+    errorMessage=''
     login={mockFn}/>);
 
 
