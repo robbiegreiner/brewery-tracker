@@ -73,7 +73,6 @@ class Landing extends Component {
         </div>
         <footer>
           <h3>© Robbie Greiner 2017</h3>
-          <h3>Thanks for Visiting!</h3>
         </footer>
       </div>
     );
