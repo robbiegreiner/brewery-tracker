@@ -10,6 +10,7 @@ import searchType from './searchType';
 import favorites from './favorites';
 import favoriteBeers from './favoriteBeers';
 import favoriteBreweries from './favoriteBreweries';
+import errorMessage from './errorMessage';
 
 const rootReducer = combineReducers({
   user,
@@ -22,7 +23,8 @@ const rootReducer = combineReducers({
   searchType,
   favorites,
   favoriteBeers,
-  favoriteBreweries
+  favoriteBreweries,
+  errorMessage
 });
 
 export default rootReducer;
