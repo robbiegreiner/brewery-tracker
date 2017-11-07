@@ -23,7 +23,7 @@ describe('SearchResultsContainer', () => {
   const mockGetBrewery = jest.fn();
   const mockAddFavoriteBeer = jest.fn();
   const mockAddFavoriteBrewery = jest.fn();
-  const store= mockStore(initialState, middlewares);
+  const store = mockStore(initialState, middlewares);
   const context = createRouterContext();
 
   SearchResultsContainer.contextTypes = {
