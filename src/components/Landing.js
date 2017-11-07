@@ -71,6 +71,10 @@ class Landing extends Component {
             featureBeer={this.props.featureBeer}
             setCurrentBeer ={this.props.setCurrentBeer}/>
         </div>
+        <footer>
+          <h3>© Robbie Greiner 2017</h3>
+          <h3>Thanks for Visiting!</h3>
+        </footer>
       </div>
     );
 
