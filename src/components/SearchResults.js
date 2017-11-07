@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BeerCard from './BeerCard.js';
 import BreweryCard from './BreweryCard.js';
+import { Link } from 'react-router-dom';
 import CityCard from './CityCard.js';
 
-const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, user, addFavoriteBrewery, addFavoriteBeer, favorites }) => {
+const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, user, addFavoriteBrewery, addFavoriteBeer, favorites, errorMessage }) => {
 
   const beerResults = searchResults.filter( result => {
     return result.style;
@@ -69,10 +70,22 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, 
       key={brewery.id}/>;
   });
 
+  const showError = () => {
+    if (errorMessage || !searchResults.length) {
+      return (
+        <div>
+          <h2>No results found, please enter a valid brewery, beer or city.</h2>
+          <Link to='/'><h2 className='search-again'>Click Here To Search Again!</h2></Link>
+        </div>
+      );
+    }
+  };
+
   return (
     <div className='search-results'>
       <h1>Search Results</h1>
       <div className='card-container'>
+        { showError() }
         { searchType === 'beer' ? beerCards : null}
         { searchType === 'brewery' ? breweryCards : null}
         { searchType === 'city' ? cityCards : null}
@@ -90,7 +103,8 @@ SearchResults.propTypes = {
   user: PropTypes.object,
   addFavoriteBeer: PropTypes.func,
   addFavoriteBrewery: PropTypes.func,
-  favorites: PropTypes.object
+  favorites: PropTypes.object,
+  errorMessage: PropTypes.string
 };
 
 export default SearchResults;
