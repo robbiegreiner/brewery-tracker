@@ -2,8 +2,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  overflow: hidden; }
+  align-items: center; }
 
 .header {
   background: #2C4154;
