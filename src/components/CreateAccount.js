@@ -29,6 +29,7 @@ class CreateAccount extends Component {
       <div className='login'>
         { this.props.user.id ? <Redirect to='/'/> : null}
         <h1>Create Account</h1>
+        {this.props.errorMessage.length ? <h4 className='error-message'>Error: {this.props.errorMessage}</h4> : ''}
         <input placeholder="email" className="email-input" onChange={(event) => this.handleChange('email', event) }></input>
         <input type="password" placeholder="password" className='password-input' onChange={(event) => this.handleChange('password', event) }></input>
         <button className='login-btn' onClick={ () => this.createNewUser()}>submit</button>
@@ -41,7 +42,8 @@ class CreateAccount extends Component {
 
 CreateAccount.propTypes = {
   createAccount: PropTypes.func,
-  user: PropTypes.object
+  user: PropTypes.object,
+  errorMessage: PropTypes.string
 };
 
 export default CreateAccount;
