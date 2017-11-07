@@ -89,6 +89,7 @@
   display: flex; }
 
 .search-container button {
+  cursor: pointer;
   margin: 20px 0px 10px 0px;
   background-color: #2C4154;
   color: white;
