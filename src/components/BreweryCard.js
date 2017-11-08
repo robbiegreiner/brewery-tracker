@@ -10,11 +10,11 @@ const showFavoriteButton = (user, brewery, removeFavoriteBrewery, addFavoriteBre
     );
   } else if (user.email && !removeFavoriteBrewery) {
     return (
-      <button className='favorite' onClick={() => addFavoriteBrewery(favorites, user.id, 'brewery', brewery.id, brewery)}>FAVORITE</button>
+      <button className='favorite favorite-2' onClick={() => addFavoriteBrewery(favorites, user.id, 'brewery', brewery.id, brewery)}>FAVORITE</button>
     );
   } else {
     return (
-      <Link to='/login'><button className='favorite'>FAVORITE</button></Link>
+      <Link to='/login'><button className='favorite favorite-2'>FAVORITE</button></Link>
     );
   }
 };

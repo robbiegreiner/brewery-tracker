@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import BeerCard from './BeerCard.js';
-import firebase from '../firebase.js';
 
 class Brewery extends Component {
   constructor() {
@@ -22,6 +21,19 @@ class Brewery extends Component {
     }
   }
 
+  showFavoriteButton() {
+    const { brewery, user, favorites, addFavoriteBrewery } = this.props;
+    if (user.email) {
+      return (
+        <button className='favorite' onClick={() => addFavoriteBrewery(favorites, user.id, 'brewery', brewery.id, brewery)}>ADD FAVORITE</button>
+      );
+    } else {
+      return (
+        <Link to='/login'><button className='favorite'>ADD FAVORITE</button></Link>
+      );
+    }
+  }
+
   renderBrewery() {
     const { brewery } = this.props;
 
@@ -29,6 +41,7 @@ class Brewery extends Component {
       return (
         <div className='brewery'>
           <h1>{brewery.name}</h1>
+          {this.showFavoriteButton()}
           {brewery.images ? <img className='brewery-page-logo' src={brewery.images.large}></img> : ''}
           <div className='location-box'>
             <h2>{brewery.locations[0].name}</h2>
@@ -47,7 +60,7 @@ class Brewery extends Component {
   }
 
   renderBeers() {
-    const { breweryBeers, setCurrentBeer, user, addFavoriteBeer, removeFavoriteBeer, favorites } = this.props;
+    const { breweryBeers, setCurrentBeer, user, addFavoriteBeer, favorites } = this.props;
     if (breweryBeers) {
       return breweryBeers.map( beer => {
         return <BeerCard
@@ -86,7 +99,10 @@ Brewery.propTypes = {
   removeFavorite: PropTypes.func,
   removeFavoriteBeer: PropTypes.func,
   removeFavoriteBrewery: PropTypes.func,
-  getBrewery: PropTypes.func
+  getBrewery: PropTypes.func,
+  addFavoriteBeer: PropTypes.func,
+  addFavoriteBrewery: PropTypes.func,
+  favorites: PropTypes.object
 };
 
 export default Brewery;

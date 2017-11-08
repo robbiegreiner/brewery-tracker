@@ -17,11 +17,11 @@ class Beer extends Component {
     const { user, currentBeer, addFavoriteBeer } = this.props;
     if (user.email){
       return (
-        <button className='favorite unfavorite' onClick={() => addFavoriteBeer(user.id, 'beer', currentBeer.id, currentBeer )}>FAVORITE</button>
+        <button className='favorite favorite-2' onClick={() => addFavoriteBeer(user.id, 'beer', currentBeer.id, currentBeer )}>ADD FAVORITE</button>
       );
     } else {
       return (
-        <Link to='/login'><button className='favorite'>FAVORITE</button></Link>
+        <Link to='/login'><button className='favorite favorite-2'>ADD FAVORITE</button></Link>
       );
     }
   }
