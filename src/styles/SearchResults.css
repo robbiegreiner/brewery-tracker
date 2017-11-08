@@ -10,6 +10,7 @@
   display: flex; }
 
 .search-container button {
+  cursor: pointer;
   margin: 20px 0px 10px 0px;
   background-color: #2C4154;
   color: white;
@@ -49,3 +50,7 @@
   justify-content: center;
   align-items: center;
   width: 95%; }
+
+.search-again {
+  color: #FF644E;
+  margin-top: 30px; }

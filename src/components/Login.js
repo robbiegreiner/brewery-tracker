@@ -27,6 +27,7 @@ class Login extends Component {
       <div className='login'>
         { this.props.user.id ? <Redirect to='/'/> : null}
         <h1>Login</h1>
+        {this.props.errorMessage.length ? <h4 className='error-message'>Error: {this.props.errorMessage}</h4> : ''}
         <input placeholder="email" className="email-input" onChange={(event) => this.handleChange('email', event) }></input>
         <input placeholder="password" type="password" className="password-input" onChange={(event) => this.handleChange('password', event) }></input>
         <button className='login-btn' onClick={ () => this.userLogin()}>submit</button>
@@ -38,7 +39,8 @@ class Login extends Component {
 
 Login.propTypes = {
   login: PropTypes.func,
-  user: PropTypes.object
+  user: PropTypes.object,
+  errorMessage: PropTypes.string
 };
 
 export default Login;

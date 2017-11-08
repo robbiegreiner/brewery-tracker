@@ -7,6 +7,7 @@ describe('CreateAccount component', () => {
 
   const wrapper = shallow(<CreateAccount
     user={{}}
+    errorMessage={''}
     createAccount={mockFn}/>);
 
 

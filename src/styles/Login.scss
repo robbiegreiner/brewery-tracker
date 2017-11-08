@@ -2,6 +2,10 @@
   margin-top: 120px;
 }
 
+.error-message {
+  color: #FF644E;
+}
+
 .login {
   color: white;
   display: flex;
@@ -13,7 +17,7 @@
   z-index: 100;
   transform: translate(-50%, -50%);
   background-color: #27394A;
-  height: 340px;
+  height: 400px;
   width: 400px;
   border-radius: 5px;
   padding: 30px;

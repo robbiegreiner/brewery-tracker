@@ -8,7 +8,8 @@ const mapStateToProps = store => ({
   searchResults: store.searchResults,
   searchType: store.searchType,
   user: store.user,
-  favorites: store.favorites
+  favorites: store.favorites,
+  errorMessage: store.errorMessage
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -3,7 +3,8 @@ import CreateAccount  from '../components/CreateAccount';
 import { createAccount } from '../actions/actions.js';
 
 const mapStateToProps = store => ({
-  user: store.user
+  user: store.user,
+  errorMessage: store.errorMessage
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -9,7 +9,8 @@ import Login from '../../components/Login';
 describe('LoginContainer', () => {
   const mockStore = configureStore();
   const initialState = {
-    user: {}
+    user: {},
+    errorMessage: ''
   };
   const mockLogin = jest.fn();
   const store= mockStore(initialState);
@@ -22,6 +23,7 @@ describe('LoginContainer', () => {
   const wrapper = mount(<LoginContainer
     store={store}
     user={initialState.user}
+    errorMessage={initialState.errorMessage}
     login={mockLogin}/>, { context });
 
   it('should have a default state', () => {
@@ -35,6 +37,7 @@ describe('LoginContainer', () => {
     const altWrapper = mount(<Login
       store={store}
       user={initialState.user}
+      errorMessage={initialState.errorMessage}
       login={mockLogin}/>, { context });
     const createUser = altWrapper.find('.login-btn').first();
 

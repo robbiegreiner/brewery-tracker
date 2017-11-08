@@ -5,6 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Login
+    errorMessage=""
     login={[Function]}
     user={
         Object {
@@ -32,6 +33,7 @@ ShallowWrapper {
         <h1>
           Login
 </h1>,
+        "",
         <input
           className="email-input"
           onChange={[Function]}
@@ -85,6 +87,7 @@ ShallowWrapper {
         "rendered": "Login",
         "type": "h1",
       },
+      "",
       Object {
         "instance": null,
         "key": null,
@@ -167,6 +170,7 @@ ShallowWrapper {
           <h1>
             Login
 </h1>,
+          "",
           <input
             className="email-input"
             onChange={[Function]}
@@ -220,6 +224,7 @@ ShallowWrapper {
           "rendered": "Login",
           "type": "h1",
         },
+        "",
         Object {
           "instance": null,
           "key": null,
