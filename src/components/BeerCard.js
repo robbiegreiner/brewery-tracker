@@ -14,7 +14,7 @@ const showFavoriteButton = (user, addFavoriteBeer, removeFavoriteBeer, beer) => 
   } else {
     return (
       <div className='bottom-btns'>
-        <Link to={'/beer/' + beer.id}><button className='view-beer'>DETAILS</button></Link>
+        <Link to={`/beer/${beer.id}`}><button className='view-beer'>DETAILS</button></Link>
         <Link to='/login'><button className='favorite'>FAVORITE</button></Link>
       </div>
     );
@@ -25,14 +25,14 @@ const BeerCard = ({ beer, setCurrentBeer, addFavoriteBeer, user, removeFavoriteB
   if (beer.breweries){
     return (
       <div className={ beer.isFav ? 'favorite-card' : 'beer-card' }>
-        <Link to={'/beer/' + beer.id}>
+        <Link to={`/beer/${beer.id}`}>
           <h2 onClick={() => setCurrentBeer(beer)}>{beer.name}</h2>
         </Link>
-        <Link to={'/brewery/' + beer.breweries[0].id}>
+        <Link to={`/brewery/${beer.breweries[0].id}`}>
           <h3>{beer.breweries ? beer.breweries[0].name : ''}</h3>
         </Link>
         <h4>{beer.breweries ? beer.breweries[0].locations[0].region: ''}</h4>
-        <Link to={'/beer/' + beer.id}>
+        <Link to={`/beer/${beer.id}`}>
           {beer.labels ? <img className='beer-logo' src={beer.labels.medium}></img> : <img className='beer-icon' src={beer1}></img> }
         </Link>
         <h3 className='style'>{beer.style ? beer.style.name : ''}</h3>
