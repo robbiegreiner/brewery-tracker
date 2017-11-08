@@ -38,7 +38,6 @@ const BreweryCard = ({ brewery, getBrewery, addFavoriteBrewery, user, removeFavo
           </Link>
           {showFavoriteButton(user, brewery, removeFavoriteBrewery, addFavoriteBrewery, favorites)}
         </div>
-
       </div>
     );
   } else {
