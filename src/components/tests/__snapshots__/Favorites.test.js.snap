@@ -27,47 +27,23 @@ ShallowWrapper {
     "key": null,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <h1>
-          Favorites
+      "children": <h1>
+        Your Favorites Are Empty!
 </h1>,
-        <div
-          className="card-container"
->
-          
-</div>,
-      ],
       "className": "favorites",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": null,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Favorites",
-        },
-        "ref": null,
-        "rendered": "Favorites",
-        "type": "h1",
+    "rendered": Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": "Your Favorites Are Empty!",
       },
-      Object {
-        "instance": null,
-        "key": null,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            Array [],
-            Array [],
-          ],
-          "className": "card-container",
-        },
-        "ref": null,
-        "rendered": Array [],
-        "type": "div",
-      },
-    ],
+      "ref": null,
+      "rendered": "Your Favorites Are Empty!",
+      "type": "h1",
+    },
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -76,47 +52,23 @@ ShallowWrapper {
       "key": null,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          <h1>
-            Favorites
+        "children": <h1>
+          Your Favorites Are Empty!
 </h1>,
-          <div
-            className="card-container"
->
-            
-</div>,
-        ],
         "className": "favorites",
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": null,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Favorites",
-          },
-          "ref": null,
-          "rendered": "Favorites",
-          "type": "h1",
+      "rendered": Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Your Favorites Are Empty!",
         },
-        Object {
-          "instance": null,
-          "key": null,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              Array [],
-              Array [],
-            ],
-            "className": "card-container",
-          },
-          "ref": null,
-          "rendered": Array [],
-          "type": "div",
-        },
-      ],
+        "ref": null,
+        "rendered": "Your Favorites Are Empty!",
+        "type": "h1",
+      },
       "type": "div",
     },
   ],

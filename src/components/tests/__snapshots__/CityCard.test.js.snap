@@ -50,29 +50,38 @@ ShallowWrapper {
                     src="beer-tap.svg"
           />
 </Link>,
+        <a
+          className="website"
+          href={undefined}
+/>,
         <h3
           className="type"
 />,
-        <Link
-          replace={false}
-          to="/brewery/undefined"
+        <div
+          className="bottom-btns"
 >
-          <h4
-                    onClick={[Function]}
+          <Link
+                    replace={false}
+                    to="/brewery/undefined"
           >
-                    DETAILS
-          </h4>
-</Link>,
-        <Link
-          replace={false}
-          to="/login"
->
-          <h4
-                    className="favorite"
+                    <button
+                              className="view-beer"
+                              onClick={[Function]}
+                    >
+                              DETAILS
+                    </button>
+          </Link>
+          <Link
+                    replace={false}
+                    to="/login"
           >
-                    FAVORITE
-          </h4>
-</Link>,
+                    <button
+                              className="favorite"
+                    >
+                              FAVORITE
+                    </button>
+          </Link>
+</div>,
       ],
       "className": "beer-card brewery-card favorite-card",
     },
@@ -150,6 +159,19 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": undefined,
+          "className": "website",
+          "href": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "a",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": undefined,
           "className": "type",
         },
         "ref": null,
@@ -159,58 +181,95 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": null,
-        "nodeType": "class",
+        "nodeType": "host",
         "props": Object {
-          "children": <h4
-            onClick={[Function]}
+          "children": Array [
+            <Link
+              replace={false}
+              to="/brewery/undefined"
 >
-            DETAILS
-</h4>,
-          "replace": false,
-          "to": "/brewery/undefined",
+              <button
+                            className="view-beer"
+                            onClick={[Function]}
+              >
+                            DETAILS
+              </button>
+</Link>,
+            <Link
+              replace={false}
+              to="/login"
+>
+              <button
+                            className="favorite"
+              >
+                            FAVORITE
+              </button>
+</Link>,
+          ],
+          "className": "bottom-btns",
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": null,
-          "nodeType": "host",
-          "props": Object {
-            "children": "DETAILS",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "DETAILS",
-          "type": "h4",
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": null,
-        "nodeType": "class",
-        "props": Object {
-          "children": <h4
-            className="favorite"
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "children": <button
+                className="view-beer"
+                onClick={[Function]}
 >
-            FAVORITE
-</h4>,
-          "replace": false,
-          "to": "/login",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": null,
-          "nodeType": "host",
-          "props": Object {
-            "children": "FAVORITE",
-            "className": "favorite",
+                DETAILS
+</button>,
+              "replace": false,
+              "to": "/brewery/undefined",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "DETAILS",
+                "className": "view-beer",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "DETAILS",
+              "type": "button",
+            },
+            "type": [Function],
           },
-          "ref": null,
-          "rendered": "FAVORITE",
-          "type": "h4",
-        },
-        "type": [Function],
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "children": <button
+                className="favorite"
+>
+                FAVORITE
+</button>,
+              "replace": false,
+              "to": "/login",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "FAVORITE",
+                "className": "favorite",
+              },
+              "ref": null,
+              "rendered": "FAVORITE",
+              "type": "button",
+            },
+            "type": [Function],
+          },
+        ],
+        "type": "div",
       },
     ],
     "type": "div",
@@ -243,29 +302,38 @@ ShallowWrapper {
                         src="beer-tap.svg"
             />
 </Link>,
+          <a
+            className="website"
+            href={undefined}
+/>,
           <h3
             className="type"
 />,
-          <Link
-            replace={false}
-            to="/brewery/undefined"
+          <div
+            className="bottom-btns"
 >
-            <h4
-                        onClick={[Function]}
+            <Link
+                        replace={false}
+                        to="/brewery/undefined"
             >
-                        DETAILS
-            </h4>
-</Link>,
-          <Link
-            replace={false}
-            to="/login"
->
-            <h4
-                        className="favorite"
+                        <button
+                                    className="view-beer"
+                                    onClick={[Function]}
+                        >
+                                    DETAILS
+                        </button>
+            </Link>
+            <Link
+                        replace={false}
+                        to="/login"
             >
-                        FAVORITE
-            </h4>
-</Link>,
+                        <button
+                                    className="favorite"
+                        >
+                                    FAVORITE
+                        </button>
+            </Link>
+</div>,
         ],
         "className": "beer-card brewery-card favorite-card",
       },
@@ -343,6 +411,19 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": undefined,
+            "className": "website",
+            "href": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "a",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": undefined,
             "className": "type",
           },
           "ref": null,
@@ -352,58 +433,95 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": null,
-          "nodeType": "class",
+          "nodeType": "host",
           "props": Object {
-            "children": <h4
-              onClick={[Function]}
+            "children": Array [
+              <Link
+                replace={false}
+                to="/brewery/undefined"
 >
-              DETAILS
-</h4>,
-            "replace": false,
-            "to": "/brewery/undefined",
+                <button
+                                className="view-beer"
+                                onClick={[Function]}
+                >
+                                DETAILS
+                </button>
+</Link>,
+              <Link
+                replace={false}
+                to="/login"
+>
+                <button
+                                className="favorite"
+                >
+                                FAVORITE
+                </button>
+</Link>,
+            ],
+            "className": "bottom-btns",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": null,
-            "nodeType": "host",
-            "props": Object {
-              "children": "DETAILS",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "DETAILS",
-            "type": "h4",
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": null,
-          "nodeType": "class",
-          "props": Object {
-            "children": <h4
-              className="favorite"
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "children": <button
+                  className="view-beer"
+                  onClick={[Function]}
 >
-              FAVORITE
-</h4>,
-            "replace": false,
-            "to": "/login",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": null,
-            "nodeType": "host",
-            "props": Object {
-              "children": "FAVORITE",
-              "className": "favorite",
+                  DETAILS
+</button>,
+                "replace": false,
+                "to": "/brewery/undefined",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "DETAILS",
+                  "className": "view-beer",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "DETAILS",
+                "type": "button",
+              },
+              "type": [Function],
             },
-            "ref": null,
-            "rendered": "FAVORITE",
-            "type": "h4",
-          },
-          "type": [Function],
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "children": <button
+                  className="favorite"
+>
+                  FAVORITE
+</button>,
+                "replace": false,
+                "to": "/login",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "FAVORITE",
+                  "className": "favorite",
+                },
+                "ref": null,
+                "rendered": "FAVORITE",
+                "type": "button",
+              },
+              "type": [Function],
+            },
+          ],
+          "type": "div",
         },
       ],
       "type": "div",
