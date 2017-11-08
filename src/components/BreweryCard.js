@@ -3,23 +3,19 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import beer1 from '../assets/beer-tap.svg';
 
-const showFavoriteButton = (user, brewery, removeFavoriteBrewery, getBrewery, addFavoriteBrewery, favorites) => {
-  if (user.email) {
+const showFavoriteButton = (user, brewery, removeFavoriteBrewery, addFavoriteBrewery, favorites) => {
+  if (user.email && removeFavoriteBrewery) {
     return (
-      <div className='bottom-btns'>
-        <Link to={`/brewery/${brewery.id}`}>
-          <button className='view-beer' onClick={() => getBrewery(brewery.id)}>DETAILS</button>
-        </Link>
-        { removeFavoriteBrewery ? <button className='unfavorite favorite' onClick={() => removeFavoriteBrewery(user.id, brewery.firebaseID)}>UNFAVORITE</button> : <button className='favorite' onClick={() => addFavoriteBrewery(favorites, user.id, 'brewery', brewery.id, brewery)}>FAVORITE</button> }
-      </div>
+      <button className='unfavorite favorite' onClick={() => removeFavoriteBrewery(user.id, brewery.firebaseID)}>UNFAVORITE</button>
+    );
+  } else if (user.email && !removeFavoriteBrewery) {
+    return (
+      <button className='favorite' onClick={() => addFavoriteBrewery(favorites, user.id, 'brewery', brewery.id, brewery)}>FAVORITE</button>
     );
   } else {
-    return <div className='bottom-btns'>
-      <Link to={`/brewery/${brewery.id}`}>
-        <button className='view-beer' onClick={() => getBrewery(brewery.id)}>DETAILS</button>
-      </Link>
+    return (
       <Link to='/login'><button className='favorite'>FAVORITE</button></Link>
-    </div>;
+    );
   }
 };
 
@@ -36,7 +32,13 @@ const BreweryCard = ({ brewery, getBrewery, addFavoriteBrewery, user, removeFavo
         </Link>
         <a className='website' href={brewery.website}>{brewery.website}</a>
         <h3 className='type'>{brewery.locations ? brewery.locations[0].locationTypeDisplay : ''}</h3>
-        {showFavoriteButton(user, brewery, removeFavoriteBrewery, getBrewery, addFavoriteBrewery, favorites)}
+        <div className='bottom-btns'>
+          <Link to={`/brewery/${brewery.id}`}>
+            <button className='view-beer' onClick={() => getBrewery(brewery.id)}>DETAILS</button>
+          </Link>
+          {showFavoriteButton(user, brewery, removeFavoriteBrewery, addFavoriteBrewery, favorites)}
+        </div>
+
       </div>
     );
   } else {
