@@ -8,20 +8,31 @@
 }
 
 .feature-brewery, .feature-beer {
-  // background-color: $primary-color;
-  width: 800px;
+  width: 100%;
   background-color: white;
-  // background-image: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
-  // border: 2px solid black;
   height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature-brewery {
+  border-top: 3px solid #FF644E;
+  border-bottom: 3px solid black;
 }
 
 .brewery-logo-2{
   filter: opacity(.9);
 }
 
+.feature-brewery-logo {
+  filter: opacity(.9);
+}
+
 .feature-brewery p, .feature-beer p {
   padding: 20px 50px 20px 50px;
+  width: 750px;
 }
 
 .brewery-logo {

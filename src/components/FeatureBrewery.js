@@ -11,7 +11,7 @@ const FeatureBrewery = ({ featureBrewery, getBrewery }) => {
         <h1>Featured Brewery</h1>
         <Link to={'/brewery/' + featureBrewery.id} onClick={() => getBrewery(featureBrewery.id)}>
           <h2>{featureBrewery.name}</h2>
-          <img className='brewery-logo-2' src={featureBrewery.images.large}></img>
+          <img className=' feature-brewery-logo brewery-logo-2' src={featureBrewery.images.large}></img>
         </Link>
         <h3>{featureBrewery.locations[0].locality}, {featureBrewery.locations[0].region}</h3>
         <a href={featureBrewery.website}>{featureBrewery.website}</a>

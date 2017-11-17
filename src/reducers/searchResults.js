@@ -2,6 +2,8 @@ const searchResults = (state = [], action) => {
   switch (action.type) {
   case 'SEARCH_ALL_SUCCESS':
     return action.searchResults;
+  case 'ERROR_OCCURRED':
+    return [];
   case 'CITY_SUCCESS':
     return action.searchResults;
   case 'ADD_FAV_BEER_SUCCESS':

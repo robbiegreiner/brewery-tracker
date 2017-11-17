@@ -7,15 +7,27 @@
   background-color: white; }
 
 .feature-brewery, .feature-beer {
-  width: 800px;
+  width: 100%;
   background-color: white;
-  height: 600px; }
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.feature-brewery {
+  border-top: 3px solid #FF644E;
+  border-bottom: 3px solid black; }
 
 .brewery-logo-2 {
   filter: opacity(0.9); }
 
+.feature-brewery-logo {
+  filter: opacity(0.9); }
+
 .feature-brewery p, .feature-beer p {
-  padding: 20px 50px 20px 50px; }
+  padding: 20px 50px 20px 50px;
+  width: 750px; }
 
 .feature-brewery a, .feature-beer a {
   color: black; }
