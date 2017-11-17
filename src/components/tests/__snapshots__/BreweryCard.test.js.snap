@@ -68,7 +68,7 @@ ShallowWrapper {
                     to="/login"
           >
                     <button
-                              className="favorite"
+                              className="favorite favorite-2"
                     >
                               FAVORITE
                     </button>
@@ -192,7 +192,7 @@ ShallowWrapper {
               to="/login"
 >
               <button
-                            className="favorite"
+                            className="favorite favorite-2"
               >
                             FAVORITE
               </button>
@@ -238,7 +238,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": <button
-                className="favorite"
+                className="favorite favorite-2"
 >
                 FAVORITE
 </button>,
@@ -252,7 +252,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "FAVORITE",
-                "className": "favorite",
+                "className": "favorite favorite-2",
               },
               "ref": null,
               "rendered": "FAVORITE",
@@ -318,7 +318,7 @@ ShallowWrapper {
                         to="/login"
             >
                         <button
-                                    className="favorite"
+                                    className="favorite favorite-2"
                         >
                                     FAVORITE
                         </button>
@@ -442,7 +442,7 @@ ShallowWrapper {
                 to="/login"
 >
                 <button
-                                className="favorite"
+                                className="favorite favorite-2"
                 >
                                 FAVORITE
                 </button>
@@ -488,7 +488,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": <button
-                  className="favorite"
+                  className="favorite favorite-2"
 >
                   FAVORITE
 </button>,
@@ -502,7 +502,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "FAVORITE",
-                  "className": "favorite",
+                  "className": "favorite favorite-2",
                 },
                 "ref": null,
                 "rendered": "FAVORITE",

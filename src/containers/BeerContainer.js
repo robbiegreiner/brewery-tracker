@@ -5,7 +5,8 @@ import { fetchBeerByID, deleteFavoriteBeer, addFavoriteBeer, fetchBrewery } from
 
 
 const mapStateToProps = store => ({
-  currentBeer: store.currentBeer
+  currentBeer: store.currentBeer,
+  user: store.user
 });
 
 const mapDispatchToProps = dispatch => ({

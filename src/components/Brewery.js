@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import BeerCard from './BeerCard.js';
-import firebase from '../firebase.js';
 
 class Brewery extends Component {
   constructor() {
@@ -22,6 +21,19 @@ class Brewery extends Component {
     }
   }
 
+  showFavoriteButton() {
+    const { brewery, user, favorites, addFavoriteBrewery } = this.props;
+    if (user.email) {
+      return (
+        <button className='favorite favorite-2' onClick={() => addFavoriteBrewery(favorites, user.id, 'brewery', brewery.id, brewery)}>ADD FAVORITE</button>
+      );
+    } else {
+      return (
+        <Link to='/login'><button className='favorite favorite-2'>ADD FAVORITE</button></Link>
+      );
+    }
+  }
+
   renderBrewery() {
     const { brewery } = this.props;
 
@@ -35,6 +47,7 @@ class Brewery extends Component {
             <h3>{brewery.locations[0].streetAddress}</h3>
             <h3>{brewery.locations[0].locality + ", " + brewery.locations[0].region + " " + brewery.locations[0].postalCode }</h3>
             <h4>{brewery.website}</h4>
+            {this.showFavoriteButton()}
           </div>
           <p>{brewery.description ? brewery.description : 'no description provided'}</p>
         </div>
@@ -47,7 +60,7 @@ class Brewery extends Component {
   }
 
   renderBeers() {
-    const { breweryBeers, setCurrentBeer, user, addFavoriteBeer, removeFavoriteBeer, favorites } = this.props;
+    const { breweryBeers, setCurrentBeer, user, addFavoriteBeer, favorites } = this.props;
     if (breweryBeers) {
       return breweryBeers.map( beer => {
         return <BeerCard
@@ -86,7 +99,10 @@ Brewery.propTypes = {
   removeFavorite: PropTypes.func,
   removeFavoriteBeer: PropTypes.func,
   removeFavoriteBrewery: PropTypes.func,
-  getBrewery: PropTypes.func
+  getBrewery: PropTypes.func,
+  addFavoriteBeer: PropTypes.func,
+  addFavoriteBrewery: PropTypes.func,
+  favorites: PropTypes.object
 };
 
 export default Brewery;
