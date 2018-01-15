@@ -83,6 +83,9 @@ const SearchResults = ({ searchResults, getBrewery, setCurrentBeer, searchType, 
 
   return (
     <div className='search-results'>
+      <h6
+        className='back-button'
+        onClick={() => window.history.back()}><u>Go Back</u></h6>
       <h1>Search Results</h1>
       <div className='card-container'>
         { showError() }

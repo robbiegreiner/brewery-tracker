@@ -77,6 +77,16 @@
   .header h1 {
     margin-left: 40px; } }
 
+.back-button {
+  align-self: flex-start;
+  margin-left: 5%;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 10px;
+  color: #FF644E; }
+  .back-button :hover {
+    color: #2C4154; }
+
 .search-results {
   width: 100%;
   display: flex;
